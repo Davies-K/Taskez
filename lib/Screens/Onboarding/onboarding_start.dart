@@ -9,6 +9,8 @@ import 'package:taskez/widgets/Onboarding/bubble.dart';
 import 'package:taskez/widgets/Onboarding/loading_stickers.dart';
 import 'dart:math' as math;
 
+import 'package:taskez/widgets/Shapes/background_hexagon.dart';
+
 class OnboardingStart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,13 @@ class OnboardingStart extends StatelessWidget {
           color: HexColor.fromHex("#181a1f"),
           position: "topLeft",
         ),
+
+        Positioned(
+            top: Utils.screenHeight,
+            left: 0,
+            child: Transform.rotate(
+                angle: -math.pi / 2,
+                child: CustomPaint(painter: BackgroundHexagon()))),
         //images
         Positioned(
             top: Utils.screenHeight * 0.7,

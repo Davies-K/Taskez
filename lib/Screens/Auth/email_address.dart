@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'dart:math' as math;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
+import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/back.dart';
+import 'package:taskez/widgets/Shapes/background_hexagon.dart';
 
 class EmailAddressScreen extends StatefulWidget {
   @override
@@ -11,6 +13,8 @@ class EmailAddressScreen extends StatefulWidget {
 }
 
 class _EmailAddressScreenState extends State<EmailAddressScreen> {
+  TextEditingController _emailController = new TextEditingController();
+  bool obscureText = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +23,12 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
         color: HexColor.fromHex("#181a1f"),
         position: "topLeft",
       ),
+      Positioned(
+          top: Utils.screenHeight / 2,
+          left: Utils.screenWidth,
+          child: Transform.rotate(
+              angle: -math.pi / 2,
+              child: CustomPaint(painter: BackgroundHexagon()))),
       Padding(
         padding: EdgeInsets.all(20.0),
         child: SafeArea(
@@ -31,6 +41,13 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold)),
+          SizedBox(height: 20),
+          LabelledFormInput(
+              placeholder: "Email",
+              keyboardType: "text",
+              controller: _emailController,
+              obscureText: obscureText,
+              label: "Your Email"),
           SizedBox(height: 20),
           Container(
             //width: 180,

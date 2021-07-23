@@ -83,11 +83,25 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_shapes:
+    dependency: "direct main"
+    description:
+      name: flutter_shapes
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  font_awesome_flutter:
+    dependency: "direct main"
+    description:
+      name: font_awesome_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "9.1.0"
   get:
     dependency: "direct main"
     description:
