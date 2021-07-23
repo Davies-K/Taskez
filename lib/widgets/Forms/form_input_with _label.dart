@@ -33,22 +33,23 @@ class LabelledFormInput extends StatelessWidget {
         TextFormField(
           controller: controller,
           style: GoogleFonts.lato(
-              fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white),
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
           onTap: () {},
           keyboardType: keyboardType == "text"
               ? TextInputType.text
               : TextInputType.number,
           //initialValue: initialValue,
-          obscureText: label == 'Password' || label == 'Choose a password'
-              ? true
-              : false,
+          obscureText:
+              placeholder == 'Password' || placeholder == 'Choose a password'
+                  ? true
+                  : false,
 
           decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
                 horizontal: 0,
                 vertical: 20,
               ),
-              suffixIcon: label == "Password"
+              suffixIcon: placeholder == "Password"
                   ? InkWell(
                       onTap: () {},
                       child: Icon(
@@ -56,7 +57,7 @@ class LabelledFormInput extends StatelessWidget {
                             ? FontAwesomeIcons.eye
                             : FontAwesomeIcons.eyeSlash,
                         size: 15.0,
-                        color: Colors.black45,
+                        color: HexColor.fromHex("3C3E49"),
                       ))
                   : InkWell(
                       onTap: () {
@@ -68,7 +69,7 @@ class LabelledFormInput extends StatelessWidget {
               hintText: placeholder,
               hintStyle: GoogleFonts.lato(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25,
+                  fontSize: 20,
                   color: HexColor.fromHex("3C3E49")),
               filled: false,
               enabledBorder: UnderlineInputBorder(

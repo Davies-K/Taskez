@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'dart:math' as math;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
@@ -6,6 +7,8 @@ import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/back.dart';
 import 'package:taskez/widgets/Shapes/background_hexagon.dart';
+
+import 'signup.dart';
 
 class EmailAddressScreen extends StatefulWidget {
   @override
@@ -48,12 +51,14 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
               controller: _emailController,
               obscureText: obscureText,
               label: "Your Email"),
-          SizedBox(height: 20),
+          SizedBox(height: 40),
           Container(
             //width: 180,
             height: 60,
             child: ElevatedButton(
-                onPressed: null,
+                onPressed: () {
+                  Get.to(SignUp(email: _emailController.text));
+                },
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
                         HexColor.fromHex("246CFE")),
