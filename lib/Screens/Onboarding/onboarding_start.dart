@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Screens/Auth/email_address.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Onboarding/background_image.dart';
@@ -89,19 +91,24 @@ class OnboardingStart extends StatelessWidget {
             left: Utils.screenWidth * 0.83,
             child: Transform.rotate(
               angle: -math.pi / 4,
-              child: Container(
-                  width: 200,
-                  height: 200,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: HexColor.fromHex("B6FFE5")),
-                  child: Transform.rotate(
-                    angle: math.pi / 4,
-                    child: Container(
-                        alignment: Alignment.topLeft,
-                        padding: EdgeInsets.only(top: 80, left: 30),
-                        child: Icon(Icons.arrow_forward, size: 40)),
-                  )),
+              child: InkWell(
+                onTap: () {
+                  Get.to(EmailAddressScreen());
+                },
+                child: Container(
+                    width: 200,
+                    height: 200,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: HexColor.fromHex("B6FFE5")),
+                    child: Transform.rotate(
+                      angle: math.pi / 4,
+                      child: Container(
+                          alignment: Alignment.topLeft,
+                          padding: EdgeInsets.only(top: 80, left: 30),
+                          child: Icon(Icons.arrow_forward, size: 40)),
+                    )),
+              ),
             )),
 
         Positioned(
@@ -133,7 +140,7 @@ class OnboardingStart extends StatelessWidget {
                     SizedBox(height: 20),
                     Container(
                       width: 180,
-                      height: 50,
+                      height: 60,
                       child: ElevatedButton(
                           onPressed: null,
                           style: ButtonStyle(
