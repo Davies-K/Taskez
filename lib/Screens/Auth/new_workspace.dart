@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
@@ -6,46 +7,10 @@ import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/Onboarding/gradient_color_ball.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
-class NewWorkSpace extends StatefulWidget {
-  NewWorkSpace({Key? key}) : super(key: key);
+import 'choose_plan.dart';
 
-  @override
-  _NewWorkSpaceState createState() => _NewWorkSpaceState();
-}
-
-class _NewWorkSpaceState extends State<NewWorkSpace> {
-  final colorIndex = List.generate(
-    8,
-    (index) => GradientColorBall(
-      currentIndex: 5,
-      selectIndex: index,
-      gradientList: [...AppColors.ballColors[index]],
-    ),
-  );
-
-  final boxGradient = BoxDecoration(
-    gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-          HexColor.fromHex("625B8B"),
-          Color.fromRGBO(98, 99, 102, 1),
-          HexColor.fromHex("#181a1f"),
-          HexColor.fromHex("#181a1f")
-        ]),
-    borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-    //border: Border.all(color: Colors.red, width: 5)
-  );
-
-  final innerDecor = BoxDecoration(
-      color: HexColor.fromHex("181A1F"),
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20), topRight: Radius.circular(20)));
-  @override
-  void initState() {
-    super.initState();
-  }
+class NewWorkSpace extends StatelessWidget {
+  ValueNotifier<int> _colorTrigger = ValueNotifier(5);
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +32,11 @@ class _NewWorkSpaceState extends State<NewWorkSpace> {
               child: Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: boxGradient,
+                  decoration: AppStyles.fadingGlory,
                   child: Padding(
                     padding: EdgeInsets.all(3.0),
                     child: DecoratedBox(
-                        decoration: innerDecor,
+                        decoration: AppStyles.fadingInnerDecor,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Column(children: [
@@ -143,7 +108,18 @@ class _NewWorkSpaceState extends State<NewWorkSpace> {
                                   padding: EdgeInsets.only(top: 15.0),
                                   child: Wrap(
                                       alignment: WrapAlignment.start,
-                                      children: [...colorIndex])),
+                                      children: [
+                                        ...List.generate(
+                                          8,
+                                          (index) => GradientColorBall(
+                                            valueChanger: _colorTrigger,
+                                            selectIndex: index,
+                                            gradientList: [
+                                              ...AppColors.ballColors[index]
+                                            ],
+                                          ),
+                                        )
+                                      ])),
                             ),
                             SizedBox(height: 20),
                           ]),
@@ -167,7 +143,9 @@ class _NewWorkSpaceState extends State<NewWorkSpace> {
                       width: 140,
                       height: 60,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(ChoosePlan());
+                          },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   HexColor.fromHex("246CFE")),
