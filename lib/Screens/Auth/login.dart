@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Screens/Auth/new_workspace.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
@@ -68,7 +70,9 @@ class _LoginState extends State<Login> {
               width: double.infinity,
               height: 60,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(NewWorkSpace());
+                  },
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           HexColor.fromHex("246CFE")),
