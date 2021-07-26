@@ -33,6 +33,7 @@ dependencies:
   get: ^4.1.4
   font_awesome_flutter:
   flutter_shapes:
+  provider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

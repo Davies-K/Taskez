@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
+import 'package:taskez/widgets/Onboarding/gradient_color_ball.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 class NewWorkSpace extends StatefulWidget {
@@ -13,6 +14,15 @@ class NewWorkSpace extends StatefulWidget {
 }
 
 class _NewWorkSpaceState extends State<NewWorkSpace> {
+  final colorIndex = List.generate(
+    8,
+    (index) => GradientColorBall(
+      currentIndex: 5,
+      selectIndex: index,
+      gradientList: [...AppColors.ballColors[index]],
+    ),
+  );
+
   final boxGradient = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -32,6 +42,11 @@ class _NewWorkSpaceState extends State<NewWorkSpace> {
       color: HexColor.fromHex("181A1F"),
       borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20), topRight: Radius.circular(20)));
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,20 +134,57 @@ class _NewWorkSpaceState extends State<NewWorkSpace> {
                             SizedBox(height: 20),
                             Container(
                                 alignment: Alignment.centerLeft,
-                                child: Text('INVITE PEOPLE TO YOUR WORKSPACE',
+                                child: Text('CHOOSE COLOR THEME',
                                     style: GoogleFonts.lato(
                                         color: HexColor.fromHex("666A7A"),
                                         fontWeight: FontWeight.bold))),
+                            Container(
+                              child: Padding(
+                                  padding: EdgeInsets.only(top: 15.0),
+                                  child: Wrap(
+                                      alignment: WrapAlignment.start,
+                                      children: [...colorIndex])),
+                            ),
+                            SizedBox(height: 20),
                           ]),
                         )),
                   ))),
         ]),
-        // Positioned(
-        //     bottom: 0,
-        //     child: Container(
-        //         width: Utils.screenWidth,
-        //         height: 50,
-        //         color: HexColor.fromHex("181A1F")))
+        Positioned(
+            bottom: 30,
+            child: Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              width: Utils.screenWidth,
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Skip',
+                        style: GoogleFonts.lato(
+                            color: HexColor.fromHex("616575"),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                    Container(
+                      width: 140,
+                      height: 60,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  HexColor.fromHex("246CFE")),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50.0),
+                                      side: BorderSide(
+                                          color: HexColor.fromHex("246CFE"))))),
+                          child: Text('Next',
+                              style: GoogleFonts.lato(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white))),
+                    )
+                  ]),
+            ))
       ]),
     );
   }
