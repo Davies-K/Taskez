@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Screens/Auth/email_address.dart';
+import 'package:taskez/Screens/Onboarding/onboarding_carousel.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Onboarding/background_image.dart';
@@ -102,7 +103,7 @@ class OnboardingStart extends StatelessWidget {
               angle: -math.pi / 4,
               child: InkWell(
                 onTap: () {
-                  Get.to(EmailAddressScreen());
+                  Get.to(OnboardingCarousel());
                 },
                 child: Container(
                     width: 200,
@@ -151,11 +152,14 @@ class OnboardingStart extends StatelessWidget {
                       width: 180,
                       height: 60,
                       child: ElevatedButton(
-                          onPressed: null,
+                          onPressed: () {
+                            Get.to(OnboardingCarousel());
+                          },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   HexColor.fromHex("246CFE")),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(50.0),
                                       side: BorderSide(
