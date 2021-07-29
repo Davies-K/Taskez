@@ -34,6 +34,7 @@ dependencies:
   font_awesome_flutter:
   flutter_shapes:
   provider: ^5.0.0
+  flutter_feather_icons: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
