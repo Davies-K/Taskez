@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskez/Constants/constants.dart';
 
 import 'package:taskez/Values/values.dart';
 import 'dart:math' as math;
@@ -6,8 +7,9 @@ import 'dart:math' as math;
 class BottomNavigationItem extends StatelessWidget {
   final IconData icon;
   final int itemIndex;
+
   final ValueNotifier<int> notifier;
-  const BottomNavigationItem(
+  BottomNavigationItem(
       {Key? key,
       required this.itemIndex,
       required this.notifier,

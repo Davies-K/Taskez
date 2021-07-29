@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Screens/Dashboard/dashboard.dart';
 import 'package:taskez/Screens/Dashboard/notifications.dart';
 import 'package:taskez/Screens/Dashboard/projects.dart';
@@ -18,13 +19,8 @@ class Timeline extends StatefulWidget {
 
 class _TimelineState extends State<Timeline> {
   ValueNotifier<int> bottomNavigatorTrigger = ValueNotifier(0);
-  final List<Widget> dashBoardScreens = [
-    Dashboard(),
-    ProjectScreen(),
-    NotificationScreen(),
-    SearchScreen()
-  ];
-  Widget currentScreen = Dashboard();
+
+  StatelessWidget currentScreen = Dashboard();
 
   final PageStorageBucket bucket = PageStorageBucket();
   @override
@@ -37,7 +33,13 @@ class _TimelineState extends State<Timeline> {
             color: HexColor.fromHex("#181a1f"),
             position: "topLeft",
           ),
-          PageStorage(child: currentScreen, bucket: bucket)
+          ValueListenableBuilder(
+              valueListenable: bottomNavigatorTrigger,
+              builder: (BuildContext context, _, __) {
+                return PageStorage(
+                    child: dashBoardScreens[bottomNavigatorTrigger.value],
+                    bucket: bucket);
+              })
         ]),
         bottomNavigationBar: Container(
             width: double.infinity,
