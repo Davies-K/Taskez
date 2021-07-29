@@ -10,11 +10,13 @@ class ProfileDummy extends StatelessWidget {
   ProfileDummyType dummyType;
   double scale;
   String? image;
+  Color? color;
   IconData? icon;
   ProfileDummy(
       {Key? key,
       required this.dummyType,
       required this.scale,
+      required this.color,
       this.icon,
       this.image})
       : super(key: key);
@@ -24,13 +26,12 @@ class ProfileDummy extends StatelessWidget {
     return Container(
         width: 40 * scale,
         height: 40 * scale,
-        decoration: BoxDecoration(
-            color: HexColor.fromHex("9F69F9"), shape: BoxShape.circle),
+        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         child: ClipOval(
             child: this.dummyType == ProfileDummyType.Icon
                 ? Icon(Icons.person, color: Colors.white, size: 30 * scale)
                 : Image(
-                    fit: BoxFit.contain,
+                    fit: (scale == 1.2) ? BoxFit.cover : BoxFit.contain,
                     image: AssetImage(
                       image!,
                     ),

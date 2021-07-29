@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 import 'back_button.dart';
@@ -14,7 +15,10 @@ class DefaultNav extends StatelessWidget {
       AppBackButton(),
       Text(this.title,
           style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
-      ProfileDummy(dummyType: ProfileDummyType.Icon, scale: 1.0)
+      ProfileDummy(
+          color: HexColor.fromHex("9F69F9"),
+          dummyType: ProfileDummyType.Icon,
+          scale: 1.0)
     ]);
   }
 }

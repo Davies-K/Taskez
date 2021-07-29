@@ -41,6 +41,7 @@ class NewWorkSpace extends StatelessWidget {
                           padding: const EdgeInsets.all(20.0),
                           child: Column(children: [
                             ProfileDummy(
+                                color: HexColor.fromHex("9F69F9"),
                                 dummyType: ProfileDummyType.Image,
                                 scale: 3.5,
                                 image: "assets/plant.png"),

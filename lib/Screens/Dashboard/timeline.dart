@@ -17,6 +17,7 @@ class Timeline extends StatefulWidget {
 }
 
 class _TimelineState extends State<Timeline> {
+  ValueNotifier<int> bottomNavigatorTrigger = ValueNotifier(0);
   final List<Widget> dashBoardScreens = [
     Dashboard(),
     ProjectScreen(),
@@ -52,9 +53,15 @@ class _TimelineState extends State<Timeline> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  BottomNavigationItem(icon: Icons.widgets),
+                  BottomNavigationItem(
+                      itemIndex: 0,
+                      notifier: bottomNavigatorTrigger,
+                      icon: Icons.widgets),
                   Spacer(),
-                  BottomNavigationItem(icon: FeatherIcons.clipboard),
+                  BottomNavigationItem(
+                      itemIndex: 1,
+                      notifier: bottomNavigatorTrigger,
+                      icon: FeatherIcons.clipboard),
                   Spacer(),
                   Positioned(
                     top: 40,
@@ -67,9 +74,15 @@ class _TimelineState extends State<Timeline> {
                         child: Icon(Icons.add, color: Colors.white)),
                   ),
                   Spacer(),
-                  BottomNavigationItem(icon: FeatherIcons.bell),
+                  BottomNavigationItem(
+                      itemIndex: 2,
+                      notifier: bottomNavigatorTrigger,
+                      icon: FeatherIcons.bell),
                   Spacer(),
-                  BottomNavigationItem(icon: FeatherIcons.search)
+                  BottomNavigationItem(
+                      itemIndex: 3,
+                      notifier: bottomNavigatorTrigger,
+                      icon: FeatherIcons.search)
                 ])));
   }
 }
