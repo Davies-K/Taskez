@@ -44,7 +44,7 @@ class _TimelineState extends State<Timeline> {
         bottomNavigationBar: Container(
             width: double.infinity,
             height: 100,
-            padding: EdgeInsets.only(top: 10, right: 13, left: 13),
+            padding: EdgeInsets.only(top: 10, right: 30, left: 30),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),

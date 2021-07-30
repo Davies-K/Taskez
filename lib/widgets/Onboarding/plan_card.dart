@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Values/values.dart';
 
 class PlanCard extends StatelessWidget {
@@ -16,14 +17,6 @@ class PlanCard extends StatelessWidget {
       required this.subHeader})
       : super(key: key);
 
-  List<Color> list = [
-    //grenn
-    HexColor.fromHex("87EFB5"),
-    //blue
-    HexColor.fromHex("8ABFFC"),
-    //pink
-    HexColor.fromHex("EEB2E8"),
-  ];
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -41,7 +34,7 @@ class PlanCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     gradient: RadialGradient(
                       colors: [
-                        ...list,
+                        ...progressCardGradientList,
                       ],
                       center: Alignment(1, 1),
                       focal: Alignment(0.3, -0.1),

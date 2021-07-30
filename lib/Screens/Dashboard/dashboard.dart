@@ -5,6 +5,9 @@ import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
 import 'package:taskez/widgets/Navigation/dasboard_header.dart';
 import 'package:taskez/widgets/Shapes/app_settings_icon.dart';
 
+import 'DashboardTabScreens/overview.dart';
+import 'DashboardTabScreens/productivity.dart';
+
 class Dashboard extends StatelessWidget {
   Dashboard({Key? key}) : super(key: key);
   ValueNotifier<int> _buttonTrigger = ValueNotifier(0);
@@ -43,7 +46,15 @@ class Dashboard extends StatelessWidget {
             ),
             Container(
                 alignment: Alignment.centerRight, child: AppSettingsIcon())
-          ])
+          ]),
+          SizedBox(height: 20),
+          ValueListenableBuilder(
+              valueListenable: _buttonTrigger,
+              builder: (BuildContext context, _, __) {
+                return _buttonTrigger.value == 0
+                    ? DashboardOverview()
+                    : DashboardProductivity();
+              })
         ]));
   }
 }

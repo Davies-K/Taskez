@@ -29,7 +29,7 @@ class BottomNavigationItem extends StatelessWidget {
             builder: (BuildContext context, _, __) {
               return Stack(children: [
                 Positioned(
-                    top: 10,
+                    top: 13,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -39,18 +39,18 @@ class BottomNavigationItem extends StatelessWidget {
                             color: notifier.value != itemIndex
                                 ? Colors.grey
                                 : Colors.white),
-                        SizedBox(height: 40),
+                        SizedBox(height: 35),
                         notifier.value != itemIndex
-                            ? SizedBox(width: 50, height: 50)
+                            ? SizedBox(width: 30, height: 30)
                             : Transform.rotate(
                                 angle: -math.pi / 4,
                                 child: AnimatedContainer(
                                     duration: Duration(milliseconds: 150),
-                                    width: 50,
-                                    height: 50,
+                                    width: 30,
+                                    height: 30,
                                     decoration: BoxDecoration(
                                         borderRadius:
-                                            BorderRadius.circular(20.0),
+                                            BorderRadius.circular(10.0),
                                         color: HexColor.fromHex("C25FFF"))))
                       ],
                     )),
