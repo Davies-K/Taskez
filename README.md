@@ -1,4 +1,6 @@
 # Taskez
+<p align="center">A productivity app design UI kit built with Flutter</p>
+<p align="center">It is inspired by <a href="https://www.behance.net/gallery/108149857/TaskEz-Productivity-App-iOS-UI-Kit"> Taskez IOS UI kit.</a></p>
 
 <p align="center">
   <img src="screenshots/screenshot-1.png" width="100%" title="homescreen1">
