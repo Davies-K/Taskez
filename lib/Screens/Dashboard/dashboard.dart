@@ -28,7 +28,7 @@ class Dashboard extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold)),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             //tab indicators
             Row(
