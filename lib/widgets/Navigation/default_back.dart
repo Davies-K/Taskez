@@ -7,7 +7,9 @@ import 'back_button.dart';
 
 class DefaultNav extends StatelessWidget {
   final String title;
-  const DefaultNav({Key? key, required this.title}) : super(key: key);
+  final ProfileDummyType? type;
+  const DefaultNav({Key? key, this.type, required this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +17,16 @@ class DefaultNav extends StatelessWidget {
       AppBackButton(),
       Text(this.title,
           style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
-      ProfileDummy(
-          color: HexColor.fromHex("9F69F9"),
-          dummyType: ProfileDummyType.Icon,
-          scale: 1.0)
+      (type == ProfileDummyType.Image)
+          ? ProfileDummy(
+              color: HexColor.fromHex("93F0F0"),
+              dummyType: ProfileDummyType.Image,
+              image: "assets/man-head.png",
+              scale: 1.2)
+          : ProfileDummy(
+              color: HexColor.fromHex("9F69F9"),
+              dummyType: ProfileDummyType.Icon,
+              scale: 1.0)
     ]);
   }
 }

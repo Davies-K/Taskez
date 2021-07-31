@@ -52,7 +52,10 @@ class DashboardSettingsBottomSheet extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                  AppTextButton(buttonText: 'Clear All'),
+                  AppTextButton(
+                    buttonText: 'Clear All',
+                    buttonSize: 20,
+                  ),
                   AppPrimaryButton(
                     buttonHeight: 45,
                     buttonWidth: 160,

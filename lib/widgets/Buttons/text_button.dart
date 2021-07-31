@@ -4,8 +4,13 @@ import 'package:taskez/Values/values.dart';
 
 class AppTextButton extends StatelessWidget {
   final String buttonText;
+  final double buttonSize;
   final VoidCallback? callback;
-  const AppTextButton({Key? key, required this.buttonText, this.callback})
+  const AppTextButton(
+      {Key? key,
+      required this.buttonSize,
+      required this.buttonText,
+      this.callback})
       : super(key: key);
 
   @override
@@ -17,7 +22,7 @@ class AppTextButton extends StatelessWidget {
       child: Text(buttonText,
           style: GoogleFonts.lato(
               color: HexColor.fromHex("616575"),
-              fontSize: 16,
+              fontSize: buttonSize,
               fontWeight: FontWeight.bold)),
     );
   }
