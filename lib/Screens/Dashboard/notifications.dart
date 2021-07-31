@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
+import 'package:taskez/widgets/Notification/notification_card.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -7,10 +9,29 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dynamic notificationData = AppData.notificationMentions;
+
+    List<Widget> notificationCards = List.generate(
+        notificationData.length,
+        (index) => NotificationCard(
+              read: notificationData[index]['read'],
+              userName: notificationData[index]['mentionedBy'],
+              date: notificationData[index]['date'],
+              image: notificationData[index]['profileImage'],
+              mentioned: notificationData[index]['hashTagPresent'],
+              message: notificationData[index]['message'],
+              mention: notificationData[index]['mentionedIn'],
+              imageBackground: notificationData[index]['color'],
+              userOnline: notificationData[index]['userOnline'],
+            ));
     return Padding(
         padding: EdgeInsets.all(20.0),
-        child: ListView(children: [
-          DefaultNav(title: "Notification", type: ProfileDummyType.Image),
-        ]));
+        child: SafeArea(
+          child: Column(children: [
+            DefaultNav(title: "Notification", type: ProfileDummyType.Image),
+            SizedBox(height: 20),
+            Expanded(child: ListView(children: [...notificationCards]))
+          ]),
+        ));
   }
 }
