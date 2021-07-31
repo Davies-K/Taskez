@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:taskez/widgets/Shapes/settings_strip.dart';
 
 class AppSettingsIcon extends StatelessWidget {
-  const AppSettingsIcon({Key? key}) : super(key: key);
+  VoidCallback? callback;
+  AppSettingsIcon({Key? key, this.callback}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

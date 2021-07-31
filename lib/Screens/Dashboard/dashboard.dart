@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/BottomSheets/dashboard_settings_sheet.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
 import 'package:taskez/widgets/Navigation/dasboard_header.dart';
 import 'package:taskez/widgets/Shapes/app_settings_icon.dart';
@@ -8,8 +10,13 @@ import 'package:taskez/widgets/Shapes/app_settings_icon.dart';
 import 'DashboardTabScreens/overview.dart';
 import 'DashboardTabScreens/productivity.dart';
 
+// ignore: must_be_immutable
 class Dashboard extends StatelessWidget {
   Dashboard({Key? key}) : super(key: key);
+  ValueNotifier<bool> _totalTaskTrigger = ValueNotifier(true);
+  ValueNotifier<bool> _totalDueTrigger = ValueNotifier(false);
+  ValueNotifier<bool> _totalCompletedTrigger = ValueNotifier(true);
+  ValueNotifier<bool> _workingOnTrigger = ValueNotifier(false);
   ValueNotifier<int> _buttonTrigger = ValueNotifier(0);
 
   @override
@@ -45,7 +52,15 @@ class Dashboard extends StatelessWidget {
               ],
             ),
             Container(
-                alignment: Alignment.centerRight, child: AppSettingsIcon())
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {
+                    _showDashboardSettings(context);
+                  },
+                  child: AppSettingsIcon(
+                      // callback: _showDashboardSettings(context),
+                      ),
+                ))
           ]),
           SizedBox(height: 20),
           ValueListenableBuilder(
@@ -56,5 +71,29 @@ class Dashboard extends StatelessWidget {
                     : DashboardProductivity();
               })
         ]));
+  }
+
+  _showDashboardSettings(context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: HexColor.fromHex("262A34"),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (BuildContext context) {
+        return Container(
+            height: Utils.screenHeight,
+            decoration: BoxDecoration(),
+            child: DashboardSettingsBottomSheet(
+              totalTaskNotifier: _totalTaskTrigger,
+              totalDueNotifier: _totalDueTrigger,
+              workingOnNotifier: _workingOnTrigger,
+              totalCompletedNotifier: _totalCompletedTrigger,
+            ));
+      },
+    );
   }
 }

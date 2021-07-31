@@ -5,27 +5,26 @@ import 'package:taskez/Values/values.dart';
 enum PrimaryButtonSizes { small, medium, large }
 
 class AppPrimaryButton extends StatelessWidget {
-  final PrimaryButtonSizes buttonSize;
-  final Color color;
+  final double buttonHeight;
+  final double buttonWidth;
+
   final String buttonText;
-  final VoidCallback callback;
+  final VoidCallback? callback;
   const AppPrimaryButton(
       {Key? key,
-      required this.buttonSize,
-      required this.color,
-      required this.callback,
-      required this.buttonText})
+      this.callback,
+      required this.buttonText,
+      required this.buttonHeight,
+      required this.buttonWidth})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: buttonSize == PrimaryButtonSizes.large
-          ? 140
-          : buttonSize == PrimaryButtonSizes.medium
-              ? 70
-              : 30,
-      height: 60,
+      // width: 180,
+      // height: 50,
+      width: buttonWidth,
+      height: buttonHeight,
       child: ElevatedButton(
           onPressed: () {},
           style: ButtonStyle(
@@ -37,7 +36,7 @@ class AppPrimaryButton extends StatelessWidget {
                       side: BorderSide(color: HexColor.fromHex("246CFE"))))),
           child: Text(buttonText,
               style: GoogleFonts.lato(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white))),
     );
