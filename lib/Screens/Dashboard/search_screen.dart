@@ -78,7 +78,31 @@ class SearchScreen extends StatelessWidget {
                 ))
           ]),
           SizedBox(height: 20),
-          SearchTaskCard()
+          SearchTaskCard(
+              activated: false,
+              header: "Unity Dashboard",
+              subHeader: "in UI Design Kit",
+              date: "Dec 2"),
+          SearchTaskCard(
+              activated: true,
+              header: "Unity Gaming",
+              subHeader: "Coded Template",
+              date: "Nov 4"),
+          SearchTaskCard(
+              activated: false,
+              header: "Gitlab Landing Page",
+              subHeader: "in UI Design Kit",
+              date: "Nov 29"),
+          SearchTaskCard(
+              activated: true,
+              header: "Portfolio Design",
+              subHeader: "Tesla Inc.",
+              date: "Nov 26"),
+          SearchTaskCard(
+              activated: true,
+              header: "Stuart'\s Workplace",
+              subHeader: "Coded Template",
+              date: "Aug 1"),
         ]));
   }
 }

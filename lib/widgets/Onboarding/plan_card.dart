@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/dummy/green_done_icon.dart';
 
 class PlanCard extends StatelessWidget {
   int selectedIndex;
@@ -75,16 +76,7 @@ class PlanCard extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: HexColor.fromHex("181a1f")),
-                                child: Center(
-                                  child: Container(
-                                      width: 35,
-                                      height: 35,
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: HexColor.fromHex("78B462")),
-                                      child: Icon(Icons.done,
-                                          color: Colors.white)),
-                                )),
+                                child: GreenDoneIcon()),
                           ),
                           Center(
                               child: Column(
