@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Screens/Chat/messaging_screen.dart';
 
 import 'online_user_profile.dart';
 
@@ -18,16 +20,24 @@ class OnlineUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0),
-      child: Row(children: [
-        OnlineUserProfile(
-          image: image,
-          imageBackground: imageBackground,
-        ),
-        SizedBox(width: 20),
-        Text(userName,
-            style: GoogleFonts.lato(
-                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18))
-      ]),
+      child: GestureDetector(
+        onTap: () {
+          Get.to(MessagingScreen(
+              userName: userName, image: image, color: imageBackground));
+        },
+        child: Row(children: [
+          OnlineUserProfile(
+            image: image,
+            imageBackground: imageBackground,
+          ),
+          SizedBox(width: 20),
+          Text(userName,
+              style: GoogleFonts.lato(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18))
+        ]),
+      ),
     );
   }
 }
