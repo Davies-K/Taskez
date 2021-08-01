@@ -27,7 +27,7 @@ class SearchBox extends StatelessWidget {
         ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 10,
-          vertical: 10,
+          vertical: 15,
         ),
         prefix: Padding(
           padding: EdgeInsets.only(right: 8.0),

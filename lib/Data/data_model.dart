@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:taskez/Values/values.dart';
+
 class AppData {
   static final List<Map<String, dynamic>> progressIndicatorList = [
     {
@@ -83,6 +86,48 @@ class AppData {
       "userOnline": false,
       "hashElement": "",
       "message": "Are you actually working? We're still waiting for it. 🏀"
+    },
+  ];
+
+  static final List<String> profileImages = [
+    "assets/memoji/1.png",
+    "assets/memoji/2.png",
+    "assets/memoji/4.png",
+    "assets/memoji/7.png"
+  ];
+
+  static final List<Color> groupBackgroundColors = [
+    HexColor.fromHex("BCF2C7"),
+    HexColor.fromHex("8D96FF"),
+    HexColor.fromHex("A5F69C"),
+    HexColor.fromHex("FCA3FF")
+  ];
+
+  static final List<Map<String, dynamic>> onlineUsers = [
+    {
+      "name": "Gareth Reid 🔥",
+      "profileImage": "assets/memoji/1.png",
+      "color": "BAF0C5",
+    },
+    {
+      "name": "Vincent Lyons 🇺🇸",
+      "profileImage": "assets/memoji/2.png",
+      "color": "DACFFE",
+    },
+    {
+      "name": "Adeline Nunez 🎉",
+      "profileImage": "assets/memoji/4.png",
+      "color": "FFC7D5",
+    },
+    {
+      "name": "Samuel Doyle 🔥",
+      "profileImage": "assets/memoji/7.png",
+      "color": "C0E7FD",
+    },
+    {
+      "name": "Ruth Benson 🔥",
+      "profileImage": "assets/memoji/9.png",
+      "color": "D7D2D4",
     },
   ];
 }
