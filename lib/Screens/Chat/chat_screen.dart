@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Data/data_model.dart';
+import 'package:taskez/Screens/Chat/new_group.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/CHAT/add_chat_icon.dart';
 import 'package:taskez/widgets/Chat/badged_title.dart';
@@ -13,16 +15,10 @@ import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 import 'package:taskez/widgets/stacked_images.dart';
 
+import 'new_message_screen.dart';
+
 class ChatScreen extends StatelessWidget {
   ChatScreen({Key? key}) : super(key: key);
-
-  final onlineUsers = List.generate(
-      AppData.onlineUsers.length,
-      (index) => OnlineUser(
-            image: AppData.onlineUsers[index]['profileImage'],
-            imageBackground: AppData.onlineUsers[index]['color'],
-            userName: AppData.onlineUsers[index]['name'],
-          ));
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +33,14 @@ class ChatScreen extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           taskezAppHeader(
             title: "Chat",
-            widget: AddChatIcon(),
+            widget: AddChatIcon(page: NewMessageScreen()),
           ),
           SizedBox(height: 20),
           SearchBox(
             placeholder: 'Search',
           ),
           SizedBox(height: 20),
-          SelectionTab(title: "GROUP"),
+          SelectionTab(title: "GROUP", page: NewGroupScreen()),
           SizedBox(height: 20),
           BadgedTitle(
             title: "Marketing",
@@ -62,9 +58,14 @@ class ChatScreen extends StatelessWidget {
           SizedBox(height: 20),
           buildStackedImages(numberOfMembers: "2"),
           SizedBox(height: 20),
-          SelectionTab(title: "DIRECT MESSAGES"),
+          SelectionTab(title: "DIRECT MESSAGES", page: NewMessageScreen()),
           SizedBox(height: 20),
-          Expanded(flex: 2, child: ListView(children: [...onlineUsers])),
+          Expanded(
+              child: MediaQuery.removePadding(
+            context: context,
+            removeTop: true,
+            child: ListView(children: [...onlineUsers]),
+          )),
         ]),
       )
     ]));

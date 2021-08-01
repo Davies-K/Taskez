@@ -129,5 +129,102 @@ class AppData {
       "profileImage": "assets/memoji/9.png",
       "color": "D7D2D4",
     },
+    {
+      "name": "Adeline Nunez 🎉",
+      "profileImage": "assets/memoji/4.png",
+      "color": "FFC7D5",
+    },
+    {
+      "name": "Samuel Doyle 🔥",
+      "profileImage": "assets/memoji/7.png",
+      "color": "C0E7FD",
+    },
+    {
+      "name": "Ruth Benson 🔥",
+      "profileImage": "assets/memoji/9.png",
+      "color": "D7D2D4",
+    },
+    {
+      "name": "Adeline Nunez 🎉",
+      "profileImage": "assets/memoji/4.png",
+      "color": "FFC7D5",
+    },
+    {
+      "name": "Samuel Doyle 🔥",
+      "profileImage": "assets/memoji/7.png",
+      "color": "C0E7FD",
+    },
+    {
+      "name": "Ruth Benson 🔥",
+      "profileImage": "assets/memoji/9.png",
+      "color": "D7D2D4",
+    },
+    {
+      "name": "Gareth Reid 🔥",
+      "profileImage": "assets/memoji/1.png",
+      "color": "BAF0C5",
+    },
+    {
+      "name": "Vincent Lyons 🇺🇸",
+      "profileImage": "assets/memoji/2.png",
+      "color": "DACFFE",
+    },
+    {
+      "name": "Adeline Nunez 🎉",
+      "profileImage": "assets/memoji/4.png",
+      "color": "FFC7D5",
+    },
+  ];
+
+  static final List<Map<String, dynamic>> employeeData = [
+    {
+      "employeeName": "Aaliyah Langosh",
+      "employeeImage": "assets/girl_smile.png",
+      "color": HexColor.fromHex("FCA3FF"),
+      "activated": true,
+      "employeePosition": "Senior Interactions Agent"
+    },
+    {
+      "employeeName": "Greta Streich",
+      "employeeImage": "assets/man-head.png",
+      "color": HexColor.fromHex("94F1F1"),
+      "activated": false,
+      "employeePosition": "Dynamic Security Technician"
+    },
+    {
+      "employeeName": "Judd Koch",
+      "employeeImage": "assets/memoji/7.png",
+      "color": HexColor.fromHex("8D96FF"),
+      "activated": true,
+      "employeePosition": "Senior Interactions Agent"
+    },
+    {
+      "employeeName": "Katherine Wells",
+      "employeeImage": "assets/memoji/2.png",
+      "color": HexColor.fromHex("DBD0FD"),
+      "activated": false,
+      "employeePosition": "Dynamic Security Technician"
+    },
+    {
+      "employeeName": "Betha Ramos",
+      "employeeImage": "assets/memoji/9.png",
+      "color": HexColor.fromHex("FFC5D5"),
+      "activated": false,
+      "employeePosition": "Dynamic Security Technician"
+    },
+    {
+      "employeeName": "Greta Streich",
+      "employeeImage": "assets/girl_smile.png",
+      "color": HexColor.fromHex("94F1F1"),
+      "activated": false,
+      "employeePosition": "Dynamic Security Technician"
+    },
+    {
+      "employeeName": "Aaliyah Langosh",
+      "employeeImage": "assets/girl_smile.png",
+      "color": HexColor.fromHex("FCA3FF"),
+      "activated": true,
+      "employeePosition": "Senior Interactions Agent"
+    },
   ];
 }

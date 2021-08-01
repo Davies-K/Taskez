@@ -42,8 +42,8 @@ class SearchBox extends StatelessWidget {
         ),
         hintText: placeholder,
         hintStyle: GoogleFonts.lato(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+            //fontWeight: FontWeight.bold,
+            fontSize: 18,
             color: HexColor.fromHex("3C3E49")),
         filled: true,
         fillColor: HexColor.fromHex("262A34"),
