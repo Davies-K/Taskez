@@ -34,11 +34,11 @@ class NewMessageScreen extends StatelessWidget {
                 child: Container(
                     width: double.infinity,
                     height: double.infinity,
-                    decoration: AppStyles.fadingGlory,
+                    decoration: BoxDecorationStyles.fadingGlory,
                     child: Padding(
                         padding: const EdgeInsets.all(3.0),
                         child: DecoratedBox(
-                            decoration: AppStyles.fadingInnerDecor,
+                            decoration: BoxDecorationStyles.fadingInnerDecor,
                             child: Padding(
                                 padding: const EdgeInsets.all(20.0),
                                 child: Column(
