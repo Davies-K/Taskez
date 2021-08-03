@@ -27,13 +27,7 @@ class AppPrimaryButton extends StatelessWidget {
       height: buttonHeight,
       child: ElevatedButton(
           onPressed: () {},
-          style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all<Color>(HexColor.fromHex("246CFE")),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      side: BorderSide(color: HexColor.fromHex("246CFE"))))),
+          style: ButtonStyles.blueRounded,
           child: Text(buttonText,
               style: GoogleFonts.lato(
                   fontSize: 16,
