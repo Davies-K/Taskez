@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Screens/Chat/chat_screen.dart';
+import 'package:taskez/Screens/Profile/my_profile.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/dashboard_settings_sheet.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
@@ -33,7 +35,10 @@ class Dashboard extends StatelessWidget {
                 image: "assets/man-head.png",
                 notificationCount: "2",
                 page: ChatScreen(),
-                title: "Dashboard"),
+                title: "Dashboard",
+                onImageTapped: () {
+                  Get.to(() => ProfilePage());
+                },),
             SizedBox(height: 20),
             Text("Hello,\nDereck Doyle 👋",
                 style: GoogleFonts.lato(

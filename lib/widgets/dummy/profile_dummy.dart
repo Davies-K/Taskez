@@ -4,6 +4,7 @@ import 'package:taskez/Values/values.dart';
 enum ProfileDummyType {
   Icon,
   Image,
+  Button
 }
 
 class ProfileDummy extends StatelessWidget {
