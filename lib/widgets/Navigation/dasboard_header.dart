@@ -53,11 +53,14 @@ class DashboardNav extends StatelessWidget {
           ]),
         ),
         SizedBox(width: 40),
-        ProfileDummy(
-            color: HexColor.fromHex("93F0F0"),
-            dummyType: ProfileDummyType.Image,
-            image: this.image,
-            scale: 1.2)
+        GestureDetector(
+          onTap: onImageTapped,
+          child: ProfileDummy(
+              color: HexColor.fromHex("93F0F0"),
+              dummyType: ProfileDummyType.Image,
+              image: this.image,
+              scale: 1.2),
+        )
       ])
     ]);
   }
