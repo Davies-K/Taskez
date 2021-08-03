@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 
+// ignore: must_be_immutable
 class ToggleLabelOption extends StatelessWidget {
   final String label;
   ValueNotifier<bool> notifierValue;
@@ -42,7 +43,7 @@ class ToggleLabelOption extends StatelessWidget {
                       )));
             }),
         SizedBox(height: 10),
-        Divider(height: 1, color: HexColor.fromHex("616575"))
+        // Divider(height: 1, color: HexColor.fromHex("616575"))
       ],
     );
   }
