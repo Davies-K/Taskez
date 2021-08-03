@@ -81,15 +81,7 @@ class _SignUpState extends State<SignUp> {
                       onPressed: () {
                         Get.to(Login(email: widget.email));
                       },
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              HexColor.fromHex("246CFE")),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      side: BorderSide(
-                                          color: HexColor.fromHex("246CFE"))))),
+                      style: ButtonStyles.blueRounded,
                       child: Text('Sign Up',
                           style: GoogleFonts.lato(
                               fontSize: 20, color: Colors.white))),

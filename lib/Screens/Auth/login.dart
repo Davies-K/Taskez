@@ -73,14 +73,7 @@ class _LoginState extends State<Login> {
                   onPressed: () {
                     Get.to(NewWorkSpace());
                   },
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          HexColor.fromHex("246CFE")),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50.0),
-                              side: BorderSide(
-                                  color: HexColor.fromHex("246CFE"))))),
+                  style: ButtonStyles.blueRounded,
                   child: Text('Sign In',
                       style:
                           GoogleFonts.lato(fontSize: 20, color: Colors.white))),

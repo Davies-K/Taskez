@@ -59,14 +59,7 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
                 onPressed: () {
                   Get.to(SignUp(email: _emailController.text));
                 },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        HexColor.fromHex("246CFE")),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            side: BorderSide(
-                                color: HexColor.fromHex("246CFE"))))),
+                style: ButtonStyles.blueRounded,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
