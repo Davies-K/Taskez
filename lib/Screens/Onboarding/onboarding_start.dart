@@ -143,9 +143,9 @@ class OnboardingStart extends StatelessWidget {
                       ),
                     ),
                     Text('Lets create\na space\nfor your workflows.',
-                        style: TextStyle(
+                        style: GoogleFonts.lato(
                             color: Colors.white,
-                            fontSize: 40,
+                            fontSize: 35,
                             fontWeight: FontWeight.bold)),
                     SizedBox(height: 20),
                     Container(

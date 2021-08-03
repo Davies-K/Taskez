@@ -43,7 +43,7 @@ class NewWorkSpace extends StatelessWidget {
                             ProfileDummy(
                                 color: HexColor.fromHex("9F69F9"),
                                 dummyType: ProfileDummyType.Image,
-                                scale: 3.5,
+                                scale: 2.5,
                                 image: "assets/plant.png"),
                             SizedBox(height: 10),
                             Text('Stuart\'s Workspace',

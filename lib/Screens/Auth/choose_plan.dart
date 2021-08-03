@@ -47,7 +47,7 @@ class ChoosePlan extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: 20),
+                              SizedBox(height: 10),
                               Text('Choose Plan',
                                   style: GoogleFonts.lato(
                                       fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class ChoosePlan extends StatelessWidget {
                                   style: GoogleFonts.lato(
                                       fontSize: 14,
                                       color: HexColor.fromHex("666A7A"))),
-                              SizedBox(height: 40),
+                              SizedBox(height: 20),
                               Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -75,7 +75,7 @@ class ChoosePlan extends StatelessWidget {
                                         header: "Premium",
                                         subHeader: "\$19/mo")
                                   ]),
-                              SizedBox(height: 40),
+                              SizedBox(height: 20),
                               Text('Enable Features',
                                   style: GoogleFonts.lato(
                                       fontWeight: FontWeight.bold,

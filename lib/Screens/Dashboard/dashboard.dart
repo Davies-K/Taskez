@@ -34,7 +34,7 @@ class Dashboard extends StatelessWidget {
                 notificationCount: "2",
                 page: ChatScreen(),
                 title: "Dashboard"),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             Text("Hello,\nDereck Doyle 👋",
                 style: GoogleFonts.lato(
                     color: Colors.white,

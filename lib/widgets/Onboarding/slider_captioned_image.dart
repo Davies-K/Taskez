@@ -22,7 +22,7 @@ class SliderCaptionedImage extends StatelessWidget {
           child: Image(
               image: AssetImage(this.imageUrl),
               fit: BoxFit.contain,
-              height: 500)),
+              height: 450)),
       Positioned(
           bottom: 20,
           left: 20,

@@ -39,7 +39,7 @@ class BottomNavigationItem extends StatelessWidget {
                             color: notifier.value != itemIndex
                                 ? Colors.grey
                                 : Colors.white),
-                        SizedBox(height: 35),
+                        SizedBox(height: 25),
                         notifier.value != itemIndex
                             ? SizedBox(width: 30, height: 30)
                             : Transform.rotate(
