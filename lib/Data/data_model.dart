@@ -303,7 +303,7 @@ class AppData {
       "ratingsLowerNumber": 20
     },
     {
-      "projectName": "3D Characters Illustration",
+      "projectName": "3D Characters Inc.",
       "category": "Development",
       "color": "A6F69C",
       "ratingsUpperNumber": 18,

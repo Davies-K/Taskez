@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
 import 'package:taskez/widgets/Chat/add_chat_icon.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
+import 'package:taskez/widgets/Projects/project_card_horizontal.dart';
 import 'package:taskez/widgets/Projects/project_card_vertical.dart';
 
 class ProjectScreen extends StatelessWidget {
   ProjectScreen({Key? key}) : super(key: key);
 
   ValueNotifier<int> _settingsButtonTrigger = ValueNotifier(0);
+  ValueNotifier<bool> _switchGridLayout = ValueNotifier(false);
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +51,18 @@ class ProjectScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: InkWell(
                   onTap: () {
+                    _switchGridLayout.value = !_switchGridLayout.value;
                     // _showDashboardSettings(context);
                   },
-                  child:
-                      Icon(FeatherIcons.grid, color: Colors.white, size: 30)))
+                  child: ValueListenableBuilder(
+                      valueListenable: _switchGridLayout,
+                      builder: (BuildContext context, _, __) {
+                        return _switchGridLayout.value
+                            ? Icon(FeatherIcons.clipboard,
+                                color: Colors.white, size: 30)
+                            : Icon(FeatherIcons.grid,
+                                color: Colors.white, size: 30);
+                      })))
         ]),
       ),
       SizedBox(height: 20),
@@ -61,47 +72,47 @@ class ProjectScreen extends StatelessWidget {
           child: MediaQuery.removePadding(
             context: context,
             removeTop: true,
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                //crossAxisCount:150,
-                mainAxisExtent: 220,
-                crossAxisSpacing: 10,
-              ),
-              itemBuilder: (_, index) => ProjectCardVertical(
-                projectName: AppData.productData[index]['projectName'],
-                category: AppData.productData[index]['category'],
-                color: AppData.productData[index]['color'],
-                ratingsUpperNumber: AppData.productData[index]
-                    ['ratingsUpperNumber'],
-                ratingsLowerNumber: AppData.productData[index]
-                    ['ratingsLowerNumber'],
-              ),
-              itemCount: AppData.productData.length,
+            child: ValueListenableBuilder(
+              valueListenable: _switchGridLayout,
+              builder: (BuildContext context, _, __) {
+                return GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    //change
+                    crossAxisCount: _switchGridLayout.value ? 2 : 1,
+                    mainAxisSpacing: 10,
+
+                    //change height 125
+                    mainAxisExtent: _switchGridLayout.value ? 220 : 125,
+                    crossAxisSpacing: 10,
+                  ),
+                  itemBuilder: (_, index) => _switchGridLayout.value
+                      ? ProjectCardVertical(
+                          projectName: AppData.productData[index]
+                              ['projectName'],
+                          category: AppData.productData[index]['category'],
+                          color: AppData.productData[index]['color'],
+                          ratingsUpperNumber: AppData.productData[index]
+                              ['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]
+                              ['ratingsLowerNumber'],
+                        )
+                      : ProjectCardHorizontal(
+                          projectName: AppData.productData[index]
+                              ['projectName'],
+                          category: AppData.productData[index]['category'],
+                          color: AppData.productData[index]['color'],
+                          ratingsUpperNumber: AppData.productData[index]
+                              ['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]
+                              ['ratingsLowerNumber'],
+                        ),
+                  itemCount: AppData.productData.length,
+                );
+              },
             ),
           ),
         ),
       )
-      // Row(
-      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //   children: [
-      //     ProjectCardVertical(
-      //       projectName: 'Unity Dashboard',
-      //       category: 'Design',
-      //       color: 'A06AFA',
-      //       ratingsUpperNumber: 5,
-      //       ratingsLowerNumber: 20,
-      //     ),
-      //     ProjectCardVertical(
-      //       projectName: 'Unity Dashboard',
-      //       category: 'Design',
-      //       color: 'A06AFA',
-      //       ratingsUpperNumber: 5,
-      //       ratingsLowerNumber: 20,
-      //     ),
-      //   ],
-      // )
     ]);
   }
 }
