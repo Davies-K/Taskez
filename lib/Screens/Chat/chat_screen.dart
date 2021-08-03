@@ -4,14 +4,12 @@ import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Screens/Chat/new_group.dart';
 import 'package:taskez/Values/values.dart';
-import 'package:taskez/widgets/CHAT/add_chat_icon.dart';
+import 'package:taskez/widgets/Chat/add_chat_icon.dart';
 import 'package:taskez/widgets/Chat/badged_title.dart';
-import 'package:taskez/widgets/Chat/online_user.dart';
 import 'package:taskez/widgets/Chat/selection_tab.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/search_box.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
-import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 import 'package:taskez/widgets/stacked_images.dart';
 
@@ -33,7 +31,7 @@ class ChatScreen extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           taskezAppHeader(
             title: "Chat",
-            widget: AddChatIcon(page: NewMessageScreen()),
+            widget: AppAddIcon(page: NewMessageScreen()),
           ),
           SizedBox(height: 20),
           SearchBox(

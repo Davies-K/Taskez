@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskez/Values/values.dart';
 
-class AddChatIcon extends StatelessWidget {
+class AppAddIcon extends StatelessWidget {
   final StatelessWidget? page;
-  const AddChatIcon({Key? key, this.page}) : super(key: key);
+  const AppAddIcon({Key? key, this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

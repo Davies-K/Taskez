@@ -31,7 +31,7 @@ class NotificationCard extends StatelessWidget {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(top: 10),
-        height: 200,
+        height: 160,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text('$userName mentioned you in $mention',
               style: GoogleFonts.lato(
