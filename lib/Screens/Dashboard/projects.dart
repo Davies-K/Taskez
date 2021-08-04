@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';

@@ -94,7 +94,7 @@ class Dashboard extends StatelessWidget {
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (BuildContext context) {
         return Container(
-            height: Utils.screenHeight,
+            height: Utils.screenHeight * 1.05,
             decoration: BoxDecoration(),
             child: DashboardSettingsBottomSheet(
               totalTaskNotifier: _totalTaskTrigger,

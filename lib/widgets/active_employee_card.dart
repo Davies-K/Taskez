@@ -29,7 +29,7 @@ class ActiveEmployeeCard extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.pink, AppColors.lightGreyBackgroundColor],
+            colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
           ),
           borderRadius: BorderRadius.circular(20)),
       child: Padding(

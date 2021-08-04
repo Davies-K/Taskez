@@ -7,13 +7,15 @@ import 'package:taskez/widgets/Projects/project_badge.dart';
 class ProjectDetailAppBar extends StatelessWidget {
   final String color;
   final String projectName;
+  final VoidCallback? iconTapped;
   final String category;
 
   const ProjectDetailAppBar(
       {Key? key,
       required this.color,
       required this.projectName,
-      required this.category})
+      required this.category,
+      this.iconTapped})
       : super(key: key);
 
   @override
@@ -41,7 +43,9 @@ class ProjectDetailAppBar extends StatelessWidget {
           Row(children: [
             Icon(FeatherIcons.star, color: Colors.white, size: 30),
             AppSpaces.horizontalSpace20,
-            Icon(Icons.more_horiz, color: Colors.white, size: 30)
+            InkWell(
+                onTap: iconTapped,
+                child: Icon(Icons.more_horiz, color: Colors.white, size: 30))
           ])
         ]);
   }

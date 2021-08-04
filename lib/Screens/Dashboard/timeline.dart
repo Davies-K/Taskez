@@ -71,7 +71,7 @@ class _TimelineState extends State<Timeline> {
                         width: 50,
                         height: 50,
                         decoration: BoxDecoration(
-                            color: HexColor.fromHex("246CFD"),
+                            color: AppColors.primaryAccentColor,
                             shape: BoxShape.circle),
                         child: Icon(Icons.add, color: Colors.white)),
                   ),

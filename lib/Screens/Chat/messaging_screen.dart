@@ -187,7 +187,7 @@ class MessagingScreen extends StatelessWidget {
                           width: 50,
                           height: 50,
                           decoration: BoxDecoration(
-                              color: HexColor.fromHex("246CFD"),
+                              color: AppColors.primaryAccentColor,
                               shape: BoxShape.circle),
                           child: Icon(Icons.attach_file,
                               color: Colors.white, size: 30)),
@@ -243,7 +243,7 @@ class SenderMessage extends StatelessWidget {
               padding:
                   EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 12),
               decoration: BoxDecoration(
-                color: HexColor.fromHex("246CFD"),
+                color: AppColors.primaryAccentColor,
                 borderRadius: BorderRadius.circular(50),
               ),
               child:

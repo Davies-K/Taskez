@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
-class ActiveTaskCard extends StatelessWidget {
+class ProjectTaskActiveCard extends StatelessWidget {
   final String header;
-  final String subHeader;
+  final String backgroundColor;
+  final String image;
   final String date;
-  const ActiveTaskCard(
+  const ProjectTaskActiveCard(
       {Key? key,
       required this.header,
-      required this.subHeader,
+      required this.backgroundColor,
+      required this.image,
       required this.date})
       : super(key: key);
 
@@ -75,13 +78,17 @@ class ActiveTaskCard extends StatelessWidget {
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 18)),
-                    Text(subHeader,
+                    Text(date,
                         style:
-                            GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
+                            GoogleFonts.lato(color: HexColor.fromHex("EA9EEE")))
                   ])
             ]),
-            Text(date,
-                style: GoogleFonts.lato(color: HexColor.fromHex("F5A3FF")))
+            // replace with image
+            ProfileDummy(
+                color: HexColor.fromHex(backgroundColor),
+                dummyType: ProfileDummyType.Image,
+                image: this.image,
+                scale: 1.0),
           ])),
       secondaryActions: <Widget>[
         IconSlideAction(

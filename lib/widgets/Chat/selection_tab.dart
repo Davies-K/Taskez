@@ -21,7 +21,7 @@ class SelectionTab extends StatelessWidget {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text(title,
               style: GoogleFonts.lato(
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: FontWeight.w500,
                 color: HexColor.fromHex("616575"),
               )),
