@@ -113,7 +113,7 @@ class DailyGoalCard extends StatelessWidget {
                       quarterTurns: 1,
                       child: TweenAnimationBuilder<double>(
                         tween: Tween<double>(begin: 0.0, end: 0.80),
-                        duration: const Duration(milliseconds: 2500),
+                        duration: const Duration(milliseconds: 1000),
                         builder: (context, value, _) => Container(
                           width: 90,
                           height: 90,
