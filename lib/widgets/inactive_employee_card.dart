@@ -24,8 +24,8 @@ class InactiveEmployeeCard extends StatelessWidget {
       height: 100,
       padding: EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-          color: HexColor.fromHex("262A34"),
-          // border: Border.all(color: HexColor.fromHex("262A34"), width: 4),
+          color: AppColors.primaryBackgroundColor,
+          // border: Border.all(color: AppColors.primaryBackgroundColor, width: 4),
           borderRadius: BorderRadius.circular(20)),
       child: Row(children: [
         ProfileDummy(
@@ -34,7 +34,7 @@ class InactiveEmployeeCard extends StatelessWidget {
           color: color,
           image: employeeImage,
         ),
-        SizedBox(width: 20),
+        AppSpaces.horizontalSpace20,
         Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -26,7 +26,7 @@ class NewWorkSpace extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: DefaultNav(title: "New WorkSpace"),
           ),
-          SizedBox(height: 20),
+          AppSpaces.verticalSpace20,
           Expanded(
               flex: 1,
               child: Container(
@@ -45,11 +45,11 @@ class NewWorkSpace extends StatelessWidget {
                                 dummyType: ProfileDummyType.Image,
                                 scale: 2.5,
                                 image: "assets/plant.png"),
-                            SizedBox(height: 10),
+                            AppSpaces.verticalSpace10,
                             Text('Stuart\'s Workspace',
                                 style: GoogleFonts.lato(
                                     fontSize: 30, color: Colors.white)),
-                            SizedBox(height: 10),
+                            AppSpaces.verticalSpace10,
                             Text('Tap the logo to upload a new image.',
                                 style: GoogleFonts.lato(
                                     fontSize: 14,
@@ -77,7 +77,7 @@ class NewWorkSpace extends StatelessWidget {
                                     )
                                   ]),
                             ),
-                            SizedBox(height: 20),
+                            AppSpaces.verticalSpace20,
                             Container(
                                 alignment: Alignment.centerLeft,
                                 child: Text('INVITE PEOPLE TO YOUR WORKSPACE',
@@ -97,7 +97,7 @@ class NewWorkSpace extends StatelessWidget {
                                         color: Colors.white, size: 30)
                                   ]),
                             ),
-                            SizedBox(height: 20),
+                            AppSpaces.verticalSpace20,
                             Container(
                                 alignment: Alignment.centerLeft,
                                 child: Text('CHOOSE COLOR THEME',
@@ -122,7 +122,7 @@ class NewWorkSpace extends StatelessWidget {
                                         )
                                       ])),
                             ),
-                            SizedBox(height: 20),
+                            AppSpaces.verticalSpace20,
                           ]),
                         )),
                   ))),

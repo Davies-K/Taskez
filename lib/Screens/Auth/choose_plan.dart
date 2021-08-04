@@ -31,7 +31,7 @@ class ChoosePlan extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: DefaultNav(title: "New WorkSpace"),
         ),
-        SizedBox(height: 20),
+        AppSpaces.verticalSpace20,
         Expanded(
             flex: 1,
             child: Container(
@@ -47,18 +47,18 @@ class ChoosePlan extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: 10),
+                              AppSpaces.verticalSpace10,
                               Text('Choose Plan',
                                   style: GoogleFonts.lato(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 25,
                                       color: Colors.white)),
-                              SizedBox(height: 10),
+                              AppSpaces.verticalSpace10,
                               Text('Unlock all features with Premium Plan',
                                   style: GoogleFonts.lato(
                                       fontSize: 14,
                                       color: HexColor.fromHex("666A7A"))),
-                              SizedBox(height: 20),
+                              AppSpaces.verticalSpace20,
                               Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -75,13 +75,13 @@ class ChoosePlan extends StatelessWidget {
                                         header: "Premium",
                                         subHeader: "\$19/mo")
                                   ]),
-                              SizedBox(height: 20),
+                              AppSpaces.verticalSpace20,
                               Text('Enable Features',
                                   style: GoogleFonts.lato(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 25,
                                       color: Colors.white)),
-                              SizedBox(height: 10),
+                              AppSpaces.verticalSpace10,
                               Container(
                                 width: Utils.screenWidth * 0.8,
                                 child: Column(
@@ -102,7 +102,7 @@ class ChoosePlan extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              AppSpaces.verticalSpace20,
                               ToggleLabelOption(
                                   label: '    Multiple Assignees',
                                   notifierValue: _multiUserTrigger,

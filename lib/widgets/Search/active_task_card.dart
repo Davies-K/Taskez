@@ -24,7 +24,7 @@ class ActiveTaskCard extends StatelessWidget {
           height: 100,
           padding: EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              color: HexColor.fromHex("262A34"),
+              color: AppColors.primaryBackgroundColor,
               borderRadius: BorderRadius.circular(10)),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -45,7 +45,7 @@ class ActiveTaskCard extends StatelessWidget {
                                 end: Alignment.centerRight,
                                 colors: [
                                   Colors.pink,
-                                  HexColor.fromHex("C395FC")
+                                  AppColors.lightGreyBackgroundColor
                                 ]),
                             shape: BoxShape.circle),
                         child: Center(
@@ -65,7 +65,7 @@ class ActiveTaskCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 20),
+              AppSpaces.horizontalSpace20,
               Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,

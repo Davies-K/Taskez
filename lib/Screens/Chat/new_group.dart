@@ -62,7 +62,7 @@ class NewGroupScreen extends StatelessWidget {
                                       SearchBox(
                                         placeholder: 'Search',
                                       ),
-                                      SizedBox(height: 20),
+                                      AppSpaces.verticalSpace20,
                                       Expanded(
                                           child: MediaQuery.removePadding(
                                         context: context,

@@ -37,7 +37,7 @@ class NotificationCard extends StatelessWidget {
               style: GoogleFonts.lato(
                   color: HexColor.fromHex("666A7B"),
                   fontWeight: FontWeight.w500)),
-          SizedBox(height: 20),
+          AppSpaces.verticalSpace20,
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +68,7 @@ class NotificationCard extends StatelessWidget {
                       : SizedBox(),
                 ],
               ),
-              SizedBox(width: 20),
+              AppSpaces.horizontalSpace20,
               Expanded(
                 child: Container(
                   alignment: Alignment.topCenter,
@@ -88,7 +88,7 @@ class NotificationCard extends StatelessWidget {
                                         : HexColor.fromHex("B0FFE1")))
                           ],
                         ),
-                        SizedBox(height: 10),
+                        AppSpaces.verticalSpace10,
                         mentioned
                             ? RichText(
                                 text: TextSpan(

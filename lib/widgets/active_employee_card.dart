@@ -29,7 +29,7 @@ class ActiveEmployeeCard extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Colors.pink, HexColor.fromHex("C395FC")],
+            colors: [Colors.pink, AppColors.lightGreyBackgroundColor],
           ),
           borderRadius: BorderRadius.circular(20)),
       child: Padding(
@@ -52,7 +52,7 @@ class ActiveEmployeeCard extends StatelessWidget {
                       color: color,
                       image: employeeImage,
                     ),
-                    SizedBox(width: 20),
+                    AppSpaces.horizontalSpace20,
                     Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,

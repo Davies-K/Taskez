@@ -62,7 +62,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              AppSpaces.verticalSpace10,
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2.0),
@@ -72,14 +72,14 @@ class BarChartSample1State extends State<BarChartSample1> {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              AppSpaces.verticalSpace10,
               Row(children: [
                 Text('108 Tasks',
                     style: GoogleFonts.lato(
                       fontWeight: FontWeight.bold,
                       color: mainColor,
                     )),
-                SizedBox(width: 20),
+                AppSpaces.horizontalSpace20,
                 Text('6 Projects',
                     style: GoogleFonts.lato(
                       fontWeight: FontWeight.bold,

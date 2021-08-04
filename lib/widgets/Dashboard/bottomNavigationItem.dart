@@ -20,7 +20,7 @@ class BottomNavigationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
           notifier.value = itemIndex;
         },

@@ -23,7 +23,7 @@ class Projects extends StatelessWidget {
               title: "Chat",
               widget: AppAddIcon(),
             ),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
           ]))
     ]));
   }

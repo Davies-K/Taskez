@@ -47,7 +47,7 @@ class SearchScreen extends StatelessWidget {
                     )),
               ],
             ),
-            SizedBox(height: 10),
+            AppSpaces.verticalSpace10,
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               //tab indicators
               Row(
@@ -69,16 +69,11 @@ class SearchScreen extends StatelessWidget {
               ),
               Container(
                   alignment: Alignment.centerRight,
-                  child: InkWell(
-                    onTap: () {
-                      // _showDashboardSettings(context);
-                    },
-                    child: AppSettingsIcon(
-                        // callback: _showDashboardSettings(context),
-                        ),
-                  ))
+                  child: AppSettingsIcon(
+                      // callback: ((),{_showDashboardSettings(context);}),
+                      ))
             ]),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             Expanded(
               child: ListView(children: [
                 SearchTaskCard(

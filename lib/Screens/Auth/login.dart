@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
                     color: Colors.white,
                     fontSize: 40,
                     fontWeight: FontWeight.bold)),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             RichText(
               text: TextSpan(
                 text: 'Using  ',

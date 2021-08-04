@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_buttons.dart';
 import 'package:taskez/widgets/Buttons/text_button.dart';
 import 'package:taskez/widgets/Onboarding/toggle_option.dart';
@@ -25,9 +26,9 @@ class DashboardSettingsBottomSheet extends StatelessWidget {
         child: Column(children: [
           Column(
             children: [
-              SizedBox(height: 10),
+              AppSpaces.verticalSpace10,
               BottomSheetHolder(),
-              SizedBox(height: 20),
+              AppSpaces.verticalSpace20,
               ToggleLabelOption(
                   label: '    Total Task',
                   notifierValue: totalTaskNotifier,

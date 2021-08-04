@@ -44,7 +44,7 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
                   color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold)),
-          SizedBox(height: 20),
+          AppSpaces.verticalSpace20,
           LabelledFormInput(
               placeholder: "Email",
               keyboardType: "text",

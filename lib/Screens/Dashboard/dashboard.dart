@@ -31,21 +31,22 @@ class Dashboard extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             DashboardNav(
-                icon: FontAwesomeIcons.comment,
-                image: "assets/man-head.png",
-                notificationCount: "2",
-                page: ChatScreen(),
-                title: "Dashboard",
-                onImageTapped: () {
-                  Get.to(() => ProfilePage());
-                },),
-            SizedBox(height: 20),
+              icon: FontAwesomeIcons.comment,
+              image: "assets/man-head.png",
+              notificationCount: "2",
+              page: ChatScreen(),
+              title: "Dashboard",
+              onImageTapped: () {
+                Get.to(() => ProfilePage());
+              },
+            ),
+            AppSpaces.verticalSpace20,
             Text("Hello,\nDereck Doyle 👋",
                 style: GoogleFonts.lato(
                     color: Colors.white,
                     fontSize: 40,
                     fontWeight: FontWeight.bold)),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               //tab indicators
               Row(
@@ -63,16 +64,13 @@ class Dashboard extends StatelessWidget {
               ),
               Container(
                   alignment: Alignment.centerRight,
-                  child: InkWell(
-                    onTap: () {
+                  child: AppSettingsIcon(
+                    callback: () {
                       _showDashboardSettings(context);
                     },
-                    child: AppSettingsIcon(
-                        // callback: _showDashboardSettings(context),
-                        ),
                   ))
             ]),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             ValueListenableBuilder(
                 valueListenable: _buttonTrigger,
                 builder: (BuildContext context, _, __) {
@@ -87,7 +85,7 @@ class Dashboard extends StatelessWidget {
   _showDashboardSettings(context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: HexColor.fromHex("262A34"),
+      backgroundColor: AppColors.primaryBackgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(20),

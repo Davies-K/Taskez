@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Constants/constants.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/progress_card_close_button.dart';
 
 class TaskProgressCard extends StatelessWidget {
@@ -50,7 +51,7 @@ class TaskProgressCard extends StatelessWidget {
                   Text(cardTitle,
                       style: GoogleFonts.lato(
                           fontWeight: FontWeight.bold, fontSize: 22)),
-                  SizedBox(height: 10),
+                  AppSpaces.verticalSpace10,
                   Text('$rating is completed',
                       style: GoogleFonts.lato(
                           fontWeight: FontWeight.w500, fontSize: 16)),

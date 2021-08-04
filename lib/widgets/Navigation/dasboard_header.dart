@@ -53,7 +53,7 @@ class DashboardNav extends StatelessWidget {
           ]),
         ),
         SizedBox(width: 40),
-        GestureDetector(
+        InkWell(
           onTap: onImageTapped,
           child: ProfileDummy(
               color: HexColor.fromHex("93F0F0"),

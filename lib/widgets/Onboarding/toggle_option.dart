@@ -42,7 +42,7 @@ class ToggleLabelOption extends StatelessWidget {
                         },
                       )));
             }),
-        SizedBox(height: 10),
+        AppSpaces.verticalSpace10,
         // Divider(height: 1, color: HexColor.fromHex("616575"))
       ],
     );

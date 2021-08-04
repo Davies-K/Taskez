@@ -22,7 +22,8 @@ class InactiveTaskCard extends StatelessWidget {
         height: 100,
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-            border: Border.all(color: HexColor.fromHex("262A34"), width: 4),
+            border:
+                Border.all(color: AppColors.primaryBackgroundColor, width: 4),
             borderRadius: BorderRadius.circular(10)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -32,10 +33,10 @@ class InactiveTaskCard extends StatelessWidget {
                 height: 50,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: HexColor.fromHex("262A34"),
+                  color: AppColors.primaryBackgroundColor,
                 ),
                 child: GreenDoneIcon()),
-            SizedBox(width: 20),
+            AppSpaces.horizontalSpace20,
             Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -10,3 +10,4 @@ part './styles.dart';
 part './button_styles.dart';
 part '../Utils/utils.dart';
 part './box_decoration_styles.dart';
+part './spacing.dart';

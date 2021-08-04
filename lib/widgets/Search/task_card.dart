@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskez/Values/values.dart';
 
 import 'package:taskez/widgets/Search/active_task_card.dart';
 import 'package:taskez/widgets/Search/inactive_task_card.dart';
@@ -23,7 +24,7 @@ class SearchTaskCard extends StatelessWidget {
         activated
             ? InactiveTaskCard(header: header, subHeader: subHeader, date: date)
             : ActiveTaskCard(header: header, subHeader: subHeader, date: date),
-        SizedBox(height: 10)
+        AppSpaces.verticalSpace10
       ],
     );
   }

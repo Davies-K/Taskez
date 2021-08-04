@@ -46,7 +46,7 @@ class SearchBox extends StatelessWidget {
             fontSize: 18,
             color: HexColor.fromHex("3C3E49")),
         filled: true,
-        fillColor: HexColor.fromHex("262A34"),
+        fillColor: AppColors.primaryBackgroundColor,
         // enabledBorder: UnderlineInputBorder(
         //   borderRadius: BorderRadius.circular(10.0),
         //   borderSide: BorderSide(color: HexColor.fromHex("3C3E49")),

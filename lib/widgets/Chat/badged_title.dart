@@ -19,7 +19,7 @@ class BadgedTitle extends StatelessWidget {
       Text(title,
           style: GoogleFonts.lato(
               color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600)),
-      SizedBox(width: 10),
+      AppSpaces.horizontalSpace10,
       Container(
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 8.0),
           decoration: BoxDecoration(

@@ -35,6 +35,9 @@ class AppColors {
       HexColor.fromHex("899FFE"),
     ],
   ];
+
+  static final Color primaryBackgroundColor = HexColor.fromHex("262A34");
+  static final Color lightGreyBackgroundColor = HexColor.fromHex("C395FC");
 }
 
 extension HexColor on Color {

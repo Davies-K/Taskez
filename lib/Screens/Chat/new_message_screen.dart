@@ -69,19 +69,19 @@ class NewMessageScreen extends StatelessWidget {
                                                           FontWeight.bold))),
                                         ],
                                       ),
-                                      SizedBox(height: 20),
+                                      AppSpaces.verticalSpace20,
                                       Text("SUGGESTED",
                                           style: GoogleFonts.lato(
                                             fontSize: 11,
                                             fontWeight: FontWeight.w500,
                                             color: HexColor.fromHex("616575"),
                                           )),
-                                      SizedBox(height: 20),
+                                      AppSpaces.verticalSpace20,
                                       Divider(
                                         height: 2,
                                         color: HexColor.fromHex("616575"),
                                       ),
-                                      SizedBox(height: 20),
+                                      AppSpaces.verticalSpace20,
                                       Expanded(
                                           child: MediaQuery.removePadding(
                                         context: context,

@@ -31,7 +31,7 @@ class DashboardOverview extends StatelessWidget {
             cards: cards,
           ),
         ),
-        SizedBox(height: 10),
+        AppSpaces.verticalSpace10,
         Column(
           children: [
             OverviewTaskContainer(

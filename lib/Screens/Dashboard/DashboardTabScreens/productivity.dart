@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Dashboard/daily_goal_card.dart';
 import 'package:taskez/widgets/Dashboard/productivity_chart.dart';
 
@@ -8,7 +9,11 @@ class DashboardProductivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [DailyGoalCard(), SizedBox(height: 20), ProductivityChart()],
+      children: [
+        DailyGoalCard(),
+        AppSpaces.verticalSpace20,
+        ProductivityChart()
+      ],
     );
   }
 }

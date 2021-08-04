@@ -60,7 +60,7 @@ class PlanCard extends StatelessWidget {
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 24)),
-                                    SizedBox(height: 10),
+                                    AppSpaces.verticalSpace10,
                                     Text(subHeader,
                                         style: GoogleFonts.lato(
                                             color: HexColor.fromHex("F7A3F9")))
@@ -85,13 +85,13 @@ class PlanCard extends StatelessWidget {
                                   children: [
                                 SizedBox(height: 45),
                                 Text("🎉", style: TextStyle(fontSize: 40)),
-                                SizedBox(height: 20),
+                                AppSpaces.verticalSpace20,
                                 Text(header,
                                     style: GoogleFonts.lato(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 24)),
-                                SizedBox(height: 10),
+                                AppSpaces.verticalSpace10,
                                 Text(subHeader, style: GoogleFonts.lato())
                               ]))
                         ]));

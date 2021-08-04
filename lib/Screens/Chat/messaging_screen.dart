@@ -41,7 +41,7 @@ class MessagingScreen extends StatelessWidget {
               messagingPage: true,
               widget: Row(children: [
                 Icon(Icons.phone, color: Colors.white),
-                SizedBox(width: 20),
+                AppSpaces.horizontalSpace20,
                 Container(
                     width: 40,
                     height: 40,
@@ -77,7 +77,7 @@ class MessagingScreen extends StatelessWidget {
                           padding: EdgeInsets.only(
                               left: 20, right: 20, top: 15, bottom: 15),
                           decoration: BoxDecoration(
-                            color: HexColor.fromHex("262A34"),
+                            color: AppColors.primaryBackgroundColor,
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Text("Hi man, how are you doing?",
@@ -85,9 +85,9 @@ class MessagingScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 20),
+                AppSpaces.verticalSpace20,
                 SenderMessage(message: "Doing well, thanks! 👋"),
-                SizedBox(height: 20),
+                AppSpaces.verticalSpace20,
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -105,7 +105,7 @@ class MessagingScreen extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   left: 20, right: 20, top: 15, bottom: 15),
                               decoration: BoxDecoration(
-                                color: HexColor.fromHex("262A34"),
+                                color: AppColors.primaryBackgroundColor,
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(50),
                                     topRight: Radius.circular(50),
@@ -114,7 +114,7 @@ class MessagingScreen extends StatelessWidget {
                               child: Text("Just one question 😂",
                                   style:
                                       GoogleFonts.lato(color: Colors.white))),
-                          SizedBox(height: 10),
+                          AppSpaces.verticalSpace10,
                           Container(
                               alignment: Alignment.centerLeft,
                               width: 250,
@@ -122,7 +122,7 @@ class MessagingScreen extends StatelessWidget {
                               padding: EdgeInsets.only(
                                   left: 20, right: 20, top: 15, bottom: 15),
                               decoration: BoxDecoration(
-                                color: HexColor.fromHex("262A34"),
+                                color: AppColors.primaryBackgroundColor,
                                 borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(50),
                                     topRight: Radius.circular(50),
@@ -132,7 +132,7 @@ class MessagingScreen extends StatelessWidget {
                                   "Can you please send me your latest mockup? ",
                                   style:
                                       GoogleFonts.lato(color: Colors.white))),
-                          SizedBox(height: 10),
+                          AppSpaces.verticalSpace10,
                           Container(
                             height: 120,
                             child: ListView(
@@ -144,9 +144,9 @@ class MessagingScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 20),
+                AppSpaces.verticalSpace20,
                 SenderMessage(message: "Sure, wait for a minute."),
-                SizedBox(height: 20),
+                AppSpaces.verticalSpace20,
                 Padding(
                     padding: EdgeInsets.only(right: 20.0),
                     child: Column(
@@ -158,7 +158,7 @@ class MessagingScreen extends StatelessWidget {
                               right: 10,
                             ),
                             decoration: BoxDecoration(
-                              color: HexColor.fromHex("262A34"),
+                              color: AppColors.primaryBackgroundColor,
                               borderRadius: BorderRadius.circular(50),
                             ),
                             child: Icon(Icons.more_horiz,
@@ -173,7 +173,7 @@ class MessagingScreen extends StatelessWidget {
               width: Utils.screenWidth,
               height: 120,
               decoration: BoxDecoration(
-                  color: HexColor.fromHex("262A34"),
+                  color: AppColors.primaryBackgroundColor,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
@@ -192,7 +192,7 @@ class MessagingScreen extends StatelessWidget {
                           child: Icon(Icons.attach_file,
                               color: Colors.white, size: 30)),
                     ),
-                    SizedBox(width: 20),
+                    AppSpaces.horizontalSpace20,
                     Text("Write a message",
                         style: GoogleFonts.lato(color: Colors.white))
                   ]))))
@@ -277,7 +277,7 @@ class MessengerDetails extends StatelessWidget {
             imageBackground: color,
             userName: userName,
           ),
-          SizedBox(width: 10),
+          AppSpaces.horizontalSpace10,
           TimeReceipt(time: "12:11 PM")
         ],
       ),

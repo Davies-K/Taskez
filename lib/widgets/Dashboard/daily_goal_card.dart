@@ -13,7 +13,7 @@ class DailyGoalCard extends StatelessWidget {
         height: 220,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            color: HexColor.fromHex("262A34")),
+            color: AppColors.primaryBackgroundColor),
         child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +27,7 @@ class DailyGoalCard extends StatelessWidget {
                           color: HexColor.fromHex("616575"),
                           fontSize: 17,
                           fontWeight: FontWeight.w500)),
-                  SizedBox(height: 10),
+                  AppSpaces.verticalSpace10,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -45,7 +45,7 @@ class DailyGoalCard extends StatelessWidget {
                                   fontSize: 16,
                                 )),
                           )),
-                      SizedBox(width: 10),
+                      AppSpaces.horizontalSpace10,
                       Text('Tasks',
                           style: GoogleFonts.lato(
                               color: Colors.white,
@@ -53,13 +53,13 @@ class DailyGoalCard extends StatelessWidget {
                               fontWeight: FontWeight.w500)),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  AppSpaces.verticalSpace10,
                   Text('You marked 3/5 tasks\nare done 🎉',
                       style: GoogleFonts.lato(
                           color: HexColor.fromHex("616575"),
                           fontSize: 17,
                           fontWeight: FontWeight.w500)),
-                  SizedBox(height: 20),
+                  AppSpaces.verticalSpace20,
                   Container(
                     width: 120,
                     height: 40,

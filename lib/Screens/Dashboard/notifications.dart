@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskez/Data/data_model.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/Notification/notification_card.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
@@ -29,7 +30,7 @@ class NotificationScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(children: [
             DefaultNav(title: "Notification", type: ProfileDummyType.Image),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             Expanded(child: ListView(children: [...notificationCards]))
           ]),
         ));

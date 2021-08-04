@@ -36,7 +36,7 @@ class ProjectDetails extends StatelessWidget {
                 color: color,
                 projectName: projectName,
               ),
-              SizedBox(height: 20),
+              AppSpaces.verticalSpace20,
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 //tab indicators
                 Row(
@@ -59,12 +59,9 @@ class ProjectDetails extends StatelessWidget {
 
                 Container(
                     alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: () {},
-                      child: AppSettingsIcon(
-                          // callback: _showDashboardSettings(context),
-                          ),
-                    ))
+                    child: AppSettingsIcon(
+                        // callback: ((),{_showDashboardSettings(context);}),
+                        ))
               ])
             ]),
           ),

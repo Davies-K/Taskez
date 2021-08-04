@@ -42,7 +42,7 @@ class ProjectCardVertical extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             ColouredProjectBadge(color: color, category: category),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             Text(projectName,
                 style: GoogleFonts.lato(
                     color: Colors.white,

@@ -44,7 +44,7 @@ class ProjectCardHorizontal extends StatelessWidget {
                 children: [
                   Row(children: [
                     ColouredProjectBadge(color: color, category: category),
-                    SizedBox(width: 20),
+                    AppSpaces.horizontalSpace20,
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -72,7 +72,7 @@ class ProjectCardHorizontal extends StatelessWidget {
                                   ? Colors.black
                                   : Colors.white))))
                 ]),
-            SizedBox(height: 20),
+            AppSpaces.verticalSpace20,
             Expanded(
               child: Container(
                   width: double.infinity,

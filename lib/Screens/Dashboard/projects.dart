@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taskez/Data/data_model.dart';
+import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
 import 'package:taskez/widgets/Chat/add_chat_icon.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
@@ -24,7 +25,7 @@ class ProjectScreen extends StatelessWidget {
           widget: AppAddIcon(),
         ),
       ),
-      SizedBox(height: 20),
+      AppSpaces.verticalSpace20,
       Padding(
         padding: const EdgeInsets.only(right: 20, left: 20),
         child:
@@ -65,7 +66,7 @@ class ProjectScreen extends StatelessWidget {
                       })))
         ]),
       ),
-      SizedBox(height: 20),
+      AppSpaces.verticalSpace20,
       Expanded(
         child: Padding(
           padding: EdgeInsets.only(right: 20.0, left: 20.0),

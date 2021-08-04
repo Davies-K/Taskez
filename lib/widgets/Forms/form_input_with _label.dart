@@ -24,7 +24,7 @@ class LabelledFormInput extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 10),
+        AppSpaces.verticalSpace10,
         Text(label.toUpperCase(),
             textAlign: TextAlign.left,
             style: GoogleFonts.lato(

@@ -14,7 +14,7 @@ class LoadingSticker extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, top: 5, bottom: 5),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50.0),
-            color: HexColor.fromHex("262A34")),
+            color: AppColors.primaryBackgroundColor),
         child: Row(children: [
           Container(
               width: 30,
@@ -26,7 +26,7 @@ class LoadingSticker extends StatelessWidget {
                       end: Alignment.bottomCenter,
                       colors: [...gradients])),
               child: Icon(Icons.done)),
-          SizedBox(width: 20),
+          AppSpaces.horizontalSpace20,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,

@@ -7,10 +7,15 @@ class AppSettingsIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      SettingsStrip(),
-      SizedBox(height: 2),
-      RotatedBox(quarterTurns: 2, child: SettingsStrip())
-    ]);
+    return InkWell(
+      onTap: callback,
+      child: Container(
+        child: Column(children: [
+          SettingsStrip(),
+          SizedBox(height: 2),
+          RotatedBox(quarterTurns: 2, child: SettingsStrip())
+        ]),
+      ),
+    );
   }
 }

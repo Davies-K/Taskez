@@ -14,7 +14,7 @@ class ProductivityChart extends StatelessWidget {
         height: 220,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            color: HexColor.fromHex("262A34")),
+            color: AppColors.primaryBackgroundColor),
         child: BarChartSample1());
   }
 }

@@ -25,7 +25,7 @@ class ProjectDetailAppBar extends StatelessWidget {
           Row(
             children: [
               ColouredProjectBadge(color: color, category: category),
-              SizedBox(width: 20),
+              AppSpaces.horizontalSpace20,
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(projectName,
                     style: GoogleFonts.lato(
@@ -40,7 +40,7 @@ class ProjectDetailAppBar extends StatelessWidget {
           ),
           Row(children: [
             Icon(FeatherIcons.star, color: Colors.white, size: 30),
-            SizedBox(width: 20),
+            AppSpaces.horizontalSpace20,
             Icon(Icons.more_horiz, color: Colors.white, size: 30)
           ])
         ]);

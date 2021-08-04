@@ -147,7 +147,7 @@ class OnboardingStart extends StatelessWidget {
                             color: Colors.white,
                             fontSize: 35,
                             fontWeight: FontWeight.bold)),
-                    SizedBox(height: 20),
+                    AppSpaces.verticalSpace20,
                     Container(
                       width: 180,
                       height: 60,

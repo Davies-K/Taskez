@@ -37,7 +37,7 @@ class SelectionTab extends StatelessWidget {
                     size: 15, color: HexColor.fromHex("616575"))),
           ),
         ]),
-        SizedBox(height: 20),
+        AppSpaces.verticalSpace20,
         Divider(
           height: 2,
           color: HexColor.fromHex("616575"),
