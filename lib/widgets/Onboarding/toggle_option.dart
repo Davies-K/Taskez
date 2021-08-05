@@ -9,12 +9,14 @@ class ToggleLabelOption extends StatelessWidget {
   ValueNotifier<bool>? notifierValue;
 
   final IconData icon;
+  final double? margin;
 
   ToggleLabelOption(
       {Key? key,
       required this.notifierValue,
       required this.label,
-      required this.icon})
+      required this.icon,
+      this.margin})
       : super(key: key);
 
   @override
@@ -25,7 +27,7 @@ class ToggleLabelOption extends StatelessWidget {
             valueListenable: notifierValue!,
             builder: (BuildContext context, _, __) {
               return Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
+                padding: EdgeInsets.symmetric(vertical: this.margin ?? 8.0), // 8.0 as default margin.
                 child: MergeSemantics(
                     child: ListTile(
                         title: Row(
