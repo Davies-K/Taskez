@@ -59,14 +59,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: const Color(0xFF262A34),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 0, top: 8, right: 0, bottom: 0),
-                  child: ToggleLabelOption(
-                      label: '$tabSpace Show me as away',
-                      notifierValue: totalTaskNotifier,
-                      icon: Icons.directions_run_rounded),
-                ),
+                child: ToggleLabelOption(
+                    label: '$tabSpace Show me as away',
+                    notifierValue: totalTaskNotifier,
+                    icon: Icons.directions_run_rounded,
+                    margin: 0.0,),
               ),
             ],
           ),
