@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
@@ -33,7 +34,8 @@ class _ProfilePageState extends State<ProfilePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                DefaultNav(title: "$tabSpace Profile", type: ProfileDummyType.Button),
+                DefaultNav(
+                    title: "$tabSpace Profile", type: ProfileDummyType.Button),
                 SizedBox(height: 30),
                 ProfileDummy(
                     color: HexColor.fromHex("94F0F1"),
@@ -66,29 +68,38 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         children: [
                           ToggleLabelOption(
-                              label: '$tabSpace Show me as away',
-                              notifierValue: totalTaskNotifier,
-                              icon: Icons.directions_run_rounded,
-                              margin: 0.0,),
+                            label: '$tabSpace Show me as away',
+                            notifierValue: totalTaskNotifier,
+                            icon: Icons.directions_run_rounded,
+                            margin: 7.0,
+                          ),
                         ],
                       ),
                     ),
                     AppSpaces.verticalSpace10,
-                    ProfileTextOption(label: '$tabSpace My Projects',
-                      icon: Icons.link,
-                      margin: 0.0,),
+                    ProfileTextOption(
+                      label: '$tabSpace My Projects',
+                      icon: Icons.cast,
+                      margin: 5.0,
+                    ),
                     AppSpaces.verticalSpace10,
-                    ProfileTextOption(label: '$tabSpace Join A Team',
-                      icon: Icons.link,
-                      margin: 0.0,),
+                    ProfileTextOption(
+                      label: '$tabSpace Join A Team',
+                      icon: Icons.group_add,
+                      margin: 5.0,
+                    ),
                     AppSpaces.verticalSpace10,
-                    ProfileTextOption(label: '$tabSpace Share Profile',
-                      icon: Icons.link,
-                      margin: 0.0,),
+                    ProfileTextOption(
+                      label: '$tabSpace Share Profile',
+                      icon: FeatherIcons.share2,
+                      margin: 5.0,
+                    ),
                     AppSpaces.verticalSpace10,
-                    ProfileTextOption(label: '$tabSpace All My Task',
-                      icon: Icons.link,
-                      margin: 0.0,)
+                    ProfileTextOption(
+                      label: '$tabSpace All My Task',
+                      icon: Icons.check_circle_outline,
+                      margin: 5.0,
+                    )
                   ],
                 ),
               ],

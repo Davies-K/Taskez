@@ -11,23 +11,20 @@ class ProfileTextOption extends StatelessWidget {
   final double? margin;
 
   ProfileTextOption(
-      {Key? key,
-      required this.label,
-      required this.icon,
-      this.margin})
+      {Key? key, required this.label, required this.icon, this.margin})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-      color: const Color(0xFF262A34),
-      borderRadius: BorderRadius.circular(10)),
+          color: const Color(0xFF262A34),
+          borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-                vertical: this.margin ?? 8.0), // 8.0 as default margin.
+                vertical: this.margin ?? 10.0), // 8.0 as default margin.
             child: ListTile(
                 title: Row(
                   children: [
