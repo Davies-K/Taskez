@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Screens/Dashboard/dashboard.dart';
-import 'package:taskez/Screens/Dashboard/notifications.dart';
-import 'package:taskez/Screens/Dashboard/projects.dart';
-import 'package:taskez/Screens/Dashboard/search_screen.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Dashboard/bottomNavigationItem.dart';
+import 'package:taskez/widgets/Dashboard/dashboard_add_icon.dart';
+import 'package:taskez/widgets/Dashboard/dashboard_add_sheet.dart';
 
 class Timeline extends StatefulWidget {
   Timeline({Key? key}) : super(key: key);
@@ -65,15 +63,10 @@ class _TimelineState extends State<Timeline> {
                       notifier: bottomNavigatorTrigger,
                       icon: FeatherIcons.clipboard),
                   Spacer(),
-                  Positioned(
-                    top: 40,
-                    child: Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: AppColors.primaryAccentColor,
-                            shape: BoxShape.circle),
-                        child: Icon(Icons.add, color: Colors.white)),
+                  DashboardAddButton(
+                    iconTapped: (() {
+                      _showAddSettings(context);
+                    }),
                   ),
                   Spacer(),
                   BottomNavigationItem(
@@ -86,5 +79,24 @@ class _TimelineState extends State<Timeline> {
                       notifier: bottomNavigatorTrigger,
                       icon: FeatherIcons.search)
                 ])));
+  }
+
+  _showAddSettings(context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: AppColors.primaryBackgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (BuildContext context) {
+        return Container(
+            height: Utils.screenHeight * 0.8,
+            decoration: BoxDecoration(),
+            child: DashboardAddBottomSheet());
+      },
+    );
   }
 }

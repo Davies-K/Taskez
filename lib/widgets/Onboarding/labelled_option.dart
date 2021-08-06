@@ -29,31 +29,34 @@ class LabelledOption extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           child: MergeSemantics(
-              child: ListTile(
-                  title: Row(
-                    children: [
-                      Icon(icon, color: Colors.white, size: 24),
-                      Text("       $label",
-                          style: GoogleFonts.lato(
-                            fontSize: 18,
-                            color: (color != null) ? color! : Colors.white,
-                          )),
-                    ],
-                  ),
-                  trailing: (label == "Set Color")
-                      ? Container(
-                          width: 30,
-                          height: 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: HexColor.fromHex(boxColor!),
-                          ))
-                      : (label == "Copy")
-                          ? Text(link!,
-                              style: TextStyle(
-                                  color: AppColors.primaryAccentColor,
-                                  fontWeight: FontWeight.bold))
-                          : SizedBox())),
+              child: InkWell(
+            onTap: callback,
+            child: ListTile(
+                title: Row(
+                  children: [
+                    Icon(icon, color: Colors.white, size: 24),
+                    Text("       $label",
+                        style: GoogleFonts.lato(
+                          fontSize: 18,
+                          color: (color != null) ? color! : Colors.white,
+                        )),
+                  ],
+                ),
+                trailing: (label == "Set Color")
+                    ? Container(
+                        width: 30,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: HexColor.fromHex(boxColor!),
+                        ))
+                    : (label == "Copy")
+                        ? Text(link!,
+                            style: TextStyle(
+                                color: AppColors.primaryAccentColor,
+                                fontWeight: FontWeight.bold))
+                        : SizedBox()),
+          )),
         ),
 
         Divider(height: 1, color: HexColor.fromHex("353742"))
