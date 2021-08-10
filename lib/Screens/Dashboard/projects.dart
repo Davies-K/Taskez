@@ -21,7 +21,7 @@ class ProjectScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 60.0, right: 20, left: 20),
         child: taskezAppHeader(
           title: "Projects",
-          widget: AppAddIcon(),
+          widget: AppAddIcon(scale: 1.0),
         ),
       ),
       AppSpaces.verticalSpace20,
