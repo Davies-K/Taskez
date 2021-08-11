@@ -6,6 +6,7 @@ import 'package:taskez/Screens/Task/set_assignees.dart';
 import 'package:taskez/Screens/Task/task_due_date.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/bottom_sheet_holder.dart';
+import 'package:taskez/widgets/Dashboard/sheet_goto_calendar.dart';
 import 'package:taskez/widgets/Forms/form_input_unlabelled.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
@@ -39,8 +40,8 @@ class CreateTaskBottomSheet extends StatelessWidget {
           Row(
             children: [
               Container(
-                  width: 30,
-                  height: 30,
+                  width: 20,
+                  height: 20,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       gradient: LinearGradient(colors: [
@@ -79,26 +80,11 @@ class CreateTaskBottomSheet extends StatelessWidget {
                 )
               ]),
             ),
-            InkWell(
-              onTap: () {
-                Get.to(() => TaskDueDate());
-              },
-              child:
-                  Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Container(
-                    width: 40 * 1.5,
-                    height: 40 * 1.5,
-                    decoration: BoxDecoration(
-                        color: HexColor.fromHex("7DBA67"),
-                        shape: BoxShape.circle),
-                    child: Icon(Icons.calendar_today, color: Colors.white)),
-                AppSpaces.horizontalSpace10,
-                CircularCardLabel(
-                  label: 'Due Date',
-                  value: 'Today 3PM',
-                  color: HexColor.fromHex("A9F49C"),
-                )
-              ]),
+            SheetGoToCalendarWidget(
+              cardBackgroundColor: HexColor.fromHex("7DBA67"),
+              textAccentColor: HexColor.fromHex("A9F49C"),
+              value: 'Today 3:00PM',
+              label: 'Due Date',
             )
           ]),
           // Spacer(),
@@ -172,29 +158,5 @@ class BottomSheetIcon extends StatelessWidget {
       iconSize: 32,
       onPressed: null,
     );
-  }
-}
-
-class CircularCardLabel extends StatelessWidget {
-  final String? label;
-  final String? value;
-  final Color? color;
-  const CircularCardLabel({
-    Key? key,
-    this.label,
-    this.color,
-    this.value,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(label!,
-          style: GoogleFonts.lato(
-              fontSize: 16, color: HexColor.fromHex("626777"))),
-      AppSpaces.horizontalSpace20,
-      AppSpaces.horizontalSpace20,
-      Text(value!, style: GoogleFonts.lato(fontSize: 16, color: color))
-    ]);
   }
 }

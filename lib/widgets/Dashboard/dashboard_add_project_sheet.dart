@@ -7,6 +7,7 @@ import 'package:taskez/widgets/Chat/badged_title.dart';
 import 'package:taskez/widgets/Forms/form_input_unlabelled.dart';
 
 import '../add_sub_icon.dart';
+import 'dashboard_design_meeting_sheet.dart';
 import 'in_bottomsheet_subtitle.dart';
 
 class DashboardAddProjectSheet extends StatelessWidget {
@@ -60,7 +61,7 @@ class DashboardAddProjectSheet extends StatelessWidget {
                 padding: EdgeInsets.all(5.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.black),
+                    color: HexColor.fromHex("181A1F")),
                 child: Row(children: [
                   Expanded(
                     flex: 1,
@@ -108,11 +109,34 @@ class DashboardAddProjectSheet extends StatelessWidget {
                 scale: 0.8,
                 color: AppColors.primaryAccentColor,
                 callback: () {
-                  //_addProject(context);
+                  _addMeeting(context);
                 },
               ),
             ]),
           ]))
     ]);
+  }
+
+  void _addMeeting(context) {
+    Navigator.pop(context);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: AppColors.primaryBackgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+              height: Utils.screenHeight * 1.05,
+              child: DashboardDesignMeetingSheet()),
+        );
+      },
+    );
   }
 }
