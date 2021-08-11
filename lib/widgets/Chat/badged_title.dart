@@ -18,7 +18,7 @@ class BadgedTitle extends StatelessWidget {
     return Row(children: [
       Text(title,
           style: GoogleFonts.lato(
-              color: Colors.white, fontSize: 24, fontWeight: FontWeight.w600)),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
       AppSpaces.horizontalSpace10,
       Container(
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 8.0),
@@ -30,7 +30,7 @@ class BadgedTitle extends StatelessWidget {
               style: GoogleFonts.lato(
                   color: HexColor.fromHex(color),
                   fontWeight: FontWeight.w500,
-                  fontSize: 14)))
+                  fontSize: 12)))
     ]);
   }
 }

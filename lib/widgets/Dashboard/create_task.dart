@@ -10,7 +10,9 @@ import 'package:taskez/widgets/Forms/form_input_unlabelled.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 import '../add_sub_icon.dart';
+import 'dashboard_add_project_sheet.dart';
 
+// ignore: must_be_immutable
 class CreateTaskBottomSheet extends StatelessWidget {
   CreateTaskBottomSheet({Key? key}) : super(key: key);
 
@@ -145,8 +147,8 @@ class CreateTaskBottomSheet extends StatelessWidget {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: Container(
-            height: Utils.screenHeight * 0.8,
-          ),
+              height: Utils.screenHeight * 1.05,
+              child: DashboardAddProjectSheet()),
         );
       },
     );

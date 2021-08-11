@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Constants/constants.dart';
-import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Screens/Chat/new_group.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Chat/add_chat_icon.dart';
@@ -10,9 +8,6 @@ import 'package:taskez/widgets/Chat/selection_tab.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/search_box.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
-import 'package:taskez/widgets/dummy/profile_dummy.dart';
-import 'package:taskez/widgets/stacked_images.dart';
-
 import 'new_message_screen.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -67,38 +62,5 @@ class ChatScreen extends StatelessWidget {
         ]),
       )
     ]));
-  }
-
-  Widget buildStackedImages(
-      {TextDirection direction = TextDirection.rtl, String? numberOfMembers}) {
-    final double size = 50;
-    final double xShift = 20;
-
-    Container lastContainer = Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-        child: Center(
-          child: Text(numberOfMembers!,
-              style: GoogleFonts.lato(
-                  color: HexColor.fromHex("226AFD"),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold)),
-        ));
-
-    final items = List.generate(
-        4,
-        (index) => ProfileDummy(
-            color: AppData.groupBackgroundColors[index],
-            dummyType: ProfileDummyType.Image,
-            image: AppData.profileImages[index],
-            scale: 1.0));
-
-    return StackedWidgets(
-      direction: direction,
-      items: [...items, lastContainer],
-      size: size,
-      xShift: xShift,
-    );
   }
 }

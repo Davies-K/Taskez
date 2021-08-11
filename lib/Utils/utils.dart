@@ -17,3 +17,36 @@ class SineCurve extends Curve {
     return val; //f(x)
   }
 }
+
+Widget buildStackedImages(
+    {TextDirection direction = TextDirection.rtl, String? numberOfMembers}) {
+  final double size = 50;
+  final double xShift = 20;
+
+  Container lastContainer = Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+      child: Center(
+        child: Text(numberOfMembers!,
+            style: GoogleFonts.lato(
+                color: HexColor.fromHex("226AFD"),
+                fontSize: 20,
+                fontWeight: FontWeight.bold)),
+      ));
+
+  final items = List.generate(
+      4,
+      (index) => ProfileDummy(
+          color: AppData.groupBackgroundColors[index],
+          dummyType: ProfileDummyType.Image,
+          image: AppData.profileImages[index],
+          scale: 1.0));
+
+  return StackedWidgets(
+    direction: direction,
+    items: [...items, lastContainer],
+    size: size,
+    xShift: xShift,
+  );
+}
