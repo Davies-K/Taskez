@@ -6,10 +6,12 @@ import 'package:taskez/Values/values.dart';
 class UnlabelledFormInput extends StatelessWidget {
   final String placeholder;
   final String keyboardType;
+  final bool? autofocus;
   final bool obscureText;
   final TextEditingController? controller;
   const UnlabelledFormInput({
     Key? key,
+    this.autofocus,
     required this.placeholder,
     required this.keyboardType,
     this.controller,
@@ -20,6 +22,7 @@ class UnlabelledFormInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      autofocus: autofocus ?? false,
       style: GoogleFonts.lato(
           fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
       onTap: () {},

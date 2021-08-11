@@ -16,9 +16,7 @@ class AppTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        callback;
-      },
+      onTap: callback,
       child: Text(buttonText,
           style: GoogleFonts.lato(
               color: HexColor.fromHex("616575"),

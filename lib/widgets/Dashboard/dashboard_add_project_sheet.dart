@@ -45,6 +45,7 @@ class DashboardAddProjectSheet extends StatelessWidget {
                 Expanded(
                   child: UnlabelledFormInput(
                     placeholder: "Project Name ....",
+                    autofocus: true,
                     keyboardType: "text",
                     controller: _projectNameController,
                     obscureText: false,
@@ -93,7 +94,10 @@ class DashboardAddProjectSheet extends StatelessWidget {
               )
             ]),
             AppSpaces.verticalSpace10,
-            buildStackedImages(numberOfMembers: "2"),
+            Transform.scale(
+                scale: 0.8,
+                alignment: Alignment.centerLeft,
+                child: buildStackedImages(numberOfMembers: "2")),
             AppSpaces.verticalSpace20,
             InBottomSheetSubtitle(title: "PRIVACY"),
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

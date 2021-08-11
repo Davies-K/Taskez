@@ -6,6 +6,8 @@ import 'package:taskez/widgets/Dashboard/sheet_goto_calendar.dart';
 import 'package:taskez/widgets/Forms/form_input_unlabelled.dart';
 
 import '../add_sub_icon.dart';
+import 'dashboard_meeting_details.dart';
+import 'filled_selectable_container.dart';
 import 'in_bottomsheet_subtitle.dart';
 
 class DashboardDesignMeetingSheet extends StatelessWidget {
@@ -42,6 +44,7 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
                   child: UnlabelledFormInput(
                     placeholder: "Design Meeting",
                     keyboardType: "text",
+                    autofocus: true,
                     controller: _meetingNameController,
                     obscureText: false,
                   ),
@@ -49,7 +52,7 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
               ],
             ),
             AppSpaces.verticalSpace20,
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               SheetGoToCalendarWidget(
                 cardBackgroundColor: AppColors.primaryAccentColor,
                 textAccentColor: HexColor.fromHex("90E7E7"),
@@ -66,55 +69,7 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
             AppSpaces.verticalSpace20,
             InBottomSheetSubtitle(title: "INVITES"),
             AppSpaces.verticalSpace10,
-            Container(
-                width: double.infinity,
-                padding: EdgeInsets.only(left: 15.0),
-                height: 120,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                    color: HexColor.fromHex("181A1F"),
-                    borderRadius: BorderRadius.circular(10)),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                text: '2 members ',
-                                style: GoogleFonts.lato(
-                                    fontSize: 12,
-                                    color: HexColor.fromHex("92EAEA"),
-                                    fontWeight: FontWeight.bold),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: 'are invited',
-                                      style: GoogleFonts.lato(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                      )),
-                                ],
-                              ),
-                            ),
-                            Row(
-                                //mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Icon(Icons.edit,
-                                      color: Colors.white, size: 20),
-                                  //AppSpaces.horizontalSpace10,
-                                  IconButton(
-                                      onPressed: null,
-                                      icon: Icon(Icons.add,
-                                          color: Colors.white, size: 25))
-                                ])
-                          ]),
-                      Transform.scale(
-                          alignment: Alignment.topLeft,
-                          origin: Offset.zero,
-                          scale: 0.7,
-                          child: buildStackedImages(numberOfMembers: "2"))
-                    ])),
+            FilledSelectableContainer(),
             AppSpaces.verticalSpace20,
             Align(
               alignment: Alignment.centerRight,
@@ -122,11 +77,34 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
                 scale: 0.8,
                 color: AppColors.primaryAccentColor,
                 callback: () {
-                  //_addMeeting(context);
+                  _addMeetingDetails(context);
                 },
               ),
             ),
           ]))
     ]);
+  }
+
+  void _addMeetingDetails(context) {
+    Navigator.pop(context);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: AppColors.primaryBackgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+              height: Utils.screenHeight * 1.5,
+              child: DashboardMeetingDetails()),
+        );
+      },
+    );
   }
 }

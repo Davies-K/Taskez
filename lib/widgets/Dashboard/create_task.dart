@@ -52,6 +52,7 @@ class CreateTaskBottomSheet extends StatelessWidget {
               Expanded(
                 child: UnlabelledFormInput(
                   placeholder: "Task Name ....",
+                  autofocus: true,
                   keyboardType: "text",
                   controller: _taskNameController,
                   obscureText: false,
@@ -60,7 +61,7 @@ class CreateTaskBottomSheet extends StatelessWidget {
             ],
           ),
           AppSpaces.verticalSpace20,
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             InkWell(
               onTap: () {
                 Get.to(() => SetAssigneesScreen());

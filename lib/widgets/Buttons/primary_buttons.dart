@@ -21,12 +21,13 @@ class AppPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //padding: EdgeInsets.all(20),
       // width: 180,
       // height: 50,
       width: buttonWidth,
       height: buttonHeight,
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: callback,
           style: ButtonStyles.blueRounded,
           child: Text(buttonText,
               style: GoogleFonts.lato(
