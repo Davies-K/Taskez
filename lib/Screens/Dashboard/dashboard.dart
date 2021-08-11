@@ -66,7 +66,7 @@ class Dashboard extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: AppSettingsIcon(
                     callback: () {
-                      _showDashboardSettings(context);
+                      showDashboardSettings(context);
                     },
                   ))
             ]),
@@ -82,7 +82,7 @@ class Dashboard extends StatelessWidget {
         ));
   }
 
-  _showDashboardSettings(context) {
+  showDashboardSettings(context) {
     showModalBottomSheet(
       context: context,
       backgroundColor: AppColors.primaryBackgroundColor,

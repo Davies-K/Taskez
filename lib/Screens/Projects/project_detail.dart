@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/BottomSheets/bottom_sheets.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/project_detail_sheet.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
@@ -42,7 +43,7 @@ class ProjectDetails extends StatelessWidget {
                 category: category,
                 color: color,
                 iconTapped: (() {
-                  _showSettingsBottomSheet(context);
+                  showSettingsBottomSheet(context);
                 }),
                 projectName: projectName,
               ),
@@ -149,27 +150,6 @@ class ProjectDetails extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  _showSettingsBottomSheet(context) {
-    showModalBottomSheet(
-      isScrollControlled: true,
-      context: context,
-      backgroundColor: AppColors.primaryBackgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
-      ),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (BuildContext context) {
-        return Container(
-            // padding: EdgeInsets.only(bottom: 20),
-            height: Utils.screenHeight * 1.4,
-            decoration: BoxDecoration(),
-            child: ProjectDetailBottomSheet());
-      },
     );
   }
 

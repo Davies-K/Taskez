@@ -39,6 +39,7 @@ dependencies:
   fl_chart: ^0.36.3
   flutter_slidable: ^0.6.0
   table_calendar: ^3.0.1
+  glassmorphism: ^2.0.1
 
 dev_dependencies:
   flutter_test:
