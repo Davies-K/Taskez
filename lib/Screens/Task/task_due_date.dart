@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/table_calendar.dart';
@@ -90,26 +91,7 @@ class TaskDueDate extends StatelessWidget {
                           color: HexColor.fromHex("F49189"),
                           fontSize: 18,
                           fontWeight: FontWeight.bold)),
-                  Container(
-                    width: 140,
-                    height: 60,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                HexColor.fromHex("246CFE")),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    side: BorderSide(
-                                        color: HexColor.fromHex("246CFE"))))),
-                        child: Text('Done',
-                            style: GoogleFonts.lato(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white))),
-                  )
+                  PrimaryProgressButton(label: "Done")
                 ]),
           ))
     ]));

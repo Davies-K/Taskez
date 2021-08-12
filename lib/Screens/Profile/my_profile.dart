@@ -4,7 +4,6 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
-import 'package:taskez/widgets/Navigation/back_button.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/Onboarding/toggle_option.dart';
 import 'package:taskez/widgets/Profile/profile_text_option.dart';

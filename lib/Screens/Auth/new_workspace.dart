@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/Onboarding/gradient_color_ball.dart';
+import 'package:taskez/widgets/container_label.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 import 'choose_plan.dart';
@@ -55,12 +57,8 @@ class NewWorkSpace extends StatelessWidget {
                                     fontSize: 14,
                                     color: HexColor.fromHex("666A7A"))),
                             SizedBox(height: 50),
-                            Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text('HOW MANY PEOPLE IN YOUR TEAM',
-                                    style: GoogleFonts.lato(
-                                        color: HexColor.fromHex("666A7A"),
-                                        fontWeight: FontWeight.bold))),
+                            ContainerLabel(
+                                label: 'HOW MANY PEOPLE IN YOUR TEAM'),
                             Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Row(
@@ -78,12 +76,8 @@ class NewWorkSpace extends StatelessWidget {
                                   ]),
                             ),
                             AppSpaces.verticalSpace20,
-                            Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text('INVITE PEOPLE TO YOUR WORKSPACE',
-                                    style: GoogleFonts.lato(
-                                        color: HexColor.fromHex("666A7A"),
-                                        fontWeight: FontWeight.bold))),
+                            ContainerLabel(
+                                label: 'INVITE PEOPLE TO YOUR WORKSPACE'),
                             Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Row(
@@ -140,27 +134,11 @@ class NewWorkSpace extends StatelessWidget {
                             color: HexColor.fromHex("616575"),
                             fontSize: 20,
                             fontWeight: FontWeight.bold)),
-                    Container(
-                      width: 140,
-                      height: 60,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Get.to(ChoosePlan());
-                          },
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  HexColor.fromHex("246CFE")),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      side: BorderSide(
-                                          color: HexColor.fromHex("246CFE"))))),
-                          child: Text('Next',
-                              style: GoogleFonts.lato(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white))),
+                    PrimaryProgressButton(
+                      label: "Next",
+                      callback: () {
+                        Get.to(ChoosePlan());
+                      },
                     )
                   ]),
             ))

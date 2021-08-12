@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:taskez/Screens/Dashboard/timeline.dart';
 import 'package:taskez/Values/values.dart';
+import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/Onboarding/plan_card.dart';
@@ -128,28 +129,11 @@ class ChoosePlan extends StatelessWidget {
                           color: HexColor.fromHex("616575"),
                           fontSize: 20,
                           fontWeight: FontWeight.bold)),
-                  Container(
-                    width: 140,
-                    height: 60,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(Timeline());
-                        },
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                HexColor.fromHex("246CFE")),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50.0),
-                                    side: BorderSide(
-                                        color: HexColor.fromHex("246CFE"))))),
-                        child: Text('Done',
-                            style: GoogleFonts.lato(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white))),
-                  )
+                  PrimaryProgressButton(
+                      label: "Done",
+                      callback: () {
+                        Get.to(Timeline());
+                      })
                 ]),
           ))
     ]));
