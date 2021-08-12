@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Screens/Profile/edit_profile.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/default_back.dart';
@@ -54,7 +56,12 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: HexColor.fromHex("B0FFE1"), fontSize: 17)),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: OutlinedButtonWithText(width: 75, content: "Edit"),
+                  child: OutlinedButtonWithText(
+                      width: 75,
+                      content: "Edit",
+                      onPressed: () {
+                        Get.to(() => EditProfilePage());
+                      }),
                 ),
                 AppSpaces.verticalSpace20,
                 Column(

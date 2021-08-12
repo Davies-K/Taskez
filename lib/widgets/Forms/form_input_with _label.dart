@@ -28,12 +28,13 @@ class LabelledFormInput extends StatelessWidget {
         Text(label.toUpperCase(),
             textAlign: TextAlign.left,
             style: GoogleFonts.lato(
-                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                //fontWeight: FontWeight.bold,
                 color: HexColor.fromHex("3C3E49"))),
         TextFormField(
           controller: controller,
           style: GoogleFonts.lato(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+              fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white),
           onTap: () {},
           keyboardType: keyboardType == "text"
               ? TextInputType.text
@@ -56,7 +57,7 @@ class LabelledFormInput extends StatelessWidget {
                         obscureText
                             ? FontAwesomeIcons.eye
                             : FontAwesomeIcons.eyeSlash,
-                        size: 15.0,
+                        //size: 15.0,
                         color: HexColor.fromHex("3C3E49"),
                       ))
                   : InkWell(
@@ -64,12 +65,12 @@ class LabelledFormInput extends StatelessWidget {
                         controller.text = "";
                       },
                       child: Icon(FontAwesomeIcons.solidTimesCircle,
-                          color: HexColor.fromHex("3C3E49")),
+                          size: 20, color: HexColor.fromHex("3C3E49")),
                     ),
               hintText: placeholder,
               hintStyle: GoogleFonts.lato(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                   color: HexColor.fromHex("3C3E49")),
               filled: false,
               enabledBorder: UnderlineInputBorder(
