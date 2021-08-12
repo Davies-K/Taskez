@@ -6,11 +6,12 @@ import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/Buttons/progress_card_close_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
-import 'package:taskez/widgets/Dashboard/in_bottomsheet_subtitle.dart';
 import 'package:taskez/widgets/Profile/badged_container.dart';
 import 'package:taskez/widgets/Profile/text_outlined_button.dart';
 import 'package:taskez/widgets/container_label.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
+
+import 'profile_notification_settings.dart';
 
 class ProfileOverview extends StatelessWidget {
   const ProfileOverview({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class ProfileOverview extends StatelessWidget {
         position: "topLeft",
       ),
       Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: SafeArea(
               child: SingleChildScrollView(
                   child: Column(children: [
@@ -108,6 +109,9 @@ class ProfileOverview extends StatelessWidget {
             AppSpaces.verticalSpace10,
             BadgedContainer(
               label: "Do not disturb",
+              callback: () {
+                Get.to(() => ProfileNotificationSettings());
+              },
               value: "Off",
               badgeColor: "FDA5FF",
             ),
@@ -149,7 +153,7 @@ class ProfileOverview extends StatelessWidget {
                 ))
           ])))),
       Positioned(
-          top: 70,
+          top: 50,
           left: 20,
           child: Transform.scale(
               scale: 1.2,

@@ -18,10 +18,12 @@ class ProjectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
-        padding: const EdgeInsets.only(top: 60.0, right: 20, left: 20),
-        child: taskezAppHeader(
-          title: "Projects",
-          widget: AppAddIcon(scale: 1.0),
+        padding: const EdgeInsets.only(right: 20, left: 20),
+        child: SafeArea(
+          child: taskezAppHeader(
+            title: "Projects",
+            widget: AppAddIcon(scale: 1.0),
+          ),
         ),
       ),
       AppSpaces.verticalSpace20,

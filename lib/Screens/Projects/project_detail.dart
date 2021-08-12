@@ -36,117 +36,122 @@ class ProjectDetails extends StatelessWidget {
             position: "topLeft",
           ),
           Padding(
-            padding: EdgeInsets.only(top: 60.0, right: 20, left: 20),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              ProjectDetailAppBar(
-                category: category,
-                color: color,
-                iconTapped: (() {
-                  showSettingsBottomSheet(context);
-                }),
-                projectName: projectName,
-              ),
-              AppSpaces.verticalSpace20,
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                //tab indicators
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+            padding: EdgeInsets.only(right: 20, left: 20),
+            child: SafeArea(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    PrimaryTabButton(
-                        buttonText: "All Tasks",
-                        itemIndex: 0,
-                        notifier: _settingsButtonTrigger),
-                    PrimaryTabButton(
-                        buttonText: "Recent",
-                        itemIndex: 1,
-                        notifier: _settingsButtonTrigger),
-                    PrimaryTabButton(
-                        buttonText: "Starred",
-                        itemIndex: 2,
-                        notifier: _settingsButtonTrigger)
-                  ],
-                ),
-
-                Container(
-                    alignment: Alignment.centerRight,
-                    child: AppSettingsIcon(
-                      callback: (() {
-                        _showLayoutDialog(context);
+                    ProjectDetailAppBar(
+                      category: category,
+                      color: color,
+                      iconTapped: (() {
+                        showSettingsBottomSheet(context);
                       }),
-                    ))
-              ]),
-              AppSpaces.verticalSpace10,
-              Expanded(
-                  child: MediaQuery.removePadding(
-                context: context,
-                removeTop: true,
-                child: ListView(children: [
-                  AppSpaces.verticalSpace10,
-                  ExpansionTile(
-                      collapsedIconColor: Colors.white,
-                      iconColor: Colors.white,
-                      textColor: Colors.white,
-                      title: Text("IDEAS (3)",
-                          style: GoogleFonts.lato(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                            color: HexColor.fromHex("616575"),
-                          )),
-                      children: [
-                        ProjectTaskCard(
-                            activated: true,
-                            header: "Orientation",
-                            image: "assets/memoji/2.png",
-                            backgroundColor: "FCA4FF",
-                            date: "Today 12:00PM"),
-                        ProjectTaskCard(
-                            activated: true,
-                            header: "Client Briefing",
-                            image: "assets/man-head.png",
-                            backgroundColor: "93F0F0",
-                            date: "Today 3:00PM"),
-                        ProjectTaskCard(
-                            activated: false,
-                            header: "WireFraming",
-                            image: "assets/memoji/9.png",
-                            backgroundColor: "8D96FF",
-                            date: "Tomorrow 4:15PM"),
+                      projectName: projectName,
+                    ),
+                    AppSpaces.verticalSpace20,
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          //tab indicators
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              PrimaryTabButton(
+                                  buttonText: "All Tasks",
+                                  itemIndex: 0,
+                                  notifier: _settingsButtonTrigger),
+                              PrimaryTabButton(
+                                  buttonText: "Recent",
+                                  itemIndex: 1,
+                                  notifier: _settingsButtonTrigger),
+                              PrimaryTabButton(
+                                  buttonText: "Starred",
+                                  itemIndex: 2,
+                                  notifier: _settingsButtonTrigger)
+                            ],
+                          ),
+
+                          Container(
+                              alignment: Alignment.centerRight,
+                              child: AppSettingsIcon(
+                                callback: (() {
+                                  _showLayoutDialog(context);
+                                }),
+                              ))
+                        ]),
+                    AppSpaces.verticalSpace10,
+                    Expanded(
+                        child: MediaQuery.removePadding(
+                      context: context,
+                      removeTop: true,
+                      child: ListView(children: [
+                        AppSpaces.verticalSpace10,
+                        ExpansionTile(
+                            collapsedIconColor: Colors.white,
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            title: Text("IDEAS (3)",
+                                style: GoogleFonts.lato(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+                                  color: HexColor.fromHex("616575"),
+                                )),
+                            children: [
+                              ProjectTaskCard(
+                                  activated: true,
+                                  header: "Orientation",
+                                  image: "assets/memoji/2.png",
+                                  backgroundColor: "FCA4FF",
+                                  date: "Today 12:00PM"),
+                              ProjectTaskCard(
+                                  activated: true,
+                                  header: "Client Briefing",
+                                  image: "assets/man-head.png",
+                                  backgroundColor: "93F0F0",
+                                  date: "Today 3:00PM"),
+                              ProjectTaskCard(
+                                  activated: false,
+                                  header: "WireFraming",
+                                  image: "assets/memoji/9.png",
+                                  backgroundColor: "8D96FF",
+                                  date: "Tomorrow 4:15PM"),
+                            ]),
+                        AppSpaces.verticalSpace10,
+                        ExpansionTile(
+                            collapsedIconColor: Colors.white,
+                            iconColor: Colors.white,
+                            textColor: Colors.white,
+                            title: Text("DESIGN (12)",
+                                style: GoogleFonts.lato(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w500,
+                                  color: HexColor.fromHex("616575"),
+                                )),
+                            children: [
+                              ProjectTaskCard(
+                                  activated: false,
+                                  header: "Onboarding Screens",
+                                  image: "assets/memoji/2.png",
+                                  backgroundColor: "FCA4FF",
+                                  date: "Today 12:00PM"),
+                              ProjectTaskCard(
+                                  activated: false,
+                                  header: "Sign In - Sign Up",
+                                  image: "assets/man-head.png",
+                                  backgroundColor: "93F0F0",
+                                  date: "Today 3:00PM"),
+                              ProjectTaskCard(
+                                  activated: false,
+                                  header: "WireFraming",
+                                  image: "assets/memoji/9.png",
+                                  backgroundColor: "8D96FF",
+                                  date: "Tomorrow 4:15PM"),
+                            ])
                       ]),
-                  AppSpaces.verticalSpace10,
-                  ExpansionTile(
-                      collapsedIconColor: Colors.white,
-                      iconColor: Colors.white,
-                      textColor: Colors.white,
-                      title: Text("DESIGN (12)",
-                          style: GoogleFonts.lato(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500,
-                            color: HexColor.fromHex("616575"),
-                          )),
-                      children: [
-                        ProjectTaskCard(
-                            activated: false,
-                            header: "Onboarding Screens",
-                            image: "assets/memoji/2.png",
-                            backgroundColor: "FCA4FF",
-                            date: "Today 12:00PM"),
-                        ProjectTaskCard(
-                            activated: false,
-                            header: "Sign In - Sign Up",
-                            image: "assets/man-head.png",
-                            backgroundColor: "93F0F0",
-                            date: "Today 3:00PM"),
-                        ProjectTaskCard(
-                            activated: false,
-                            header: "WireFraming",
-                            image: "assets/memoji/9.png",
-                            backgroundColor: "8D96FF",
-                            date: "Tomorrow 4:15PM"),
-                      ])
-                ]),
-              ))
-            ]),
+                    ))
+                  ]),
+            ),
           ),
         ],
       ),

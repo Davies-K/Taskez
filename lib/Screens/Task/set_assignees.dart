@@ -28,49 +28,48 @@ class SetAssigneesScreen extends StatelessWidget {
         color: HexColor.fromHex("#181a1f"),
         position: "topLeft",
       ),
-      Padding(
-          padding: const EdgeInsets.only(top: 60.0),
-          child: Column(children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 20, left: 20),
-              child: taskezAppHeader(
-                title: "Set Assignees",
-                widget: AppPrimaryButton(
-                  buttonHeight: 40,
-                  buttonWidth: 70,
-                  buttonText: "Next",
-                ),
+      SafeArea(
+        child: Column(children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20, left: 20),
+            child: taskezAppHeader(
+              title: "Set Assignees",
+              widget: AppPrimaryButton(
+                buttonHeight: 40,
+                buttonWidth: 70,
+                buttonText: "Next",
               ),
             ),
-            SizedBox(height: 40),
-            Expanded(
-                flex: 1,
-                child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    decoration: BoxDecorationStyles.fadingGlory,
-                    child: Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: DecoratedBox(
-                            decoration: BoxDecorationStyles.fadingInnerDecor,
-                            child: Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SearchBox(
-                                        placeholder: 'Search',
-                                      ),
-                                      AppSpaces.verticalSpace20,
-                                      Expanded(
-                                          child: MediaQuery.removePadding(
-                                        context: context,
-                                        removeTop: true,
-                                        child: ListView(children: [...cards]),
-                                      ))
-                                    ]))))))
-          ]))
+          ),
+          SizedBox(height: 40),
+          Expanded(
+              flex: 1,
+              child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecorationStyles.fadingGlory,
+                  child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: DecoratedBox(
+                          decoration: BoxDecorationStyles.fadingInnerDecor,
+                          child: Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SearchBox(
+                                      placeholder: 'Search',
+                                    ),
+                                    AppSpaces.verticalSpace20,
+                                    Expanded(
+                                        child: MediaQuery.removePadding(
+                                      context: context,
+                                      removeTop: true,
+                                      child: ListView(children: [...cards]),
+                                    ))
+                                  ]))))))
+        ]),
+      )
     ]));
   }
 }

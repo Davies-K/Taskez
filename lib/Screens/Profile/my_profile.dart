@@ -30,7 +30,7 @@ class _ProfilePageState extends State<ProfilePage> {
         position: "topLeft",
       ),
       Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(

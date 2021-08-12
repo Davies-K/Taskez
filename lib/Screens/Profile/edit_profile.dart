@@ -28,7 +28,7 @@ class EditProfilePage extends StatelessWidget {
         position: "topLeft",
       ),
       Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.only(left: 20, right: 20),
           child: SafeArea(
               child: SingleChildScrollView(
                   child: Column(children: [

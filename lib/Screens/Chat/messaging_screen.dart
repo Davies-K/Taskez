@@ -34,28 +34,32 @@ class MessagingScreen extends StatelessWidget {
         position: "topLeft",
       ),
       Padding(
-        padding: const EdgeInsets.only(top: 60.0, right: 20, left: 20),
-        child: Column(
-          children: [
-            taskezAppHeader(
-              title: "$userName",
-              messagingPage: true,
-              widget: Row(children: [
-                Icon(Icons.phone, color: Colors.white),
-                AppSpaces.horizontalSpace20,
-                Container(
-                    width: 40,
-                    height: 40,
-                    alignment: Alignment.centerLeft,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(
-                            width: 3, color: HexColor.fromHex("31333D"))),
-                    child: Center(
-                        child: Icon(Icons.more_vert, color: Colors.white))),
-              ]),
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                taskezAppHeader(
+                  title: "$userName",
+                  messagingPage: true,
+                  widget: Row(children: [
+                    Icon(Icons.phone, color: Colors.white),
+                    AppSpaces.horizontalSpace20,
+                    Container(
+                        width: 40,
+                        height: 40,
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                                width: 3, color: HexColor.fromHex("31333D"))),
+                        child: Center(
+                            child: Icon(Icons.more_vert, color: Colors.white))),
+                  ]),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
       //Chat

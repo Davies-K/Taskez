@@ -16,15 +16,17 @@ class Projects extends StatelessWidget {
         position: "topLeft",
       ),
       Padding(
-          padding: const EdgeInsets.only(top: 60.0, right: 20, left: 20),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            taskezAppHeader(
-              title: "Chat",
-              widget: AppAddIcon(),
-            ),
-            AppSpaces.verticalSpace20,
-          ]))
+          padding: const EdgeInsets.only(right: 20, left: 20),
+          child: SafeArea(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              taskezAppHeader(
+                title: "Chat",
+                widget: AppAddIcon(),
+              ),
+              AppSpaces.verticalSpace20,
+            ]),
+          ))
     ]));
   }
 }

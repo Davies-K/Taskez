@@ -26,7 +26,7 @@ class NotificationScreen extends StatelessWidget {
               userOnline: notificationData[index]['userOnline'],
             ));
     return Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.only(left: 20.0, right: 20.0),
         child: SafeArea(
           child: Column(children: [
             DefaultNav(title: "Notification", type: ProfileDummyType.Image),

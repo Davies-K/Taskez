@@ -22,44 +22,47 @@ class ChatScreen extends StatelessWidget {
         position: "topLeft",
       ),
       Padding(
-        padding: const EdgeInsets.only(top: 60.0, right: 20, left: 20),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          taskezAppHeader(
-            title: "Chat",
-            widget: AppAddIcon(page: NewMessageScreen()),
-          ),
-          AppSpaces.verticalSpace20,
-          SearchBox(
-            placeholder: 'Search',
-          ),
-          AppSpaces.verticalSpace20,
-          SelectionTab(title: "GROUP", page: NewGroupScreen()),
-          AppSpaces.verticalSpace20,
-          BadgedTitle(
-            title: "Marketing",
-            color: 'A5EB9B',
-            number: '12',
-          ),
-          AppSpaces.verticalSpace20,
-          buildStackedImages(numberOfMembers: "8"),
-          AppSpaces.verticalSpace20,
-          BadgedTitle(
-            title: "Design",
-            color: 'FCA3FF',
-            number: '6',
-          ),
-          AppSpaces.verticalSpace20,
-          buildStackedImages(numberOfMembers: "2"),
-          AppSpaces.verticalSpace20,
-          SelectionTab(title: "DIRECT MESSAGES", page: NewMessageScreen()),
-          AppSpaces.verticalSpace20,
-          Expanded(
-              child: MediaQuery.removePadding(
-            context: context,
-            removeTop: true,
-            child: ListView(children: [...onlineUsers]),
-          )),
-        ]),
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: SafeArea(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            taskezAppHeader(
+              title: "Chat",
+              widget: AppAddIcon(page: NewMessageScreen()),
+            ),
+            AppSpaces.verticalSpace20,
+            SearchBox(
+              placeholder: 'Search',
+            ),
+            AppSpaces.verticalSpace20,
+            SelectionTab(title: "GROUP", page: NewGroupScreen()),
+            AppSpaces.verticalSpace20,
+            BadgedTitle(
+              title: "Marketing",
+              color: 'A5EB9B',
+              number: '12',
+            ),
+            AppSpaces.verticalSpace20,
+            buildStackedImages(numberOfMembers: "8"),
+            AppSpaces.verticalSpace20,
+            BadgedTitle(
+              title: "Design",
+              color: 'FCA3FF',
+              number: '6',
+            ),
+            AppSpaces.verticalSpace20,
+            buildStackedImages(numberOfMembers: "2"),
+            AppSpaces.verticalSpace20,
+            SelectionTab(title: "DIRECT MESSAGES", page: NewMessageScreen()),
+            AppSpaces.verticalSpace20,
+            Expanded(
+                child: MediaQuery.removePadding(
+              context: context,
+              removeTop: true,
+              child: ListView(children: [...onlineUsers]),
+            )),
+          ]),
+        ),
       )
     ]));
   }
