@@ -21,49 +21,41 @@ class DashboardSettingsBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: 1,
-        child: Column(children: [
-          Column(
-            children: [
-              AppSpaces.verticalSpace10,
-              BottomSheetHolder(),
-              AppSpaces.verticalSpace20,
-              ToggleLabelOption(
-                  label: '    Total Task',
-                  notifierValue: totalTaskNotifier,
-                  icon: Icons.check_circle_outline),
-              ToggleLabelOption(
-                  label: '    Task Due Soon',
-                  notifierValue: totalDueNotifier,
-                  icon: Icons.batch_prediction),
-              ToggleLabelOption(
-                  label: '    Completed',
-                  notifierValue: totalCompletedNotifier,
-                  icon: Icons.check_circle),
-              ToggleLabelOption(
-                  label: '    Working On',
-                  notifierValue: workingOnNotifier,
-                  icon: Icons.flag),
-            ],
+    return Column(children: [
+      AppSpaces.verticalSpace10,
+      BottomSheetHolder(),
+      AppSpaces.verticalSpace20,
+      ToggleLabelOption(
+          label: '    Total Task',
+          notifierValue: totalTaskNotifier,
+          icon: Icons.check_circle_outline),
+      ToggleLabelOption(
+          label: '    Task Due Soon',
+          notifierValue: totalDueNotifier,
+          icon: Icons.batch_prediction),
+      ToggleLabelOption(
+          label: '    Completed',
+          notifierValue: totalCompletedNotifier,
+          icon: Icons.check_circle),
+      ToggleLabelOption(
+          label: '    Working On',
+          notifierValue: workingOnNotifier,
+          icon: Icons.flag),
+      Padding(
+        padding: EdgeInsets.only(top: 40.0, right: 20.0, left: 20),
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          AppTextButton(
+            buttonText: 'Clear All',
+            buttonSize: 16,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 40.0, right: 20.0, left: 20),
-            child: Expanded(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                  AppTextButton(
-                    buttonText: 'Clear All',
-                    buttonSize: 16,
-                  ),
-                  AppPrimaryButton(
-                    buttonHeight: 45,
-                    buttonWidth: 160,
-                    buttonText: "Save Changes",
-                  )
-                ])),
+          AppPrimaryButton(
+            buttonHeight: 60,
+            buttonWidth: 160,
+            buttonText: "Save Changes",
           )
-        ]));
+        ]),
+      )
+    ]);
   }
 }

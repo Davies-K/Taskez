@@ -98,7 +98,6 @@ class Dashboard extends StatelessWidget {
       builder: (BuildContext context) {
         return Container(
             height: Utils.screenHeight * 1.05,
-            decoration: BoxDecoration(),
             child: DashboardSettingsBottomSheet(
               totalTaskNotifier: _totalTaskTrigger,
               totalDueNotifier: _totalDueTrigger,

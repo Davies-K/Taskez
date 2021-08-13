@@ -7,7 +7,8 @@ import 'package:taskez/widgets/Forms/search_box.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
 
 class NewMessageScreen extends StatelessWidget {
-  const NewMessageScreen({Key? key}) : super(key: key);
+  TextEditingController _searchController = new TextEditingController();
+  NewMessageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +55,8 @@ class NewMessageScreen extends StatelessWidget {
                                           Expanded(
                                             flex: 3,
                                             child: SearchBox(
-                                              placeholder: 'Search Members',
-                                            ),
+                                                placeholder: 'Search Members',
+                                                controller: _searchController),
                                           ),
                                           Expanded(
                                               flex: 1,

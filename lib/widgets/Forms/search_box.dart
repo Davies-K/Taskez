@@ -38,7 +38,7 @@ class SearchBox extends StatelessWidget {
             controller!.text = "";
           },
           child: Icon(FontAwesomeIcons.solidTimesCircle,
-              color: HexColor.fromHex("3C3E49")),
+              color: Colors.white70, size: 20),
         ),
         hintText: placeholder,
         hintStyle: GoogleFonts.lato(

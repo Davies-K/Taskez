@@ -11,6 +11,7 @@ import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'new_message_screen.dart';
 
 class ChatScreen extends StatelessWidget {
+  TextEditingController _searchController = new TextEditingController();
   ChatScreen({Key? key}) : super(key: key);
 
   @override
@@ -31,9 +32,7 @@ class ChatScreen extends StatelessWidget {
               widget: AppAddIcon(page: NewMessageScreen()),
             ),
             AppSpaces.verticalSpace20,
-            SearchBox(
-              placeholder: 'Search',
-            ),
+            SearchBox(placeholder: 'Search', controller: _searchController),
             AppSpaces.verticalSpace20,
             SelectionTab(title: "GROUP", page: NewGroupScreen()),
             AppSpaces.verticalSpace20,

@@ -9,7 +9,7 @@ import 'package:taskez/widgets/Shapes/app_settings_icon.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({Key? key}) : super(key: key);
-
+  TextEditingController _searchController = new TextEditingController();
   ValueNotifier<int> _settingsButtonTrigger = ValueNotifier(0);
 
   @override
@@ -29,8 +29,8 @@ class SearchScreen extends StatelessWidget {
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: SearchBox(
-                      placeholder: 'Search Dashboard',
-                    ),
+                        placeholder: 'Search Dashboard',
+                        controller: _searchController),
                   ),
                 ),
                 Expanded(

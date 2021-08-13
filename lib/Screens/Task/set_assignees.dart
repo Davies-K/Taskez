@@ -8,6 +8,7 @@ import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/employee_card.dart';
 
 class SetAssigneesScreen extends StatelessWidget {
+  TextEditingController _searchController = new TextEditingController();
   SetAssigneesScreen({Key? key}) : super(key: key);
 
   @override
@@ -58,8 +59,8 @@ class SetAssigneesScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SearchBox(
-                                      placeholder: 'Search',
-                                    ),
+                                        placeholder: 'Search',
+                                        controller: _searchController),
                                     AppSpaces.verticalSpace20,
                                     Expanded(
                                         child: MediaQuery.removePadding(

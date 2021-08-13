@@ -8,6 +8,7 @@ import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/employee_card.dart';
 
 class SelectMembersScreen extends StatelessWidget {
+  TextEditingController _searchController = new TextEditingController();
   SelectMembersScreen({Key? key}) : super(key: key);
 
   @override
@@ -61,6 +62,7 @@ class SelectMembersScreen extends StatelessWidget {
                                     children: [
                                       SearchBox(
                                         placeholder: 'Search',
+                                        controller: _searchController,
                                       ),
                                       AppSpaces.verticalSpace20,
                                       Expanded(
