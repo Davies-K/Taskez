@@ -34,6 +34,14 @@ class AppColors {
       HexColor.fromHex("899FFE"),
       HexColor.fromHex("899FFE"),
     ],
+    [
+      HexColor.fromHex("FC946E"),
+      HexColor.fromHex("FFD996"),
+    ],
+    [
+      HexColor.fromHex("87C76F"),
+      HexColor.fromHex("87C76F"),
+    ],
   ];
 
   static final Color primaryBackgroundColor = HexColor.fromHex("262A34");

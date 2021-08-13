@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
@@ -8,9 +9,12 @@ import 'package:taskez/widgets/Onboarding/labelled_option.dart';
 import 'package:taskez/widgets/container_label.dart';
 
 class ProfileNotificationSettings extends StatelessWidget {
-  const ProfileNotificationSettings({Key? key}) : super(key: key);
+  ValueNotifier<bool> _assignmedToMe = ValueNotifier(true);
+  ValueNotifier<bool> _taskCompleted = ValueNotifier(false);
+  ValueNotifier<bool> _mentionedMe = ValueNotifier(true);
+  ValueNotifier<bool> _directMessage = ValueNotifier(false);
 
-  final String tabSpace = "\t\t\t";
+  ProfileNotificationSettings({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +71,16 @@ class ProfileNotificationSettings extends StatelessWidget {
             AppSpaces.verticalSpace40,
             ContainerLabel(label: "NOTIFY MY ABOUT"),
             AppSpaces.verticalSpace40,
-            LabelledCheckbox(label: "Task assigned to me", value: true),
-            LabelledCheckbox(label: "Task completed", value: false),
-            LabelledCheckbox(label: "Mentioned Me", value: true),
-            LabelledCheckbox(label: "Direct Message", value: true),
-            LabelledCheckbox(label: "Direct Message", value: true),
+            LabelledCheckbox(
+              label: "Task assigned to me",
+              notifierValue: _assignmedToMe,
+            ),
+            LabelledCheckbox(
+                label: "Task completed", notifierValue: _taskCompleted),
+            LabelledCheckbox(
+                label: "Mentioned Me", notifierValue: _mentionedMe),
+            LabelledCheckbox(
+                label: "Direct Message", notifierValue: _directMessage),
           ]))))
     ]));
   }
@@ -79,11 +88,12 @@ class ProfileNotificationSettings extends StatelessWidget {
 
 class LabelledCheckbox extends StatelessWidget {
   final String label;
-  final bool value;
+  final ValueNotifier<bool>? notifierValue;
+
   const LabelledCheckbox({
     required this.label,
-    required this.value,
     Key? key,
+    this.notifierValue,
   }) : super(key: key);
 
   @override
@@ -94,10 +104,14 @@ class LabelledCheckbox extends StatelessWidget {
         data: Theme.of(context).copyWith(
           unselectedWidgetColor: Colors.grey,
         ),
-        child: Checkbox(
-            value: value,
-            activeColor: AppColors.primaryAccentColor,
-            onChanged: (bool? value) => print(value)),
+        child: ValueListenableBuilder(
+            valueListenable: notifierValue!,
+            builder: (BuildContext context, _, __) {
+              return Checkbox(
+                  value: notifierValue!.value,
+                  activeColor: AppColors.primaryAccentColor,
+                  onChanged: (bool? value) => notifierValue!.value = value!);
+            }),
       ),
     ]);
   }

@@ -92,12 +92,7 @@ class NewWorkSpace extends StatelessWidget {
                                   ]),
                             ),
                             AppSpaces.verticalSpace20,
-                            Container(
-                                alignment: Alignment.centerLeft,
-                                child: Text('CHOOSE COLOR THEME',
-                                    style: GoogleFonts.lato(
-                                        color: HexColor.fromHex("666A7A"),
-                                        fontWeight: FontWeight.bold))),
+                            ContainerLabel(label: 'CHOOSE COLOR THEME'),
                             Container(
                               child: Padding(
                                   padding: EdgeInsets.only(top: 15.0),
@@ -105,7 +100,7 @@ class NewWorkSpace extends StatelessWidget {
                                       alignment: WrapAlignment.start,
                                       children: [
                                         ...List.generate(
-                                          8,
+                                          AppColors.ballColors.length,
                                           (index) => GradientColorBall(
                                             valueChanger: _colorTrigger,
                                             selectIndex: index,
@@ -122,9 +117,9 @@ class NewWorkSpace extends StatelessWidget {
                   ))),
         ]),
         Positioned(
-            bottom: 30,
+            bottom: 50,
             child: Container(
-              padding: EdgeInsets.only(left: 20, right: 20),
+              padding: EdgeInsets.only(left: 40, right: 20),
               width: Utils.screenWidth,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,9 +127,10 @@ class NewWorkSpace extends StatelessWidget {
                     Text('Skip',
                         style: GoogleFonts.lato(
                             color: HexColor.fromHex("616575"),
-                            fontSize: 20,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold)),
                     PrimaryProgressButton(
+                      width: 120,
                       label: "Next",
                       callback: () {
                         Get.to(ChoosePlan());

@@ -14,4 +14,7 @@ class AppTextStyles {
 
   static final TextStyle brandTextStyle =
       GoogleFonts.lato(fontSize: 35, fontWeight: FontWeight.bold);
+
+  static final TextStyle header2 = GoogleFonts.lato(
+      fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white);
 }

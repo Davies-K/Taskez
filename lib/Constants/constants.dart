@@ -7,6 +7,8 @@ import 'package:taskez/Screens/Dashboard/search_screen.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Chat/online_user.dart';
 
+String tabSpace = "\t\t\t";
+
 final List<Widget> dashBoardScreens = [
   Dashboard(),
   ProjectScreen(),

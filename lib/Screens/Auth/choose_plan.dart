@@ -49,11 +49,7 @@ class ChoosePlan extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               AppSpaces.verticalSpace10,
-                              Text('Choose Plan',
-                                  style: GoogleFonts.lato(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: Colors.white)),
+                              Text('Choose Plan', style: AppTextStyles.header2),
                               AppSpaces.verticalSpace10,
                               Text('Unlock all features with Premium Plan',
                                   style: GoogleFonts.lato(
@@ -78,10 +74,7 @@ class ChoosePlan extends StatelessWidget {
                                   ]),
                               AppSpaces.verticalSpace20,
                               Text('Enable Features',
-                                  style: GoogleFonts.lato(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: Colors.white)),
+                                  style: AppTextStyles.header2),
                               AppSpaces.verticalSpace10,
                               Container(
                                 width: Utils.screenWidth * 0.8,
@@ -117,9 +110,9 @@ class ChoosePlan extends StatelessWidget {
                 )))
       ]),
       Positioned(
-          bottom: 30,
+          bottom: 50,
           child: Container(
-            padding: EdgeInsets.only(left: 20, right: 20),
+            padding: EdgeInsets.only(left: 40, right: 20),
             width: Utils.screenWidth,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,9 +120,10 @@ class ChoosePlan extends StatelessWidget {
                   Text('Back',
                       style: GoogleFonts.lato(
                           color: HexColor.fromHex("616575"),
-                          fontSize: 20,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold)),
                   PrimaryProgressButton(
+                      width: 120,
                       label: "Done",
                       callback: () {
                         Get.to(Timeline());

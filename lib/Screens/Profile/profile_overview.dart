@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Screens/Profile/my_profile.dart';
+import 'package:taskez/Screens/Profile/my_team.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/Buttons/progress_card_close_button.dart';
@@ -125,6 +126,9 @@ class ProfileOverview extends StatelessWidget {
                   label: "Team",
                   value: "8",
                   badgeColor: "FDA5FF",
+                  callback: () {
+                    Get.to(() => MyTeams());
+                  },
                 ),
               ),
               AppSpaces.horizontalSpace10,

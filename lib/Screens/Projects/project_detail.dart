@@ -88,6 +88,7 @@ class ProjectDetails extends StatelessWidget {
                       child: ListView(children: [
                         AppSpaces.verticalSpace10,
                         ExpansionTile(
+                            initiallyExpanded: true,
                             collapsedIconColor: Colors.white,
                             iconColor: Colors.white,
                             textColor: Colors.white,
@@ -119,6 +120,7 @@ class ProjectDetails extends StatelessWidget {
                             ]),
                         AppSpaces.verticalSpace10,
                         ExpansionTile(
+                            initiallyExpanded: true,
                             collapsedIconColor: Colors.white,
                             iconColor: Colors.white,
                             textColor: Colors.white,

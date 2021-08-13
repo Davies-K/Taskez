@@ -27,9 +27,7 @@ class DashboardNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Text(this.title,
-          style: GoogleFonts.lato(
-              fontSize: 25, fontWeight: FontWeight.w600, color: Colors.white)),
+      Text(this.title, style: AppTextStyles.header2),
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         InkWell(
           onTap: () {

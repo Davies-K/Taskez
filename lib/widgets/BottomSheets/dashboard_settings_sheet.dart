@@ -55,7 +55,7 @@ class DashboardSettingsBottomSheet extends StatelessWidget {
                     children: [
                   AppTextButton(
                     buttonText: 'Clear All',
-                    buttonSize: 20,
+                    buttonSize: 16,
                   ),
                   AppPrimaryButton(
                     buttonHeight: 45,

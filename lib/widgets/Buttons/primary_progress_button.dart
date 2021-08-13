@@ -20,7 +20,7 @@ class PrimaryProgressButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width ?? 140,
+      width: width ?? 130,
       height: height ?? 60,
       child: ElevatedButton(
           onPressed: callback,
@@ -34,7 +34,7 @@ class PrimaryProgressButton extends StatelessWidget {
           child: Text(label,
               style: textStyle ??
                   GoogleFonts.lato(
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white))),
     );

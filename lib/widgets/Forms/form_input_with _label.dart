@@ -6,6 +6,7 @@ import 'package:taskez/Values/values.dart';
 class LabelledFormInput extends StatelessWidget {
   final String label;
   final String placeholder;
+  final String? value;
   final String keyboardType;
   final bool obscureText;
   final TextEditingController controller;
@@ -15,7 +16,8 @@ class LabelledFormInput extends StatelessWidget {
       required this.keyboardType,
       required this.controller,
       required this.obscureText,
-      required this.label})
+      required this.label,
+      this.value})
       : super(key: key);
 
   @override
@@ -33,6 +35,7 @@ class LabelledFormInput extends StatelessWidget {
                 color: HexColor.fromHex("3C3E49"))),
         TextFormField(
           controller: controller,
+
           style: GoogleFonts.lato(
               fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white),
           onTap: () {},

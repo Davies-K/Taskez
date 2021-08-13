@@ -23,18 +23,18 @@ class GradientColorBall extends StatelessWidget {
           valueListenable: valueChanger,
           builder: (BuildContext context, _, __) {
             return Container(
-              width: 80,
-              height: 80,
+              width: 70,
+              height: 70,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(15.0),
                   border: (selectIndex == valueChanger.value)
-                      ? Border.all(color: HexColor.fromHex("266FFE"), width: 5)
+                      ? Border.all(color: HexColor.fromHex("266FFE"), width: 2)
                       : Border.all(
                           width: 0, color: HexColor.fromHex("181A1F"))),
               child: Center(
                 child: Container(
-                    width: 30,
-                    height: 30,
+                    width: 20,
+                    height: 20,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                             begin: Alignment.topLeft,
