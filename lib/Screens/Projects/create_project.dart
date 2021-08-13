@@ -137,11 +137,11 @@ class CreateProjectScreen extends StatelessWidget {
                 AppSpaces.verticalSpace40,
                 ProjectSelectableContainer(
                   activated: false,
-                  header: "Sub task completed 🎉",
+                  header: "Sub task completed ",
                 ),
                 ProjectSelectableContainer(
                   activated: true,
-                  header: "Unity Gaming",
+                  header: "Unity Gaming ",
                 ),
                 AppSpaces.verticalSpace40,
                 Container(

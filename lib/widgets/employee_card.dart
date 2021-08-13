@@ -20,20 +20,29 @@ class EmployeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool newBool = this.activated;
+    ValueNotifier<bool> _totalDueTrigger = ValueNotifier(newBool);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: Container(
-          child: activated
-              ? ActiveEmployeeCard(
-                  color: backgroundColor,
-                  employeeImage: employeeImage,
-                  employeeName: employeeName,
-                  employeePosition: employeePosition)
-              : InactiveEmployeeCard(
-                  color: backgroundColor,
-                  employeeImage: employeeImage,
-                  employeeName: employeeName,
-                  employeePosition: employeePosition)),
+      child: ValueListenableBuilder(
+          valueListenable: _totalDueTrigger,
+          builder: (BuildContext context, _, __) {
+            return Container(
+                child: _totalDueTrigger.value
+                    ? ActiveEmployeeCard(
+                        color: backgroundColor,
+                        notifier: _totalDueTrigger,
+                        employeeImage: employeeImage,
+                        employeeName: employeeName,
+                        employeePosition: employeePosition)
+                    : InactiveEmployeeCard(
+                        color: backgroundColor,
+                        notifier: _totalDueTrigger,
+                        employeeImage: employeeImage,
+                        employeeName: employeeName,
+                        employeePosition: employeePosition));
+          }),
     );
   }
 }

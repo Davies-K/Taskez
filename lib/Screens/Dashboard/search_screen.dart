@@ -36,13 +36,13 @@ class SearchScreen extends StatelessWidget {
                 Expanded(
                     flex: 1,
                     child: Container(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 20),
                       height: 60,
                       child: Text("Cancel",
                           textAlign: TextAlign.right,
                           style: GoogleFonts.lato(
                               color: HexColor.fromHex("616575"),
-                              fontSize: 20,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold)),
                     )),
               ],

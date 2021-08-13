@@ -7,11 +7,13 @@ import 'package:taskez/widgets/dummy/profile_dummy.dart';
 class ProjectTaskActiveCard extends StatelessWidget {
   final String header;
   final String backgroundColor;
+  final ValueNotifier<bool> notifier;
   final String image;
   final String date;
   const ProjectTaskActiveCard(
       {Key? key,
       required this.header,
+      required this.notifier,
       required this.backgroundColor,
       required this.image,
       required this.date})
@@ -19,93 +21,99 @@ class ProjectTaskActiveCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
-      child: Container(
-          width: double.infinity,
-          height: 100,
-          padding: EdgeInsets.all(20.0),
-          decoration: BoxDecoration(
-              color: AppColors.primaryBackgroundColor,
-              borderRadius: BorderRadius.circular(10)),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Row(children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-                child: ClipOval(
-                  child: Center(
-                    child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Colors.pink,
-                                  AppColors.lightMauveBackgroundColor
-                                ]),
-                            shape: BoxShape.circle),
+    return InkWell(
+      onTap: () {
+        notifier.value = !notifier.value;
+      },
+      child: Slidable(
+        actionPane: SlidableDrawerActionPane(),
+        actionExtentRatio: 0.25,
+        child: Container(
+            width: double.infinity,
+            height: 100,
+            padding: EdgeInsets.all(20.0),
+            decoration: BoxDecoration(
+                color: AppColors.primaryBackgroundColor,
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.black),
+                      child: ClipOval(
                         child: Center(
-                            child: Container(
-                                width: 25,
-                                height: 25,
-                                decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    shape: BoxShape.circle),
-                                child: Center(
-                                    child: Container(
-                                        width: 12,
-                                        height: 12,
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            shape: BoxShape.circle)))))),
-                  ),
-                ),
-              ),
-              AppSpaces.horizontalSpace20,
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(header,
-                        style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18)),
-                    Text(date,
-                        style:
-                            GoogleFonts.lato(color: HexColor.fromHex("EA9EEE")))
-                  ])
-            ]),
-            // replace with image
-            ProfileDummy(
-                color: HexColor.fromHex(backgroundColor),
-                dummyType: ProfileDummyType.Image,
-                image: this.image,
-                scale: 1.0),
-          ])),
-      secondaryActions: <Widget>[
-        IconSlideAction(
-          //caption: 'More',
-          color: HexColor.fromHex("B1FEE2"),
-          icon: Icons.share,
+                          child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                      colors: [
+                                        Colors.pink,
+                                        AppColors.lightMauveBackgroundColor
+                                      ]),
+                                  shape: BoxShape.circle),
+                              child: Center(
+                                  child: Container(
+                                      width: 25,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          shape: BoxShape.circle),
+                                      child: Center(
+                                          child: Container(
+                                              width: 12,
+                                              height: 12,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  shape: BoxShape.circle)))))),
+                        ),
+                      ),
+                    ),
+                    AppSpaces.horizontalSpace20,
+                    Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(header,
+                              style: GoogleFonts.lato(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18)),
+                          Text(date,
+                              style: GoogleFonts.lato(
+                                  color: HexColor.fromHex("EA9EEE")))
+                        ])
+                  ]),
+                  // replace with image
+                  ProfileDummy(
+                      color: HexColor.fromHex(backgroundColor),
+                      dummyType: ProfileDummyType.Image,
+                      image: this.image,
+                      scale: 1.0),
+                ])),
+        secondaryActions: <Widget>[
+          IconSlideAction(
+            //caption: 'More',
+            color: HexColor.fromHex("B1FEE2"),
+            icon: Icons.share,
 
-          // onTap: () => _showSnackBar('More'),
-        ),
-        IconSlideAction(
-          //caption: 'Delete',
-          iconWidget: Icon(Icons.delete, size: 35),
-          color: HexColor.fromHex("F5A3FF"),
+            // onTap: () => _showSnackBar('More'),
+          ),
+          IconSlideAction(
+            //caption: 'Delete',
+            iconWidget: Icon(Icons.delete, size: 35),
+            color: HexColor.fromHex("F5A3FF"),
 
-          // onTap: () => _showSnackBar('Delete'),
-        ),
-      ],
+            // onTap: () => _showSnackBar('Delete'),
+          ),
+        ],
+      ),
     );
   }
 }

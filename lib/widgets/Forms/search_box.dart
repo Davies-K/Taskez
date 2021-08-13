@@ -29,7 +29,7 @@ class SearchBox extends StatelessWidget {
           horizontal: 10,
           vertical: 15,
         ),
-        prefix: Padding(
+        prefixIcon: Padding(
           padding: EdgeInsets.only(right: 8.0),
           child: Icon(FeatherIcons.search, color: Colors.white),
         ),

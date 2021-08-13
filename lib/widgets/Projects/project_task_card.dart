@@ -20,22 +20,33 @@ class ProjectTaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        activated
-            ? ProjectTaskInActiveCard(
-                header: header,
-                backgroundColor: backgroundColor,
-                date: date,
-                image: image)
-            : ProjectTaskActiveCard(
-                header: header,
-                backgroundColor: backgroundColor,
-                date: date,
-                image: image,
-              ),
-        AppSpaces.verticalSpace10
-      ],
-    );
+    final bool newBool = this.activated;
+    ValueNotifier<bool> _totalDueTrigger = ValueNotifier(newBool);
+    return ValueListenableBuilder(
+        valueListenable: _totalDueTrigger,
+        builder: (BuildContext context, _, __) {
+          return _totalDueTrigger.value
+              ? Column(
+                  children: [
+                    ProjectTaskInActiveCard(
+                        header: header,
+                        backgroundColor: backgroundColor,
+                        notifier: _totalDueTrigger,
+                        date: date,
+                        image: image),
+                    AppSpaces.verticalSpace10
+                  ],
+                )
+              : Column(children: [
+                  ProjectTaskActiveCard(
+                    header: header,
+                    backgroundColor: backgroundColor,
+                    notifier: _totalDueTrigger,
+                    date: date,
+                    image: image,
+                  ),
+                  AppSpaces.verticalSpace10
+                ]);
+        });
   }
 }

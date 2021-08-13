@@ -16,17 +16,29 @@ class ProjectSelectableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        activated
-            ? InactiveProjectSelectableContainer(
-                header: header,
-              )
-            : ActiveProjectSelectableContainer(
-                header: header,
-              ),
-        AppSpaces.verticalSpace10
-      ],
-    );
+    final bool newBool = this.activated;
+    ValueNotifier<bool> _totalDueTrigger = ValueNotifier(newBool);
+
+    return ValueListenableBuilder(
+        valueListenable: _totalDueTrigger,
+        builder: (BuildContext context, _, __) {
+          return _totalDueTrigger.value
+              ? Column(
+                  children: [
+                    InactiveProjectSelectableContainer(
+                      header: header,
+                      notifier: _totalDueTrigger,
+                    ),
+                    AppSpaces.verticalSpace10
+                  ],
+                )
+              : Column(children: [
+                  ActiveProjectSelectableContainer(
+                    header: header,
+                    notifier: _totalDueTrigger,
+                  ),
+                  AppSpaces.verticalSpace10
+                ]);
+        });
   }
 }

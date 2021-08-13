@@ -11,65 +11,73 @@ class ActiveEmployeeCard extends StatelessWidget {
   final String employeeImage;
   final Color color;
   final String employeePosition;
+  final ValueNotifier<bool> notifier;
 
   const ActiveEmployeeCard(
       {Key? key,
       required this.employeeName,
       required this.employeeImage,
       required this.employeePosition,
+      required this.notifier,
       required this.color})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 100,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
-          ),
-          borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-        padding: EdgeInsets.all(2.0),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: HexColor.fromHex("181A1F")),
-          child: Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    ProfileDummy(
-                      dummyType: ProfileDummyType.Image,
-                      scale: 1.1,
-                      color: color,
-                      image: employeeImage,
-                    ),
-                    AppSpaces.horizontalSpace20,
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(employeeName,
-                              style: GoogleFonts.lato(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18)),
-                          SizedBox(height: 5),
-                          Text(employeePosition,
-                              style: GoogleFonts.lato(
-                                  color: HexColor.fromHex("5A5E6D")))
-                        ])
-                  ]),
-                  Align(alignment: Alignment.topCenter, child: GreenDoneIcon())
-                ],
+    return InkWell(
+      onTap: () {
+        notifier.value = !notifier.value;
+      },
+      child: Container(
+        width: double.infinity,
+        height: 100,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
+            ),
+            borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: EdgeInsets.all(2.0),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: HexColor.fromHex("181A1F")),
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(children: [
+                      ProfileDummy(
+                        dummyType: ProfileDummyType.Image,
+                        scale: 1.1,
+                        color: color,
+                        image: employeeImage,
+                      ),
+                      AppSpaces.horizontalSpace20,
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(employeeName,
+                                style: GoogleFonts.lato(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18)),
+                            SizedBox(height: 5),
+                            Text(employeePosition,
+                                style: GoogleFonts.lato(
+                                    color: HexColor.fromHex("5A5E6D")))
+                          ])
+                    ]),
+                    Align(
+                        alignment: Alignment.topCenter, child: GreenDoneIcon())
+                  ],
+                ),
               ),
             ),
           ),

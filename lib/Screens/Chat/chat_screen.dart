@@ -43,7 +43,10 @@ class ChatScreen extends StatelessWidget {
               number: '12',
             ),
             AppSpaces.verticalSpace20,
-            buildStackedImages(numberOfMembers: "8"),
+            Transform.scale(
+                alignment: Alignment.centerLeft,
+                scale: 0.8,
+                child: buildStackedImages(numberOfMembers: "8")),
             AppSpaces.verticalSpace20,
             BadgedTitle(
               title: "Design",
@@ -51,7 +54,10 @@ class ChatScreen extends StatelessWidget {
               number: '6',
             ),
             AppSpaces.verticalSpace20,
-            buildStackedImages(numberOfMembers: "2"),
+            Transform.scale(
+                alignment: Alignment.centerLeft,
+                scale: 0.8,
+                child: buildStackedImages(numberOfMembers: "2")),
             AppSpaces.verticalSpace20,
             SelectionTab(title: "DIRECT MESSAGES", page: NewMessageScreen()),
             AppSpaces.verticalSpace20,
