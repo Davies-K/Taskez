@@ -1,4 +1,4 @@
-package com.example.taskez
+package com.taskez.io
 
 import io.flutter.embedding.android.FlutterActivity
 

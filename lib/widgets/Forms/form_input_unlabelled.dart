@@ -24,7 +24,7 @@ class UnlabelledFormInput extends StatelessWidget {
       controller: controller,
       autofocus: autofocus ?? false,
       style: GoogleFonts.lato(
-          fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+          fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white),
       onTap: () {},
       keyboardType:
           keyboardType == "text" ? TextInputType.text : TextInputType.number,
@@ -37,7 +37,7 @@ class UnlabelledFormInput extends StatelessWidget {
       decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(
             horizontal: 0,
-            vertical: 20,
+            vertical: 18,
           ),
           suffixIcon: placeholder == "Password"
               ? InkWell(
@@ -54,12 +54,12 @@ class UnlabelledFormInput extends StatelessWidget {
                     controller!.text = "";
                   },
                   child: Icon(FontAwesomeIcons.solidTimesCircle,
-                      color: HexColor.fromHex("3C3E49")),
+                      color: Colors.white70, size: 20),
                 ),
           hintText: placeholder,
           hintStyle: GoogleFonts.lato(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 18,
               color: HexColor.fromHex("3C3E49")),
           filled: false,
           enabledBorder: UnderlineInputBorder(

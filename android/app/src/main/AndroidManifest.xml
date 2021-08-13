@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.taskez">
+    package="com.taskez.io">
    <application
         android:label="taskez"
         android:icon="@mipmap/launcher_icon">
