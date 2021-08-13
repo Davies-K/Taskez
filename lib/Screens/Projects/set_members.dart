@@ -70,7 +70,7 @@ class SelectMembersScreen extends StatelessWidget {
                                         child: ListView(children: [...cards]),
                                       ))
                                     ])))))),
-            AppSpaces.verticalSpace20,
+            //AppSpaces.verticalSpace20,
             AppPrimaryButton(
                 buttonHeight: 50,
                 buttonWidth: 150,
@@ -79,7 +79,7 @@ class SelectMembersScreen extends StatelessWidget {
                   int count = 0;
                   Navigator.of(context).popUntil((_) => count++ >= 2);
                 }),
-            AppSpaces.verticalSpace40,
+            AppSpaces.verticalSpace20,
           ]))
     ]));
   }

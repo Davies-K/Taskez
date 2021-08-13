@@ -30,22 +30,22 @@ class ActiveEmployeeCard extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 100,
+        height: 80,
         decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [Colors.pink, AppColors.lightMauveBackgroundColor],
             ),
-            borderRadius: BorderRadius.circular(20)),
+            borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: EdgeInsets.all(2.0),
           child: DecoratedBox(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
                 color: HexColor.fromHex("181A1F")),
             child: Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(8.0),
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +54,7 @@ class ActiveEmployeeCard extends StatelessWidget {
                     Row(children: [
                       ProfileDummy(
                         dummyType: ProfileDummyType.Image,
-                        scale: 1.1,
+                        scale: 0.85,
                         color: color,
                         image: employeeImage,
                       ),
@@ -67,8 +67,8 @@ class ActiveEmployeeCard extends StatelessWidget {
                                 style: GoogleFonts.lato(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 18)),
-                            SizedBox(height: 5),
+                                    fontSize: 14.2)),
+                            SizedBox(height: 4),
                             Text(employeePosition,
                                 style: GoogleFonts.lato(
                                     color: HexColor.fromHex("5A5E6D")))

@@ -10,17 +10,14 @@ class DashboardAddButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 40,
-      child: InkWell(
-        onTap: iconTapped,
-        child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-                color: AppColors.primaryAccentColor, shape: BoxShape.circle),
-            child: Icon(Icons.add, color: Colors.white)),
-      ),
+    return InkWell(
+      onTap: iconTapped,
+      child: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+              color: AppColors.primaryAccentColor, shape: BoxShape.circle),
+          child: Icon(Icons.add, color: Colors.white)),
     );
   }
 }

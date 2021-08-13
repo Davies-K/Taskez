@@ -27,16 +27,16 @@ class InactiveEmployeeCard extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 100,
-        padding: EdgeInsets.all(20.0),
+        height: 80,
+        padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
             color: AppColors.primaryBackgroundColor,
             // border: Border.all(color: AppColors.primaryBackgroundColor, width: 4),
-            borderRadius: BorderRadius.circular(20)),
+            borderRadius: BorderRadius.circular(16)),
         child: Row(children: [
           ProfileDummy(
             dummyType: ProfileDummyType.Image,
-            scale: 1.1,
+            scale: 0.85,
             color: color,
             image: employeeImage,
           ),
@@ -49,7 +49,7 @@ class InactiveEmployeeCard extends StatelessWidget {
                     style: GoogleFonts.lato(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
-                        fontSize: 18)),
+                        fontSize: 14.4)),
                 Text(employeePosition,
                     style: GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
               ])

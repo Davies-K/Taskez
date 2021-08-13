@@ -15,38 +15,36 @@ class DashboardAddBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: 1,
-        child: Column(children: [
-          AppSpaces.verticalSpace10,
-          BottomSheetHolder(),
-          AppSpaces.verticalSpace10,
-          LabelledOption(
-            label: 'Create Task',
-            icon: Icons.add_to_queue,
-            callback: () {
-              _createTask(context);
-            },
-          ),
-          LabelledOption(
-              label: 'Create Project',
-              icon: Icons.device_hub,
-              callback: () {
-                Get.to(() => CreateProjectScreen());
-              }),
-          LabelledOption(
-              label: 'Create team',
-              icon: Icons.people,
-              callback: () {
-                Get.to(() => SelectMembersScreen());
-              }),
-          LabelledOption(
-              label: 'Create Event',
-              icon: Icons.fiber_smart_record,
-              callback: () {
-                Get.to(() => TaskDueDate());
-              }),
-        ]));
+    return Column(children: [
+      AppSpaces.verticalSpace10,
+      BottomSheetHolder(),
+      AppSpaces.verticalSpace10,
+      LabelledOption(
+        label: 'Create Task',
+        icon: Icons.add_to_queue,
+        callback: () {
+          _createTask(context);
+        },
+      ),
+      LabelledOption(
+          label: 'Create Project',
+          icon: Icons.device_hub,
+          callback: () {
+            Get.to(() => CreateProjectScreen());
+          }),
+      LabelledOption(
+          label: 'Create team',
+          icon: Icons.people,
+          callback: () {
+            Get.to(() => SelectMembersScreen());
+          }),
+      LabelledOption(
+          label: 'Create Event',
+          icon: Icons.fiber_smart_record,
+          callback: () {
+            Get.to(() => TaskDueDate());
+          }),
+    ]);
   }
 
   void _createTask(context) {
