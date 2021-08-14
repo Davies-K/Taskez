@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.taskez.io">
+   <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="taskez"
+        android:label="Taskez"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
