@@ -1,7 +1,7 @@
 # Taskez
 <p align="center">A productivity mobile application UI kit built with Flutter</p>
 <p align="center">It is inspired by <a href="https://www.behance.net/gallery/108149857/TaskEz-Productivity-App-iOS-UI-Kit"> Taskez IOS UI kit.</a></p>
-<div align="center"> <a href="#" target="_blank"><img src="screenshots/playstore.png"/></a></div>
+<!-- <div align="center"> <a href="#" target="_blank"><img src="screenshots/playstore.png"/></a></div> -->
 <p align="center">
   <!-- <img src="screenshots/screenshot-1.png" width="100%" title="homescreen1"> -->
   <img src="screenshots/screenshot-2.png" width="100%" title="homescreen2">
