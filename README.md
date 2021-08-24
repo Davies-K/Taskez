@@ -3,12 +3,13 @@
 <h3 align="center">Designs and inspiration by <a href="https://www.behance.net/gallery/108149857/TaskEz-Productivity-App-iOS-UI-Kit"> Taskez IOS UI kit.</a></h3>
 <div align="center"> <a href="https://play.google.com/store/apps/details?id=com.taskez.io" target="_blank"><img src="screenshots/playstore.png"/></a></div> 
 <p align="center"> Application Flow - <a href="https://youtu.be/VpYzfUInOYE">Youtube</a></p>
-<p align="center"><a href="https://www.buymeacoffee.com/davieskwarteng" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a></p> 
+
 ### Show some :heart: and star the repo to support the project
 
 [![GitHub stars](https://img.shields.io/github/stars/Davies-K/Taskez.svg?style=social&label=Star)](https://github.com/Davies-K/Taskez) [![GitHub forks](https://img.shields.io/github/forks/Davies-K/Taskez.svg?style=social&label=Fork)](https://github.com/Davies-K/Taskez/fork) [![GitHub watchers](https://img.shields.io/github/watchers/Davies-K/Taskez.svg?style=social&label=Watch)](https://github.com/Davies-K/Taskez) [![GitHub followers](https://img.shields.io/github/followers/Davies-K.svg?style=social&label=Follow)](https://github.com/Davies-K/Taskez)
 [![Twitter Follow](https://img.shields.io/twitter/follow/SterlinJohn.svg?style=social)](https://twitter.com/@SterlinJohn)
 
+<p><a href="https://www.buymeacoffee.com/davieskwarteng" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a></p> 
 
 <div>
   <p>Screenshots</p>
