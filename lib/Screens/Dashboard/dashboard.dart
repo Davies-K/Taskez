@@ -83,14 +83,12 @@ class Dashboard extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (BuildContext context) {
-        return Container(
-            height: Utils.screenHeight * 1.05,
-            child: DashboardSettingsBottomSheet(
-              totalTaskNotifier: _totalTaskTrigger,
-              totalDueNotifier: _totalDueTrigger,
-              workingOnNotifier: _workingOnTrigger,
-              totalCompletedNotifier: _totalCompletedTrigger,
-            ));
+        return DashboardSettingsBottomSheet(
+          totalTaskNotifier: _totalTaskTrigger,
+          totalDueNotifier: _totalDueTrigger,
+          workingOnNotifier: _workingOnTrigger,
+          totalCompletedNotifier: _totalCompletedTrigger,
+        );
       },
     );
   }

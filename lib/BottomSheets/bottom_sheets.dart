@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/project_detail_sheet.dart';
 
@@ -7,22 +8,13 @@ class TaskezBottomSheet {
 }
 
 showSettingsBottomSheet(context) {
-  showModalBottomSheet(
-    isScrollControlled: true,
-    context: context,
-    backgroundColor: AppColors.primaryBackgroundColor,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(
-        top: Radius.circular(20),
+  return Get.bottomSheet(ProjectDetailBottomSheet(),
+      backgroundColor: AppColors.primaryBackgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
       ),
-    ),
-    clipBehavior: Clip.antiAliasWithSaveLayer,
-    builder: (BuildContext context) {
-      return Container(
-          // padding: EdgeInsets.only(bottom: 20),
-          height: Utils.screenHeight * 1.4,
-          decoration: BoxDecoration(),
-          child: ProjectDetailBottomSheet());
-    },
-  );
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      isScrollControlled: true);
 }

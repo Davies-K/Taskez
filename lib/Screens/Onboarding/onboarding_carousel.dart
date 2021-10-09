@@ -108,8 +108,9 @@ class _OnboardingCarouselState extends State<OnboardingCarousel> {
                         ),
                         SizedBox(height: 10.0),
                         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                          OutlinedButtonWithImage(width: 180, imageUrl: "assets/google_icon.png"),
-                          OutlinedButtonWithImage(width: 180, imageUrl: "assets/facebook_icon.png")
+                          Expanded(child: OutlinedButtonWithImage(imageUrl: "assets/google_icon.png")),
+                          SizedBox(width: 20),
+                          Expanded(child: OutlinedButtonWithImage(imageUrl: "assets/facebook_icon.png"))
                         ]),
                         Padding(
                           padding: const EdgeInsets.all(10.0),

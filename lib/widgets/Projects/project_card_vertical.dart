@@ -45,19 +45,22 @@ class ProjectCardVertical extends StatelessWidget {
             Text(category, style: GoogleFonts.lato(color: HexColor.fromHex("626677"))),
             Expanded(
                 child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Container(
-                  width: 100,
-                  height: 5,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: HexColor.fromHex("343840")),
-                  child: Row(children: [
-                    Expanded(
-                        flex: ratingsUpperNumber,
-                        child: Container(
-                            decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [darken(HexColor.fromHex(color)), HexColor.fromHex(color)])))),
-                    Expanded(flex: ratingsLowerNumber, child: SizedBox())
-                  ])),
+              Expanded(
+                child: Container(
+                    height: 5,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10), color: HexColor.fromHex("343840")),
+                    child: Row(children: [
+                      Expanded(
+                          flex: ratingsUpperNumber,
+                          child: Container(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                      colors: [darken(HexColor.fromHex(color)), HexColor.fromHex(color)])))),
+                      Expanded(flex: ratingsLowerNumber, child: SizedBox())
+                    ])),
+              ),
+              AppSpaces.horizontalSpace10,
               Text("$ratingsUpperNumber/$ratingsLowerNumber", style: GoogleFonts.lato(color: Colors.white))
             ]))
           ])),

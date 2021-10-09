@@ -29,7 +29,7 @@ class DashboardNav extends StatelessWidget {
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         InkWell(
           onTap: () {
-            Get.to(() => page);
+            if (page != null) Get.to(() => page!);
           },
           child: Stack(children: <Widget>[
             Icon(icon, color: Colors.white, size: 30),

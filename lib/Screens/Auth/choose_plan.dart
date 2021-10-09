@@ -61,6 +61,7 @@ class ChoosePlan extends StatelessWidget {
                                   header: "It's Free",
                                   subHeader: "For team\nfrom 1 - 5",
                                 ),
+                                AppSpaces.horizontalSpace20,
                                 PlanCard(
                                     notifierValue: _planContainerTrigger,
                                     selectedIndex: 1,

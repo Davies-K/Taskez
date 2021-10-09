@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:get/get.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Screens/Dashboard/dashboard.dart';
 import 'package:taskez/Values/values.dart';
@@ -34,9 +35,7 @@ class _TimelineState extends State<Timeline> {
           ValueListenableBuilder(
               valueListenable: bottomNavigatorTrigger,
               builder: (BuildContext context, _, __) {
-                return PageStorage(
-                    child: dashBoardScreens[bottomNavigatorTrigger.value],
-                    bucket: bucket);
+                return PageStorage(child: dashBoardScreens[bottomNavigatorTrigger.value], bucket: bucket);
               })
         ]),
         bottomNavigationBar: Container(
@@ -53,37 +52,25 @@ class _TimelineState extends State<Timeline> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  BottomNavigationItem(
-                      itemIndex: 0,
-                      notifier: bottomNavigatorTrigger,
-                      icon: Icons.widgets),
+                  BottomNavigationItem(itemIndex: 0, notifier: bottomNavigatorTrigger, icon: Icons.widgets),
                   Spacer(),
-                  BottomNavigationItem(
-                      itemIndex: 1,
-                      notifier: bottomNavigatorTrigger,
-                      icon: FeatherIcons.clipboard),
+                  BottomNavigationItem(itemIndex: 1, notifier: bottomNavigatorTrigger, icon: FeatherIcons.clipboard),
                   Spacer(),
                   DashboardAddButton(
                     iconTapped: (() {
-                      _showAddSettings(context);
+                      _showAddSettings();
                     }),
                   ),
                   Spacer(),
-                  BottomNavigationItem(
-                      itemIndex: 2,
-                      notifier: bottomNavigatorTrigger,
-                      icon: FeatherIcons.bell),
+                  BottomNavigationItem(itemIndex: 2, notifier: bottomNavigatorTrigger, icon: FeatherIcons.bell),
                   Spacer(),
-                  BottomNavigationItem(
-                      itemIndex: 3,
-                      notifier: bottomNavigatorTrigger,
-                      icon: FeatherIcons.search)
+                  BottomNavigationItem(itemIndex: 3, notifier: bottomNavigatorTrigger, icon: FeatherIcons.search)
                 ])));
   }
 
-  _showAddSettings(context) {
-    showModalBottomSheet(
-      context: context,
+  _showAddSettings() {
+    Get.bottomSheet(
+      DashboardAddBottomSheet(),
       backgroundColor: AppColors.primaryBackgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -91,12 +78,6 @@ class _TimelineState extends State<Timeline> {
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (BuildContext context) {
-        return Container(
-            height: Utils.screenHeight * 0.8,
-            decoration: BoxDecoration(),
-            child: DashboardAddBottomSheet());
-      },
     );
   }
 }
