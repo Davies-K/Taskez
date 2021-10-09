@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:taskez/Values/values.dart';
 
 class GradientColorBall extends StatelessWidget {
