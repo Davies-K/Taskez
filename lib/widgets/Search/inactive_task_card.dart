@@ -9,11 +9,7 @@ class InactiveTaskCard extends StatelessWidget {
   final ValueNotifier<bool> notifier;
   final String date;
   const InactiveTaskCard(
-      {Key? key,
-      required this.notifier,
-      required this.header,
-      required this.subHeader,
-      required this.date})
+      {Key? key, required this.notifier, required this.header, required this.subHeader, required this.date})
       : super(key: key);
 
   @override
@@ -27,11 +23,9 @@ class InactiveTaskCard extends StatelessWidget {
           height: 100,
           padding: EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              border:
-                  Border.all(color: AppColors.primaryBackgroundColor, width: 4),
+              border: Border.all(color: AppColors.primaryBackgroundColor, width: 4),
               borderRadius: BorderRadius.circular(10)),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Row(children: [
               Container(
                   width: 50,
@@ -47,19 +41,12 @@ class InactiveTaskCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(header,
-                        style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18)),
-                    Text(subHeader,
-                        style:
-                            GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
+                        style: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18)),
+                    Text(subHeader, style: GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
                   ])
             ]),
-            Text(date,
-                style: GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
+            Text(date, style: GoogleFonts.lato(color: HexColor.fromHex("5A5E6D")))
           ])),
     );
-    ;
   }
 }

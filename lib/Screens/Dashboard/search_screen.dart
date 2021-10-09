@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/Buttons/primary_tab_buttons.dart';
-import 'package:taskez/widgets/Buttons/text_button.dart';
 import 'package:taskez/widgets/Forms/search_box.dart';
 import 'package:taskez/widgets/Search/task_card.dart';
 import 'package:taskez/widgets/Shapes/app_settings_icon.dart';
@@ -26,11 +25,8 @@ class SearchScreen extends StatelessWidget {
                   flex: 3,
                   child: Container(
                     height: 60,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                    child: SearchBox(
-                        placeholder: 'Search Dashboard',
-                        controller: _searchController),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    child: SearchBox(placeholder: 'Search Dashboard', controller: _searchController),
                   ),
                 ),
                 Expanded(
@@ -41,9 +37,7 @@ class SearchScreen extends StatelessWidget {
                       child: Text("Cancel",
                           textAlign: TextAlign.right,
                           style: GoogleFonts.lato(
-                              color: HexColor.fromHex("616575"),
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold)),
+                              color: HexColor.fromHex("616575"), fontSize: 16, fontWeight: FontWeight.bold)),
                     )),
               ],
             ),
@@ -53,18 +47,9 @@ class SearchScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  PrimaryTabButton(
-                      buttonText: "Task",
-                      itemIndex: 0,
-                      notifier: _settingsButtonTrigger),
-                  PrimaryTabButton(
-                      buttonText: "Mention",
-                      itemIndex: 1,
-                      notifier: _settingsButtonTrigger),
-                  PrimaryTabButton(
-                      buttonText: "Files",
-                      itemIndex: 2,
-                      notifier: _settingsButtonTrigger)
+                  PrimaryTabButton(buttonText: "Task", itemIndex: 0, notifier: _settingsButtonTrigger),
+                  PrimaryTabButton(buttonText: "Mention", itemIndex: 1, notifier: _settingsButtonTrigger),
+                  PrimaryTabButton(buttonText: "Files", itemIndex: 2, notifier: _settingsButtonTrigger)
                 ],
               ),
               Container(
@@ -77,30 +62,13 @@ class SearchScreen extends StatelessWidget {
             Expanded(
               child: ListView(children: [
                 SearchTaskCard(
-                    activated: false,
-                    header: "Unity Dashboard",
-                    subHeader: "in UI Design Kit",
-                    date: "Dec 2"),
+                    activated: false, header: "Unity Dashboard", subHeader: "in UI Design Kit", date: "Dec 2"),
+                SearchTaskCard(activated: true, header: "Unity Gaming", subHeader: "Coded Template", date: "Nov 4"),
                 SearchTaskCard(
-                    activated: true,
-                    header: "Unity Gaming",
-                    subHeader: "Coded Template",
-                    date: "Nov 4"),
+                    activated: false, header: "Gitlab Landing Page", subHeader: "in UI Design Kit", date: "Nov 29"),
+                SearchTaskCard(activated: true, header: "Portfolio Design", subHeader: "Tesla Inc.", date: "Nov 26"),
                 SearchTaskCard(
-                    activated: false,
-                    header: "Gitlab Landing Page",
-                    subHeader: "in UI Design Kit",
-                    date: "Nov 29"),
-                SearchTaskCard(
-                    activated: true,
-                    header: "Portfolio Design",
-                    subHeader: "Tesla Inc.",
-                    date: "Nov 26"),
-                SearchTaskCard(
-                    activated: true,
-                    header: "Stuart'\s Workplace",
-                    subHeader: "Coded Template",
-                    date: "Aug 1"),
+                    activated: true, header: "Stuart'\s Workplace", subHeader: "Coded Template", date: "Aug 1"),
               ]),
             )
           ]),

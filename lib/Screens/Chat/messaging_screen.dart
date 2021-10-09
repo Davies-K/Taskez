@@ -10,12 +10,7 @@ class MessagingScreen extends StatelessWidget {
   final String userName;
   final String color;
   final String image;
-  MessagingScreen(
-      {Key? key,
-      required this.userName,
-      required this.color,
-      required this.image})
-      : super(key: key);
+  MessagingScreen({Key? key, required this.userName, required this.color, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +20,7 @@ class MessagingScreen extends StatelessWidget {
       "assets/slider-background-3.png"
     ];
 
-    List<SentImage> imageCards = List.generate(
-        sentImage.length, (index) => SentImage(image: sentImage[index]));
+    List<SentImage> imageCards = List.generate(sentImage.length, (index) => SentImage(image: sentImage[index]));
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
@@ -39,7 +33,7 @@ class MessagingScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                taskezAppHeader(
+                TaskezAppHeader(
                   title: "$userName",
                   messagingPage: true,
                   widget: Row(children: [
@@ -51,10 +45,8 @@ class MessagingScreen extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0),
-                            border: Border.all(
-                                width: 3, color: HexColor.fromHex("31333D"))),
-                        child: Center(
-                            child: Icon(Icons.more_vert, color: Colors.white))),
+                            border: Border.all(width: 3, color: HexColor.fromHex("31333D"))),
+                        child: Center(child: Icon(Icons.more_vert, color: Colors.white))),
                   ]),
                 ),
               ],
@@ -72,21 +64,18 @@ class MessagingScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MessengerDetails(
-                        image: image, color: color, userName: userName),
+                    MessengerDetails(image: image, color: color, userName: userName),
                     Padding(
                       padding: EdgeInsets.only(left: 70.0),
                       child: Container(
                           alignment: Alignment.centerLeft,
                           width: 250,
-                          padding: EdgeInsets.only(
-                              left: 20, right: 20, top: 15, bottom: 15),
+                          padding: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
                           decoration: BoxDecoration(
                             color: AppColors.primaryBackgroundColor,
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: Text("Hi man, how are you doing?",
-                              style: GoogleFonts.lato(color: Colors.white))),
+                          child: Text("Hi man, how are you doing?", style: GoogleFonts.lato(color: Colors.white))),
                     )
                   ],
                 ),
@@ -96,8 +85,7 @@ class MessagingScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MessengerDetails(
-                        image: image, color: color, userName: userName),
+                    MessengerDetails(image: image, color: color, userName: userName),
                     Padding(
                       padding: EdgeInsets.only(left: 70.0),
                       child: Column(
@@ -107,8 +95,7 @@ class MessagingScreen extends StatelessWidget {
                               alignment: Alignment.centerLeft,
                               width: 250,
                               //height: 50,
-                              padding: EdgeInsets.only(
-                                  left: 20, right: 20, top: 15, bottom: 15),
+                              padding: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
                               decoration: BoxDecoration(
                                 color: AppColors.primaryBackgroundColor,
                                 borderRadius: BorderRadius.only(
@@ -116,16 +103,13 @@ class MessagingScreen extends StatelessWidget {
                                     topRight: Radius.circular(50),
                                     bottomRight: Radius.circular(50)),
                               ),
-                              child: Text("Just one question 😂",
-                                  style:
-                                      GoogleFonts.lato(color: Colors.white))),
+                              child: Text("Just one question 😂", style: GoogleFonts.lato(color: Colors.white))),
                           AppSpaces.verticalSpace10,
                           Container(
                               alignment: Alignment.centerLeft,
                               width: 250,
                               //height: 50,
-                              padding: EdgeInsets.only(
-                                  left: 20, right: 20, top: 15, bottom: 15),
+                              padding: EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 15),
                               decoration: BoxDecoration(
                                 color: AppColors.primaryBackgroundColor,
                                 borderRadius: BorderRadius.only(
@@ -133,16 +117,12 @@ class MessagingScreen extends StatelessWidget {
                                     topRight: Radius.circular(50),
                                     bottomRight: Radius.circular(50)),
                               ),
-                              child: Text(
-                                  "Can you please send me your latest mockup? ",
-                                  style:
-                                      GoogleFonts.lato(color: Colors.white))),
+                              child: Text("Can you please send me your latest mockup? ",
+                                  style: GoogleFonts.lato(color: Colors.white))),
                           AppSpaces.verticalSpace10,
                           Container(
                             height: 120,
-                            child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [...imageCards]),
+                            child: ListView(scrollDirection: Axis.horizontal, children: [...imageCards]),
                           )
                         ],
                       ),
@@ -166,8 +146,7 @@ class MessagingScreen extends StatelessWidget {
                               color: AppColors.primaryBackgroundColor,
                               borderRadius: BorderRadius.circular(50),
                             ),
-                            child: Icon(Icons.more_horiz,
-                                color: HexColor.fromHex("7F8088"), size: 40)),
+                            child: Icon(Icons.more_horiz, color: HexColor.fromHex("7F8088"), size: 40)),
                       ],
                     ))
               ]))),
@@ -193,8 +172,7 @@ class SentImage extends StatelessWidget {
       ),
       child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
-          child: Image(
-              width: 200, fit: BoxFit.fitWidth, image: AssetImage(image))),
+          child: Image(width: 200, fit: BoxFit.fitWidth, image: AssetImage(image))),
     );
   }
 }
@@ -216,14 +194,12 @@ class SenderMessage extends StatelessWidget {
           Container(
               alignment: Alignment.centerLeft,
               width: 200,
-              padding:
-                  EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 12),
+              padding: EdgeInsets.only(left: 20, right: 20, top: 12, bottom: 12),
               decoration: BoxDecoration(
                 color: AppColors.primaryAccentColor,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child:
-                  Text(message, style: GoogleFonts.lato(color: Colors.white))),
+              child: Text(message, style: GoogleFonts.lato(color: Colors.white))),
         ],
       ),
     );

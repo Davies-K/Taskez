@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:taskez/Values/values.dart';
 
-enum ProfileDummyType {
-  Icon,
-  Image,
-  Button
-}
+enum ProfileDummyType { Icon, Image, Button }
 
 class ProfileDummy extends StatelessWidget {
   ProfileDummyType dummyType;
@@ -13,13 +8,7 @@ class ProfileDummy extends StatelessWidget {
   String? image;
   Color? color;
   IconData? icon;
-  ProfileDummy(
-      {Key? key,
-      required this.dummyType,
-      required this.scale,
-      required this.color,
-      this.icon,
-      this.image})
+  ProfileDummy({Key? key, required this.dummyType, required this.scale, required this.color, this.icon, this.image})
       : super(key: key);
 
   @override

@@ -6,7 +6,6 @@ import 'package:taskez/Screens/Task/task_due_date.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/bottom_sheet_holder.dart';
 import 'package:taskez/widgets/Onboarding/labelled_option.dart';
-import 'package:taskez/widgets/table_calendar.dart';
 
 import 'create_task.dart';
 
@@ -62,9 +61,7 @@ class DashboardAddBottomSheet extends StatelessWidget {
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
-          child: Container(
-              height: Utils.screenHeight * 0.8 - 20,
-              child: CreateTaskBottomSheet()),
+          child: Container(height: Utils.screenHeight * 0.8 - 20, child: CreateTaskBottomSheet()),
         );
       },
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'Screens/splash_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Taskez',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          brightness: Brightness.light,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
       ),
       home: SplashScreen(),

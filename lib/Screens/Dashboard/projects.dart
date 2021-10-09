@@ -20,7 +20,7 @@ class ProjectScreen extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.only(right: 20, left: 20),
         child: SafeArea(
-          child: taskezAppHeader(
+          child: TaskezAppHeader(
             title: "Projects",
             widget: AppAddIcon(scale: 1.0),
           ),
@@ -29,24 +29,14 @@ class ProjectScreen extends StatelessWidget {
       AppSpaces.verticalSpace20,
       Padding(
         padding: const EdgeInsets.only(right: 20, left: 20),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           //tab indicators
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              PrimaryTabButton(
-                  buttonText: "Favorites",
-                  itemIndex: 0,
-                  notifier: _settingsButtonTrigger),
-              PrimaryTabButton(
-                  buttonText: "Recent",
-                  itemIndex: 1,
-                  notifier: _settingsButtonTrigger),
-              PrimaryTabButton(
-                  buttonText: "All",
-                  itemIndex: 2,
-                  notifier: _settingsButtonTrigger)
+              PrimaryTabButton(buttonText: "Favorites", itemIndex: 0, notifier: _settingsButtonTrigger),
+              PrimaryTabButton(buttonText: "Recent", itemIndex: 1, notifier: _settingsButtonTrigger),
+              PrimaryTabButton(buttonText: "All", itemIndex: 2, notifier: _settingsButtonTrigger)
             ],
           ),
           Container(
@@ -60,10 +50,8 @@ class ProjectScreen extends StatelessWidget {
                       valueListenable: _switchGridLayout,
                       builder: (BuildContext context, _, __) {
                         return _switchGridLayout.value
-                            ? Icon(FeatherIcons.clipboard,
-                                color: Colors.white, size: 30)
-                            : Icon(FeatherIcons.grid,
-                                color: Colors.white, size: 30);
+                            ? Icon(FeatherIcons.clipboard, color: Colors.white, size: 30)
+                            : Icon(FeatherIcons.grid, color: Colors.white, size: 30);
                       })))
         ]),
       ),
@@ -89,24 +77,18 @@ class ProjectScreen extends StatelessWidget {
                   ),
                   itemBuilder: (_, index) => _switchGridLayout.value
                       ? ProjectCardVertical(
-                          projectName: AppData.productData[index]
-                              ['projectName'],
+                          projectName: AppData.productData[index]['projectName'],
                           category: AppData.productData[index]['category'],
                           color: AppData.productData[index]['color'],
-                          ratingsUpperNumber: AppData.productData[index]
-                              ['ratingsUpperNumber'],
-                          ratingsLowerNumber: AppData.productData[index]
-                              ['ratingsLowerNumber'],
+                          ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
                         )
                       : ProjectCardHorizontal(
-                          projectName: AppData.productData[index]
-                              ['projectName'],
+                          projectName: AppData.productData[index]['projectName'],
                           category: AppData.productData[index]['category'],
                           color: AppData.productData[index]['color'],
-                          ratingsUpperNumber: AppData.productData[index]
-                              ['ratingsUpperNumber'],
-                          ratingsLowerNumber: AppData.productData[index]
-                              ['ratingsLowerNumber'],
+                          ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
                         ),
                   itemCount: AppData.productData.length,
                 );

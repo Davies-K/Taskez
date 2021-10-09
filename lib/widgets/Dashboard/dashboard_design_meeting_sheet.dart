@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/bottom_sheet_holder.dart';
 import 'package:taskez/widgets/Dashboard/sheet_goto_calendar.dart';
@@ -23,8 +22,7 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
       AppSpaces.verticalSpace10,
       Padding(
           padding: EdgeInsets.all(20),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(
               children: [
                 Container(
@@ -32,13 +30,11 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
                     height: 20,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        gradient: LinearGradient(
-                            begin: FractionalOffset.topLeft,
-                            end: FractionalOffset.bottomRight,
-                            colors: [
-                              HexColor.fromHex("8DCB73"),
-                              HexColor.fromHex("8DCB73"),
-                            ]))),
+                        gradient:
+                            LinearGradient(begin: FractionalOffset.topLeft, end: FractionalOffset.bottomRight, colors: [
+                          HexColor.fromHex("8DCB73"),
+                          HexColor.fromHex("8DCB73"),
+                        ]))),
                 AppSpaces.horizontalSpace20,
                 Expanded(
                   child: UnlabelledFormInput(
@@ -100,9 +96,7 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
       builder: (BuildContext context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
-          child: Container(
-              height: Utils.screenHeight * 1.5,
-              child: DashboardMeetingDetails()),
+          child: Container(height: Utils.screenHeight * 1.5, child: DashboardMeetingDetails()),
         );
       },
     );

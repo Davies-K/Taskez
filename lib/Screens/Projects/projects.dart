@@ -18,9 +18,8 @@ class Projects extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: SafeArea(
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              taskezAppHeader(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              TaskezAppHeader(
                 title: "Chat",
                 widget: AppAddIcon(),
               ),

@@ -4,13 +4,11 @@ import 'package:taskez/Values/values.dart';
 
 import 'back_button.dart';
 
-class taskezAppHeader extends StatelessWidget {
+class TaskezAppHeader extends StatelessWidget {
   final String title;
   final bool? messagingPage;
   final Widget? widget;
-  const taskezAppHeader(
-      {Key? key, this.widget, required this.title, this.messagingPage})
-      : super(key: key);
+  const TaskezAppHeader({Key? key, this.widget, required this.title, this.messagingPage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +19,11 @@ class taskezAppHeader extends StatelessWidget {
               Container(
                   width: 10,
                   height: 10,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: HexColor.fromHex("94D57B"))),
+                  decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor.fromHex("94D57B"))),
               SizedBox(width: 5),
-              Text(this.title,
-                  style: GoogleFonts.lato(fontSize: 20, color: Colors.white))
+              Text(this.title, style: GoogleFonts.lato(fontSize: 20, color: Colors.white))
             ])
-          : Text(this.title,
-              style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
+          : Text(this.title, style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
       widget!
     ]);
   }

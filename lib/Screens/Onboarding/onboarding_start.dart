@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:taskez/Screens/Auth/email_address.dart';
 import 'package:taskez/Screens/Onboarding/onboarding_carousel.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
@@ -25,9 +24,7 @@ class OnboardingStart extends StatelessWidget {
         Positioned(
             top: Utils.screenHeight,
             left: 0,
-            child: Transform.rotate(
-                angle: -math.pi / 2,
-                child: CustomPaint(painter: BackgroundHexagon()))),
+            child: Transform.rotate(angle: -math.pi / 2, child: CustomPaint(painter: BackgroundHexagon()))),
         //images
         Positioned(
             top: Utils.screenHeight * 0.7,
@@ -35,10 +32,7 @@ class OnboardingStart extends StatelessWidget {
             child: BackgroundImage(
                 scale: 1.0,
                 image: "assets/man-head.png",
-                gradient: [
-                  HexColor.fromHex("92ECEC"),
-                  HexColor.fromHex("92ECEC")
-                ])),
+                gradient: [HexColor.fromHex("92ECEC"), HexColor.fromHex("92ECEC")])),
 
         Positioned(
             top: Utils.screenHeight * 0.50,
@@ -46,10 +40,7 @@ class OnboardingStart extends StatelessWidget {
             child: BackgroundImage(
                 scale: 0.5,
                 image: "assets/head_cut.png",
-                gradient: [
-                  HexColor.fromHex("FD9871"),
-                  HexColor.fromHex("F7D092")
-                ])),
+                gradient: [HexColor.fromHex("FD9871"), HexColor.fromHex("F7D092")])),
 
         Positioned(
             top: Utils.screenHeight * 0.30,
@@ -57,45 +48,29 @@ class OnboardingStart extends StatelessWidget {
             child: BackgroundImage(
                 scale: 0.4,
                 image: "assets/girl_smile.png",
-                gradient: [
-                  HexColor.fromHex("#a7b2fd"),
-                  HexColor.fromHex("#c1a0fd")
-                ])),
+                gradient: [HexColor.fromHex("#a7b2fd"), HexColor.fromHex("#c1a0fd")])),
 
         //end of images
 
         //Bubble
-        Positioned(
-            top: 80, left: 50, child: Bubble(1.0, HexColor.fromHex("A06AF9"))),
+        Positioned(top: 80, left: 50, child: Bubble(1.0, HexColor.fromHex("A06AF9"))),
 
-        Positioned(
-            top: 130,
-            left: 130,
-            child: Bubble(0.6, HexColor.fromHex("FDA5FF"))),
+        Positioned(top: 130, left: 130, child: Bubble(0.6, HexColor.fromHex("FDA5FF"))),
         //end bubble
 
         Positioned(
             top: Utils.screenHeight * 0.12,
             left: Utils.screenWidth * 0.45,
-            child: LoadingSticker(gradients: [
-              HexColor.fromHex("#F3EEAE"),
-              HexColor.fromHex("F3EFAB"),
-              HexColor.fromHex("#4A88FE")
-            ])),
+            child: LoadingSticker(
+                gradients: [HexColor.fromHex("#F3EEAE"), HexColor.fromHex("F3EFAB"), HexColor.fromHex("#4A88FE")])),
         Positioned(
             top: Utils.screenHeight * 0.50,
             left: Utils.screenWidth * 0.22,
-            child: LoadingSticker(gradients: [
-              HexColor.fromHex("#a7b2fd"),
-              HexColor.fromHex("#c1a0fd")
-            ])),
+            child: LoadingSticker(gradients: [HexColor.fromHex("#a7b2fd"), HexColor.fromHex("#c1a0fd")])),
         Positioned(
             top: Utils.screenHeight * 0.7,
             left: Utils.screenWidth * 0.6,
-            child: LoadingSticker(gradients: [
-              HexColor.fromHex("#a7b2fd"),
-              HexColor.fromHex("#c1a0fd")
-            ])),
+            child: LoadingSticker(gradients: [HexColor.fromHex("#a7b2fd"), HexColor.fromHex("#c1a0fd")])),
         Positioned(
             top: Utils.screenHeight * 1.3,
             left: Utils.screenWidth * 0.83,
@@ -108,9 +83,8 @@ class OnboardingStart extends StatelessWidget {
                 child: Container(
                     width: 200,
                     height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50.0),
-                        color: HexColor.fromHex("B6FFE5")),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(50.0), color: HexColor.fromHex("B6FFE5")),
                     child: Transform.rotate(
                       angle: math.pi / 4,
                       child: Container(
@@ -133,8 +107,7 @@ class OnboardingStart extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         text: 'Task Management ',
-                        style: GoogleFonts.lato(
-                            fontSize: 18, color: HexColor.fromHex("FDA5FF")),
+                        style: GoogleFonts.lato(fontSize: 18, color: HexColor.fromHex("FDA5FF")),
                         children: <TextSpan>[
                           TextSpan(
                             text: '🙌',
@@ -143,10 +116,7 @@ class OnboardingStart extends StatelessWidget {
                       ),
                     ),
                     Text('Lets create\na space\nfor your workflows.',
-                        style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold)),
+                        style: GoogleFonts.lato(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold)),
                     AppSpaces.verticalSpace20,
                     Container(
                       width: 180,
@@ -156,18 +126,12 @@ class OnboardingStart extends StatelessWidget {
                             Get.to(OnboardingCarousel());
                           },
                           style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  HexColor.fromHex("246CFE")),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      side: BorderSide(
-                                          color: HexColor.fromHex("246CFE"))))),
+                              backgroundColor: MaterialStateProperty.all<Color>(HexColor.fromHex("246CFE")),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  side: BorderSide(color: HexColor.fromHex("246CFE"))))),
                           child: Center(
-                              child: Text('Get Started',
-                                  style: GoogleFonts.lato(
-                                      fontSize: 20, color: Colors.white)))),
+                              child: Text('Get Started', style: GoogleFonts.lato(fontSize: 20, color: Colors.white)))),
                     )
                   ]),
             ))

@@ -6,7 +6,6 @@ import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
-import 'package:taskez/widgets/Navigation/default_back.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -32,14 +31,13 @@ class EditProfilePage extends StatelessWidget {
           child: SafeArea(
               child: SingleChildScrollView(
                   child: Column(children: [
-            taskezAppHeader(
+            TaskezAppHeader(
               title: "$tabSpace Edit Profile",
               widget: PrimaryProgressButton(
                 width: 80,
                 height: 40,
                 label: "Done",
-                textStyle: GoogleFonts.lato(
-                    color: Colors.white, fontWeight: FontWeight.bold),
+                textStyle: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(height: 30),
@@ -53,11 +51,9 @@ class EditProfilePage extends StatelessWidget {
                 Container(
                     width: 120,
                     height: 120,
-                    decoration: BoxDecoration(
-                        color: AppColors.primaryAccentColor.withOpacity(0.75),
-                        shape: BoxShape.circle),
-                    child: Icon(FeatherIcons.camera,
-                        color: Colors.white, size: 20))
+                    decoration:
+                        BoxDecoration(color: AppColors.primaryAccentColor.withOpacity(0.75), shape: BoxShape.circle),
+                    child: Icon(FeatherIcons.camera, color: Colors.white, size: 20))
               ],
             ),
             AppSpaces.verticalSpace20,
