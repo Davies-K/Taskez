@@ -22,7 +22,7 @@ class SelectionTab extends StatelessWidget {
               )),
           InkWell(
             onTap: () {
-              Get.to(page!);
+              Get.to(() => page!);
             },
             child: CircularBorder(
                 color: HexColor.fromHex("616575"),

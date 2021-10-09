@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(OnboardingStart());
+      Get.to(() => OnboardingStart());
     });
   }
 
@@ -44,9 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: <TextSpan>[
                 TextSpan(
                     text: 'ez',
-                    style: TextStyle(
-                        foreground: Paint()..shader = linearGradient,
-                        fontWeight: FontWeight.bold)),
+                    style: TextStyle(foreground: Paint()..shader = linearGradient, fontWeight: FontWeight.bold)),
               ],
             ),
           ),

@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
               height: 60,
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(NewWorkSpace());
+                    Get.to(() => NewWorkSpace());
                   },
                   style: ButtonStyles.blueRounded,
                   child: Text('Sign In', style: GoogleFonts.lato(fontSize: 20, color: Colors.white))),

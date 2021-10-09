@@ -78,7 +78,7 @@ class OnboardingStart extends StatelessWidget {
               angle: -math.pi / 4,
               child: InkWell(
                 onTap: () {
-                  Get.to(OnboardingCarousel());
+                  Get.to(() => OnboardingCarousel());
                 },
                 child: Container(
                     width: 200,
@@ -123,7 +123,7 @@ class OnboardingStart extends StatelessWidget {
                       height: 60,
                       child: ElevatedButton(
                           onPressed: () {
-                            Get.to(OnboardingCarousel());
+                            Get.to(() => OnboardingCarousel());
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(HexColor.fromHex("246CFE")),

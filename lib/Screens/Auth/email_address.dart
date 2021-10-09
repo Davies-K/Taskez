@@ -29,21 +29,15 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
       Positioned(
           top: Utils.screenHeight / 2,
           left: Utils.screenWidth,
-          child: Transform.rotate(
-              angle: -math.pi / 2,
-              child: CustomPaint(painter: BackgroundHexagon()))),
+          child: Transform.rotate(angle: -math.pi / 2, child: CustomPaint(painter: BackgroundHexagon()))),
       Padding(
         padding: EdgeInsets.all(20.0),
         child: SafeArea(
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           NavigationBack(),
           SizedBox(height: 40),
           Text("What's your\nemail\naddress?",
-              style: GoogleFonts.lato(
-                  color: Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold)),
+              style: GoogleFonts.lato(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold)),
           AppSpaces.verticalSpace20,
           LabelledFormInput(
               placeholder: "Email",
@@ -57,16 +51,14 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
             height: 60,
             child: ElevatedButton(
                 onPressed: () {
-                  Get.to(SignUp(email: _emailController.text));
+                  Get.to(() => SignUp(email: _emailController.text));
                 },
                 style: ButtonStyles.blueRounded,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.email, color: Colors.white),
-                    Text('   Continue with Email',
-                        style: GoogleFonts.lato(
-                            fontSize: 20, color: Colors.white)),
+                    Text('   Continue with Email', style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
                   ],
                 )),
           )
