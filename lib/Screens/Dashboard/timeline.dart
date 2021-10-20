@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
+import 'package:taskez/BottomSheets/bottom_sheets.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Screens/Dashboard/dashboard.dart';
 import 'package:taskez/Values/values.dart';
@@ -58,7 +59,7 @@ class _TimelineState extends State<Timeline> {
                   Spacer(),
                   DashboardAddButton(
                     iconTapped: (() {
-                      _showAddSettings();
+                      showAppBottomSheet(DashboardAddBottomSheet());
                     }),
                   ),
                   Spacer(),
@@ -66,18 +67,5 @@ class _TimelineState extends State<Timeline> {
                   Spacer(),
                   BottomNavigationItem(itemIndex: 3, notifier: bottomNavigatorTrigger, icon: FeatherIcons.search)
                 ])));
-  }
-
-  _showAddSettings() {
-    Get.bottomSheet(
-      DashboardAddBottomSheet(),
-      backgroundColor: AppColors.primaryBackgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
-      ),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-    );
   }
 }

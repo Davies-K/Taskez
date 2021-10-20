@@ -36,7 +36,7 @@ class ProjectDetails extends StatelessWidget {
                   category: category,
                   color: color,
                   iconTapped: (() {
-                    showSettingsBottomSheet(context);
+                    showSettingsBottomSheet();
                   }),
                   projectName: projectName,
                 ),

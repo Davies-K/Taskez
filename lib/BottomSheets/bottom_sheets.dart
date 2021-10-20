@@ -7,8 +7,11 @@ class TaskezBottomSheet {
   // static const MethodChannel _channel = MethodChannel('taskezBottomSheet');
 }
 
-showSettingsBottomSheet(context) {
-  return Get.bottomSheet(ProjectDetailBottomSheet(),
+showSettingsBottomSheet() => showAppBottomSheet(ProjectDetailBottomSheet());
+
+showAppBottomSheet(Widget widget, {bool isScrollControlled = false, bool popAndShow = false, double? height}) {
+  if (popAndShow) Get.back();
+  return Get.bottomSheet(height == null ? widget : Container(height: height, child: widget),
       backgroundColor: AppColors.primaryBackgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -16,5 +19,5 @@ showSettingsBottomSheet(context) {
         ),
       ),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      isScrollControlled: true);
+      isScrollControlled: isScrollControlled);
 }

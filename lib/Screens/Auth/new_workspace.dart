@@ -78,7 +78,7 @@ class NewWorkSpace extends StatelessWidget {
                             Container(
                               child: Padding(
                                   padding: EdgeInsets.only(top: 15.0),
-                                  child: Wrap(runSpacing: 0.0, spacing: 0.0, alignment: WrapAlignment.start, children: [
+                                  child: Wrap(alignment: WrapAlignment.start, children: [
                                     ...List.generate(
                                       AppColors.ballColors.length,
                                       (index) => GradientColorBall(

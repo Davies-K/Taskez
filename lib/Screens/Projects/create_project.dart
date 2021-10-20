@@ -62,49 +62,45 @@ class CreateProjectScreen extends StatelessWidget {
                 Text("Onboarding\n Screens",
                     style: GoogleFonts.lato(fontSize: 40, color: Colors.white, fontWeight: FontWeight.bold)),
                 AppSpaces.verticalSpace20,
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                            ProfileDummy(
-                                color: HexColor.fromHex("94F0F1"),
-                                dummyType: ProfileDummyType.Image,
-                                scale: 1.5,
-                                image: "assets/man-head.png"),
-                            AppSpaces.horizontalSpace10,
-                            CircularCardLabel(
-                              label: 'Assigned to',
-                              value: 'Dereck Boyle',
-                              color: Colors.white,
-                            )
-                          ]),
-                          AppSpaces.verticalSpace20,
-                          Row(
-                            children: [
-                              ColouredProjectBadge(color: "A06AFA", category: "Task List"),
-                              AppSpaces.horizontalSpace20,
-                              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                Text("Unity Dashboard",
-                                    style: GoogleFonts.lato(
-                                        color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
-                                SizedBox(height: 5),
-                                Text("Task List", style: GoogleFonts.lato(color: HexColor.fromHex("626677"))),
-                              ])
-                            ],
-                          ),
-                        ],
-                      ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                      Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        ProfileDummy(
+                            color: HexColor.fromHex("94F0F1"),
+                            dummyType: ProfileDummyType.Image,
+                            scale: 1.5,
+                            image: "assets/man-head.png"),
+                        AppSpaces.horizontalSpace10,
+                        CircularCardLabel(
+                          label: 'Assigned to',
+                          value: 'Dereck Boyle',
+                          color: Colors.white,
+                        )
+                      ]),
                       SheetGoToCalendarWidget(
                         cardBackgroundColor: AppColors.primaryAccentColor,
                         textAccentColor: HexColor.fromHex("E89EE9"),
                         value: 'Nov 10',
                         label: 'Due Date',
-                      )
+                      ),
                     ]),
+                    AppSpaces.verticalSpace20,
+                    Row(
+                      children: [
+                        ColouredProjectBadge(color: "A06AFA", category: "Task List"),
+                        AppSpaces.horizontalSpace20,
+                        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          Text("Unity Dashboard",
+                              style: GoogleFonts.lato(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600)),
+                          SizedBox(height: 5),
+                          Text("Task List", style: GoogleFonts.lato(color: HexColor.fromHex("626677"))),
+                        ])
+                      ],
+                    ),
+                  ],
+                ),
                 AppSpaces.verticalSpace40,
                 InBottomSheetSubtitle(
                   title: "Description",
@@ -182,7 +178,7 @@ class CreateProjectScreen extends StatelessWidget {
                         color: Colors.white,
                         iconSize: 30,
                         onPressed: () {
-                          showSettingsBottomSheet(context);
+                          showSettingsBottomSheet();
                         },
                       )
                     ]))

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/BottomSheets/bottom_sheets.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Values/values.dart';
@@ -35,7 +36,13 @@ class TeamDetails extends StatelessWidget {
                 title: "$tabSpace $title Team",
                 widget: InkWell(
                     onTap: () {
-                      _viewMore(context);
+                      showAppBottomSheet(
+                        Padding(
+                          padding: MediaQuery.of(context).viewInsets,
+                          child: Container(height: Utils.screenHeight * 0.9, child: MoreTeamDetailsSheet()),
+                        ),
+                        isScrollControlled: true,
+                      );
                     },
                     child: Icon(Icons.more_horiz, size: 30, color: Colors.white))),
             AppSpaces.verticalSpace40,
@@ -62,26 +69,6 @@ class TeamDetails extends StatelessWidget {
                 })
           ])))
     ]));
-  }
-
-  void _viewMore(context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: AppColors.primaryBackgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
-      ),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (BuildContext context) {
-        return Padding(
-          padding: MediaQuery.of(context).viewInsets,
-          child: Container(height: Utils.screenHeight * 0.9, child: MoreTeamDetailsSheet()),
-        );
-      },
-    );
   }
 }
 

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/BottomSheets/bottom_sheets.dart';
 import 'package:taskez/Screens/Chat/chat_screen.dart';
 import 'package:taskez/Screens/Profile/profile_overview.dart';
 import 'package:taskez/Values/values.dart';
@@ -57,7 +58,14 @@ class Dashboard extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: AppSettingsIcon(
                       callback: () {
-                        showDashboardSettings(context);
+                        showAppBottomSheet(
+                          DashboardSettingsBottomSheet(
+                            totalTaskNotifier: _totalTaskTrigger,
+                            totalDueNotifier: _totalDueTrigger,
+                            workingOnNotifier: _workingOnTrigger,
+                            totalCompletedNotifier: _totalCompletedTrigger,
+                          ),
+                        );
                       },
                     ))
               ]),
@@ -70,26 +78,5 @@ class Dashboard extends StatelessWidget {
             ]),
           ),
         ));
-  }
-
-  showDashboardSettings(context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: AppColors.primaryBackgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
-      ),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (BuildContext context) {
-        return DashboardSettingsBottomSheet(
-          totalTaskNotifier: _totalTaskTrigger,
-          totalDueNotifier: _totalDueTrigger,
-          workingOnNotifier: _workingOnTrigger,
-          totalCompletedNotifier: _totalCompletedTrigger,
-        );
-      },
-    );
   }
 }
