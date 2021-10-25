@@ -3,10 +3,8 @@ import 'package:taskez/Values/values.dart';
 
 class OutlinedButtonWithImage extends StatelessWidget {
   final String imageUrl;
-  final double width;
-  OutlinedButtonWithImage(
-      {Key? key, required this.imageUrl, required this.width})
-      : super(key: key);
+  final double? width;
+  OutlinedButtonWithImage({Key? key, required this.imageUrl, this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +19,7 @@ class OutlinedButtonWithImage extends StatelessWidget {
                 width: 30,
                 height: 30,
                 child: ClipOval(
-                  child: Image(
-                      fit: BoxFit.contain, image: AssetImage(this.imageUrl)),
+                  child: Image(fit: BoxFit.contain, image: AssetImage(this.imageUrl)),
                 ),
               ),
             )));

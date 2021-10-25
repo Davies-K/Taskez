@@ -31,62 +31,47 @@ class _SignUpState extends State<SignUp> {
       Padding(
           padding: EdgeInsets.all(20.0),
           child: SafeArea(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                NavigationBack(),
-                SizedBox(height: 40),
-                Text('Sign Up',
-                    style: GoogleFonts.lato(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold)),
-                AppSpaces.verticalSpace20,
-                RichText(
-                  text: TextSpan(
-                    text: 'Using  ',
-                    style: GoogleFonts.lato(color: HexColor.fromHex("676979")),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: widget.email,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.bold)),
-                      TextSpan(
-                          text: "  to login.",
-                          style: GoogleFonts.lato(
-                              color: HexColor.fromHex("676979"))),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 30),
-                LabelledFormInput(
-                    placeholder: "Name",
-                    keyboardType: "text",
-                    controller: _nameController,
-                    obscureText: obscureText,
-                    label: "Your Name"),
-                SizedBox(height: 15),
-                LabelledFormInput(
-                    placeholder: "Password",
-                    keyboardType: "text",
-                    controller: _passController,
-                    obscureText: obscureText,
-                    label: "Your Password"),
-                SizedBox(height: 40),
-                Container(
-                  width: double.infinity,
-                  height: 60,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Get.to(Login(email: widget.email));
-                      },
-                      style: ButtonStyles.blueRounded,
-                      child: Text('Sign Up',
-                          style: GoogleFonts.lato(
-                              fontSize: 20, color: Colors.white))),
-                )
-              ])))
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            NavigationBack(),
+            SizedBox(height: 40),
+            Text('Sign Up', style: GoogleFonts.lato(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold)),
+            AppSpaces.verticalSpace20,
+            RichText(
+              text: TextSpan(
+                text: 'Using  ',
+                style: GoogleFonts.lato(color: HexColor.fromHex("676979")),
+                children: <TextSpan>[
+                  TextSpan(text: widget.email, style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
+                  TextSpan(text: "  to login.", style: GoogleFonts.lato(color: HexColor.fromHex("676979"))),
+                ],
+              ),
+            ),
+            SizedBox(height: 30),
+            LabelledFormInput(
+                placeholder: "Name",
+                keyboardType: "text",
+                controller: _nameController,
+                obscureText: obscureText,
+                label: "Your Name"),
+            SizedBox(height: 15),
+            LabelledFormInput(
+                placeholder: "Password",
+                keyboardType: "text",
+                controller: _passController,
+                obscureText: obscureText,
+                label: "Your Password"),
+            SizedBox(height: 40),
+            Container(
+              width: double.infinity,
+              height: 60,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Get.to(() => Login(email: widget.email));
+                  },
+                  style: ButtonStyles.blueRounded,
+                  child: Text('Sign Up', style: GoogleFonts.lato(fontSize: 20, color: Colors.white))),
+            )
+          ])))
     ]));
   }
 }

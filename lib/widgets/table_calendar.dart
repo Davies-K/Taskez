@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:taskez/Data/my_task.dart';
-import 'package:taskez/Values/values.dart';
-
 import 'Shapes/roundedborder_with_icon.dart';
 
 const kBlueCircleForCalendar = BoxDecoration(
@@ -46,9 +44,7 @@ class _CalendarViewState extends State<CalendarView> {
     return
         //isClassLoading ? CustomWidget.rectangular(height: 300) :
         Container(
-      decoration: BoxDecoration(
-          color: const Color(0xFF262A34),
-          borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(color: const Color(0xFF262A34), borderRadius: BorderRadius.circular(10)),
       child: TableCalendar(
         // event here
         eventLoader: _getEventsForDay,
@@ -59,14 +55,10 @@ class _CalendarViewState extends State<CalendarView> {
         locale: 'en_US',
         focusedDay: _focusedDay,
         calendarFormat: _calendarFormat,
-        daysOfWeekStyle:
-            DaysOfWeekStyle(weekdayStyle: TextStyle(color: Colors.grey)),
+        daysOfWeekStyle: DaysOfWeekStyle(weekdayStyle: TextStyle(color: Colors.grey)),
         headerStyle: HeaderStyle(
             titleCentered: true,
-            titleTextStyle: GoogleFonts.lato(
-                color: const Color(0xFFAEF8A3),
-                fontWeight: FontWeight.bold,
-                fontSize: 20),
+            titleTextStyle: GoogleFonts.lato(color: const Color(0xFFAEF8A3), fontWeight: FontWeight.bold, fontSize: 20),
             formatButtonVisible: false,
             leftChevronIcon: RoundedBorderWithIcon(
               icon: Icons.arrow_back,
@@ -82,12 +74,10 @@ class _CalendarViewState extends State<CalendarView> {
             weekendTextStyle: TextStyle(color: Colors.grey),
             defaultTextStyle: TextStyle(color: Colors.white),
             outsideTextStyle: TextStyle(color: Colors.white),
-            markerDecoration:
-                kBlueCircleForCalendar.copyWith(color: const Color(0xCC448AFF)),
+            markerDecoration: kBlueCircleForCalendar.copyWith(color: const Color(0xCC448AFF)),
             markerSize: 5,
             selectedDecoration: kBlueCircleForCalendar,
-            todayDecoration:
-                kBlueCircleForCalendar.copyWith(color: const Color(0x995C6BC0)),
+            todayDecoration: kBlueCircleForCalendar.copyWith(color: const Color(0x995C6BC0)),
             isTodayHighlighted: true),
         selectedDayPredicate: (day) {
           // Use `selectedDayPredicate` to determine which day is currently selected.

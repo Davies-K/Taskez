@@ -34,7 +34,7 @@ class SelectMembersScreen extends StatelessWidget {
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.only(right: 20, left: 20),
-              child: taskezAppHeader(
+              child: TaskezAppHeader(
                 title: "Set Assignees",
                 widget: AppPrimaryButton(
                   buttonHeight: 40,
@@ -56,22 +56,19 @@ class SelectMembersScreen extends StatelessWidget {
                             decoration: BoxDecorationStyles.fadingInnerDecor,
                             child: Padding(
                                 padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SearchBox(
-                                        placeholder: 'Search',
-                                        controller: _searchController,
-                                      ),
-                                      AppSpaces.verticalSpace20,
-                                      Expanded(
-                                          child: MediaQuery.removePadding(
-                                        context: context,
-                                        removeTop: true,
-                                        child: ListView(children: [...cards]),
-                                      ))
-                                    ])))))),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                                  SearchBox(
+                                    placeholder: 'Search',
+                                    controller: _searchController,
+                                  ),
+                                  AppSpaces.verticalSpace20,
+                                  Expanded(
+                                      child: MediaQuery.removePadding(
+                                    context: context,
+                                    removeTop: true,
+                                    child: ListView(children: [...cards]),
+                                  ))
+                                ])))))),
             //AppSpaces.verticalSpace20,
             AppPrimaryButton(
                 buttonHeight: 50,

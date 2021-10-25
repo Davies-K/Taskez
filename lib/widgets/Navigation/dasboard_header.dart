@@ -4,8 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
-import 'back_button.dart';
-
 class DashboardNav extends StatelessWidget {
   final String title;
   final String image;
@@ -31,7 +29,7 @@ class DashboardNav extends StatelessWidget {
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         InkWell(
           onTap: () {
-            Get.to(page);
+            if (page != null) Get.to(() => page!);
           },
           child: Stack(children: <Widget>[
             Icon(icon, color: Colors.white, size: 30),
@@ -41,11 +39,9 @@ class DashboardNav extends StatelessWidget {
               right: 0.0,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: HexColor.fromHex("FF9B76")),
+                decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor.fromHex("FF9B76")),
                 alignment: Alignment.center,
-                child: Text(notificationCount,
-                    style: GoogleFonts.lato(fontSize: 11, color: Colors.white)),
+                child: Text(notificationCount, style: GoogleFonts.lato(fontSize: 11, color: Colors.white)),
               ),
             )
           ]),
@@ -54,10 +50,7 @@ class DashboardNav extends StatelessWidget {
         InkWell(
           onTap: onImageTapped,
           child: ProfileDummy(
-              color: HexColor.fromHex("93F0F0"),
-              dummyType: ProfileDummyType.Image,
-              image: this.image,
-              scale: 1.2),
+              color: HexColor.fromHex("93F0F0"), dummyType: ProfileDummyType.Image, image: this.image, scale: 1.2),
         )
       ])
     ]);

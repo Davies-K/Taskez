@@ -30,11 +30,9 @@ class ProjectTaskInActiveCard extends StatelessWidget {
           height: 100,
           padding: EdgeInsets.all(20.0),
           decoration: BoxDecoration(
-              border:
-                  Border.all(color: AppColors.primaryBackgroundColor, width: 4),
+              border: Border.all(color: AppColors.primaryBackgroundColor, width: 4),
               borderRadius: BorderRadius.circular(10)),
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+          child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Row(children: [
               Container(
                   width: 50,
@@ -50,13 +48,8 @@ class ProjectTaskInActiveCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(header,
-                        style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18)),
-                    Text(date,
-                        style:
-                            GoogleFonts.lato(color: HexColor.fromHex("8ECA84")))
+                        style: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 18)),
+                    Text(date, style: GoogleFonts.lato(color: HexColor.fromHex("8ECA84")))
                   ])
             ]),
             ProfileDummy(
@@ -66,6 +59,5 @@ class ProjectTaskInActiveCard extends StatelessWidget {
                 scale: 1.0),
           ])),
     );
-    ;
   }
 }

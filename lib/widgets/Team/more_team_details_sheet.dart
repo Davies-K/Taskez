@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:taskez/Screens/Profile/team_details.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/BottomSheets/bottom_sheet_holder.dart';
 import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskez/Constants/constants.dart';
 
 import 'package:taskez/Values/values.dart';
 import 'dart:math' as math;
@@ -9,11 +8,7 @@ class BottomNavigationItem extends StatelessWidget {
   final int itemIndex;
 
   final ValueNotifier<int> notifier;
-  BottomNavigationItem(
-      {Key? key,
-      required this.itemIndex,
-      required this.notifier,
-      required this.icon})
+  BottomNavigationItem({Key? key, required this.itemIndex, required this.notifier, required this.icon})
       : super(key: key);
 
   @override
@@ -34,11 +29,7 @@ class BottomNavigationItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(icon,
-                            size: 30,
-                            color: notifier.value != itemIndex
-                                ? Colors.grey
-                                : Colors.white),
+                        Icon(icon, size: 30, color: notifier.value != itemIndex ? Colors.grey : Colors.white),
                         SizedBox(height: 25),
                         notifier.value != itemIndex
                             ? SizedBox(width: 30, height: 30)
@@ -49,9 +40,7 @@ class BottomNavigationItem extends StatelessWidget {
                                     width: 30,
                                     height: 30,
                                     decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                        color: HexColor.fromHex("C25FFF"))))
+                                        borderRadius: BorderRadius.circular(10.0), color: HexColor.fromHex("C25FFF"))))
                       ],
                     )),
               ]);

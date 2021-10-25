@@ -25,9 +25,8 @@ class ChatScreen extends StatelessWidget {
       Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: SafeArea(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            taskezAppHeader(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            TaskezAppHeader(
               title: "Chat",
               widget: AppAddIcon(page: NewMessageScreen()),
             ),
@@ -43,9 +42,7 @@ class ChatScreen extends StatelessWidget {
             ),
             AppSpaces.verticalSpace20,
             Transform.scale(
-                alignment: Alignment.centerLeft,
-                scale: 0.8,
-                child: buildStackedImages(numberOfMembers: "8")),
+                alignment: Alignment.centerLeft, scale: 0.8, child: buildStackedImages(numberOfMembers: "8")),
             AppSpaces.verticalSpace20,
             BadgedTitle(
               title: "Design",
@@ -54,9 +51,7 @@ class ChatScreen extends StatelessWidget {
             ),
             AppSpaces.verticalSpace20,
             Transform.scale(
-                alignment: Alignment.centerLeft,
-                scale: 0.8,
-                child: buildStackedImages(numberOfMembers: "2")),
+                alignment: Alignment.centerLeft, scale: 0.8, child: buildStackedImages(numberOfMembers: "2")),
             AppSpaces.verticalSpace20,
             SelectionTab(title: "DIRECT MESSAGES", page: NewMessageScreen()),
             AppSpaces.verticalSpace20,

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Values/values.dart';
-import 'package:taskez/widgets/Buttons/primary_progress_button.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/Projects/project_card_vertical.dart';
@@ -28,102 +26,87 @@ class MyTeams extends StatelessWidget {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: SafeArea(
               child: SingleChildScrollView(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                taskezAppHeader(
-                    title: "$tabSpace $tabSpace Team",
-                    widget: Row(children: [
-                      Icon(Icons.more_horiz, size: 30, color: Colors.white),
-                      AppSpaces.horizontalSpace20,
-                      AddSubIcon()
-                    ])),
-                AppSpaces.verticalSpace40,
-                TeamStory(
-                    teamTitle: "Marketing",
-                    numberOfMembers: "12",
-                    noImages: "8"),
-                Container(
-                  height: Utils.screenHeight / 2,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      //change
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            TaskezAppHeader(
+                title: "$tabSpace $tabSpace Team",
+                widget: Row(children: [
+                  Icon(Icons.more_horiz, size: 30, color: Colors.white),
+                  AppSpaces.horizontalSpace20,
+                  AddSubIcon()
+                ])),
+            AppSpaces.verticalSpace40,
+            TeamStory(teamTitle: "Marketing", numberOfMembers: "12", noImages: "8"),
+            Container(
+              height: Utils.screenHeight / 2,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //change
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
 
-                      //change height 125
-                      mainAxisExtent: 220,
-                      crossAxisSpacing: 10,
-                    ),
-                    itemBuilder: (_, index) => ProjectCardVertical(
-                      projectName: AppData.productData[index]['projectName'],
-                      category: AppData.productData[index]['category'],
-                      color: AppData.productData[index]['color'],
-                      ratingsUpperNumber: AppData.productData[index]
-                          ['ratingsUpperNumber'],
-                      ratingsLowerNumber: AppData.productData[index]
-                          ['ratingsLowerNumber'],
-                    ),
-                    itemCount: 2,
-                  ),
+                  //change height 125
+                  mainAxisExtent: 220,
+                  crossAxisSpacing: 10,
                 ),
-                AppSpaces.verticalSpace40,
-                TeamStory(
-                    teamTitle: "Design", numberOfMembers: "12", noImages: "8"),
-                Container(
-                  height: Utils.screenHeight / 2,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      //change
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-
-                      //change height 125
-                      mainAxisExtent: 220,
-                      crossAxisSpacing: 10,
-                    ),
-                    itemBuilder: (_, index) => ProjectCardVertical(
-                      projectName: AppData.productData[index]['projectName'],
-                      category: AppData.productData[index]['category'],
-                      color: AppData.productData[index]['color'],
-                      ratingsUpperNumber: AppData.productData[index]
-                          ['ratingsUpperNumber'],
-                      ratingsLowerNumber: AppData.productData[index]
-                          ['ratingsLowerNumber'],
-                    ),
-                    itemCount: 4,
-                  ),
+                itemBuilder: (_, index) => ProjectCardVertical(
+                  projectName: AppData.productData[index]['projectName'],
+                  category: AppData.productData[index]['category'],
+                  color: AppData.productData[index]['color'],
+                  ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
+                  ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
                 ),
-                AppSpaces.verticalSpace40,
-                TeamStory(
-                    teamTitle: "Accounting",
-                    numberOfMembers: "12",
-                    noImages: "8"),
-                Container(
-                  height: Utils.screenHeight / 2,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      //change
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
+                itemCount: 2,
+              ),
+            ),
+            AppSpaces.verticalSpace40,
+            TeamStory(teamTitle: "Design", numberOfMembers: "12", noImages: "8"),
+            Container(
+              height: Utils.screenHeight / 2,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //change
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
 
-                      //change height 125
-                      mainAxisExtent: 220,
-                      crossAxisSpacing: 10,
-                    ),
-                    itemBuilder: (_, index) => ProjectCardVertical(
-                      projectName: AppData.productData[index]['projectName'],
-                      category: AppData.productData[index]['category'],
-                      color: AppData.productData[index]['color'],
-                      ratingsUpperNumber: AppData.productData[index]
-                          ['ratingsUpperNumber'],
-                      ratingsLowerNumber: AppData.productData[index]
-                          ['ratingsLowerNumber'],
-                    ),
-                    itemCount: 1,
-                  ),
-                )
-              ]))))
+                  //change height 125
+                  mainAxisExtent: 220,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (_, index) => ProjectCardVertical(
+                  projectName: AppData.productData[index]['projectName'],
+                  category: AppData.productData[index]['category'],
+                  color: AppData.productData[index]['color'],
+                  ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
+                  ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
+                ),
+                itemCount: 4,
+              ),
+            ),
+            AppSpaces.verticalSpace40,
+            TeamStory(teamTitle: "Accounting", numberOfMembers: "12", noImages: "8"),
+            Container(
+              height: Utils.screenHeight / 2,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  //change
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+
+                  //change height 125
+                  mainAxisExtent: 220,
+                  crossAxisSpacing: 10,
+                ),
+                itemBuilder: (_, index) => ProjectCardVertical(
+                  projectName: AppData.productData[index]['projectName'],
+                  category: AppData.productData[index]['category'],
+                  color: AppData.productData[index]['color'],
+                  ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
+                  ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
+                ),
+                itemCount: 1,
+              ),
+            )
+          ]))))
     ]));
   }
 }
@@ -156,8 +139,7 @@ class TeamStory extends StatelessWidget {
           child: Transform.scale(
               alignment: Alignment.centerLeft,
               scale: 0.7,
-              child:
-                  buildStackedImages(numberOfMembers: noImages, addMore: true)),
+              child: buildStackedImages(numberOfMembers: noImages, addMore: true)),
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskez/BottomSheets/bottom_sheets.dart';
 import 'package:taskez/Constants/constants.dart';
 import 'package:taskez/Data/data_model.dart';
 import 'package:taskez/Values/values.dart';
@@ -30,73 +31,44 @@ class TeamDetails extends StatelessWidget {
       Padding(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: SafeArea(
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                taskezAppHeader(
-                    title: "$tabSpace $title Team",
-                    widget: InkWell(
-                        onTap: () {
-                          _viewMore(context);
-                        },
-                        child: Icon(Icons.more_horiz,
-                            size: 30, color: Colors.white))),
-                AppSpaces.verticalSpace40,
-                //tab indicators
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    PrimaryTabButton(
-                        buttonText: "Overview",
-                        itemIndex: 0,
-                        notifier: _settingsButtonTrigger),
-                    PrimaryTabButton(
-                        buttonText: "Calendar",
-                        itemIndex: 1,
-                        notifier: _settingsButtonTrigger),
-                  ],
-                ),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            TaskezAppHeader(
+                title: "$tabSpace $title Team",
+                widget: InkWell(
+                    onTap: () {
+                      showAppBottomSheet(
+                        Padding(
+                          padding: MediaQuery.of(context).viewInsets,
+                          child: Container(height: Utils.screenHeight * 0.9, child: MoreTeamDetailsSheet()),
+                        ),
+                        isScrollControlled: true,
+                      );
+                    },
+                    child: Icon(Icons.more_horiz, size: 30, color: Colors.white))),
+            AppSpaces.verticalSpace40,
+            //tab indicators
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                PrimaryTabButton(buttonText: "Overview", itemIndex: 0, notifier: _settingsButtonTrigger),
+                PrimaryTabButton(buttonText: "Calendar", itemIndex: 1, notifier: _settingsButtonTrigger),
+              ],
+            ),
 
-                AppSpaces.verticalSpace40,
-                TeamStory(
-                    teamTitle: title, numberOfMembers: "12", noImages: "8"),
-                AppSpaces.verticalSpace10,
-                InBottomSheetSubtitle(
-                    title:
-                        "We're a growing family of 371,521 designers and \nmakers from around the world.",
-                    textStyle:
-                        GoogleFonts.lato(fontSize: 15, color: Colors.white70)),
-                AppSpaces.verticalSpace40,
-                ValueListenableBuilder(
-                    valueListenable: _settingsButtonTrigger,
-                    builder: (BuildContext context, _, __) {
-                      return _settingsButtonTrigger.value == 0
-                          ? Expanded(child: TeamProjectOverview())
-                          : CalendarView();
-                    })
-              ])))
+            AppSpaces.verticalSpace40,
+            TeamStory(teamTitle: title, numberOfMembers: "12", noImages: "8"),
+            AppSpaces.verticalSpace10,
+            InBottomSheetSubtitle(
+                title: "We're a growing family of 371,521 designers and \nmakers from around the world.",
+                textStyle: GoogleFonts.lato(fontSize: 15, color: Colors.white70)),
+            AppSpaces.verticalSpace40,
+            ValueListenableBuilder(
+                valueListenable: _settingsButtonTrigger,
+                builder: (BuildContext context, _, __) {
+                  return _settingsButtonTrigger.value == 0 ? Expanded(child: TeamProjectOverview()) : CalendarView();
+                })
+          ])))
     ]));
-  }
-
-  void _viewMore(context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: AppColors.primaryBackgroundColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
-      ),
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      builder: (BuildContext context) {
-        return Padding(
-          padding: MediaQuery.of(context).viewInsets,
-          child: Container(
-              height: Utils.screenHeight * 0.9, child: MoreTeamDetailsSheet()),
-        );
-      },
-    );
   }
 }
 

@@ -8,11 +8,7 @@ class PrimaryTabButton extends StatelessWidget {
   final ValueNotifier<int> notifier;
   final VoidCallback? callback;
   const PrimaryTabButton(
-      {Key? key,
-      this.callback,
-      required this.notifier,
-      required this.buttonText,
-      required this.itemIndex})
+      {Key? key, this.callback, required this.notifier, required this.buttonText, required this.itemIndex})
       : super(key: key);
 
   @override
@@ -25,24 +21,20 @@ class PrimaryTabButton extends StatelessWidget {
             return ElevatedButton(
                 onPressed: () {
                   notifier.value = itemIndex;
-                  callback;
+                  if (callback != null) {
+                    callback!();
+                  }
                 },
                 style: ButtonStyle(
                     backgroundColor: notifier.value == itemIndex
-                        ? MaterialStateProperty.all<Color>(
-                            HexColor.fromHex("246CFE"))
-                        : MaterialStateProperty.all<Color>(
-                            HexColor.fromHex("181A1F")),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                            side: notifier.value == itemIndex
-                                ? BorderSide(color: HexColor.fromHex("246CFE"))
-                                : BorderSide(
-                                    color: HexColor.fromHex("181A1F"))))),
-                child: Text(buttonText,
-                    style:
-                        GoogleFonts.lato(fontSize: 16, color: Colors.white)));
+                        ? MaterialStateProperty.all<Color>(HexColor.fromHex("246CFE"))
+                        : MaterialStateProperty.all<Color>(HexColor.fromHex("181A1F")),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        side: notifier.value == itemIndex
+                            ? BorderSide(color: HexColor.fromHex("246CFE"))
+                            : BorderSide(color: HexColor.fromHex("181A1F"))))),
+                child: Text(buttonText, style: GoogleFonts.lato(fontSize: 16, color: Colors.white)));
           }),
     );
   }
