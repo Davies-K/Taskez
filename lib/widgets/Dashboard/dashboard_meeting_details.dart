@@ -73,7 +73,7 @@ class DashboardMeetingDetails extends StatelessWidget {
               callback: () {
                 Get.to(() => SelectMembersScreen());
               }),
-          AppSpaces.verticalSpace10,
+          AppSpaces.verticalSpace20,
         ]),
       ),
     );
