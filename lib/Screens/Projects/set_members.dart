@@ -8,11 +8,11 @@ import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/employee_card.dart';
 
 class SelectMembersScreen extends StatelessWidget {
-  TextEditingController _searchController = new TextEditingController();
   SelectMembersScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _searchController = new TextEditingController();
     final dynamic data = AppData.employeeData;
     List<Widget> cards = List.generate(
         AppData.employeeData.length,
@@ -56,19 +56,22 @@ class SelectMembersScreen extends StatelessWidget {
                             decoration: BoxDecorationStyles.fadingInnerDecor,
                             child: Padding(
                                 padding: const EdgeInsets.all(20.0),
-                                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                  SearchBox(
-                                    placeholder: 'Search',
-                                    controller: _searchController,
-                                  ),
-                                  AppSpaces.verticalSpace20,
-                                  Expanded(
-                                      child: MediaQuery.removePadding(
-                                    context: context,
-                                    removeTop: true,
-                                    child: ListView(children: [...cards]),
-                                  ))
-                                ])))))),
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SearchBox(
+                                        placeholder: 'Search',
+                                        controller: _searchController,
+                                      ),
+                                      AppSpaces.verticalSpace20,
+                                      Expanded(
+                                          child: MediaQuery.removePadding(
+                                        context: context,
+                                        removeTop: true,
+                                        child: ListView(children: [...cards]),
+                                      ))
+                                    ])))))),
             //AppSpaces.verticalSpace20,
             AppPrimaryButton(
                 buttonHeight: 50,

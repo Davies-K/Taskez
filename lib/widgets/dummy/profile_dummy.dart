@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 enum ProfileDummyType { Icon, Image, Button }
 
 class ProfileDummy extends StatelessWidget {
-  ProfileDummyType dummyType;
-  double scale;
-  String? image;
-  Color? color;
-  IconData? icon;
-  ProfileDummy({Key? key, required this.dummyType, required this.scale, required this.color, this.icon, this.image})
+  final ProfileDummyType dummyType;
+  final double scale;
+  final String? image;
+  final Color? color;
+  final IconData? icon;
+  ProfileDummy(
+      {Key? key,
+      required this.dummyType,
+      required this.scale,
+      required this.color,
+      this.icon,
+      this.image})
       : super(key: key);
 
   @override

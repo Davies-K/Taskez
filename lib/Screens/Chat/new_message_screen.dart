@@ -7,11 +7,11 @@ import 'package:taskez/widgets/Forms/search_box.dart';
 import 'package:taskez/widgets/Navigation/app_header.dart';
 
 class NewMessageScreen extends StatelessWidget {
-  TextEditingController _searchController = new TextEditingController();
   NewMessageScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _searchController = new TextEditingController();
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
@@ -42,45 +42,55 @@ class NewMessageScreen extends StatelessWidget {
                             decoration: BoxDecorationStyles.fadingInnerDecor,
                             child: Padding(
                                 padding: const EdgeInsets.all(20.0),
-                                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Expanded(
-                                        flex: 3,
-                                        child: SearchBox(placeholder: 'Search Members', controller: _searchController),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Expanded(
+                                            flex: 3,
+                                            child: SearchBox(
+                                                placeholder: 'Search Members',
+                                                controller: _searchController),
+                                          ),
+                                          Expanded(
+                                              flex: 1,
+                                              child: Text("Cancel",
+                                                  textAlign: TextAlign.right,
+                                                  style: GoogleFonts.lato(
+                                                      color: HexColor.fromHex(
+                                                          "616575"),
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold))),
+                                        ],
                                       ),
-                                      Expanded(
-                                          flex: 1,
-                                          child: Text("Cancel",
-                                              textAlign: TextAlign.right,
-                                              style: GoogleFonts.lato(
-                                                  color: HexColor.fromHex("616575"),
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold))),
-                                    ],
-                                  ),
-                                  AppSpaces.verticalSpace20,
-                                  Text("SUGGESTED",
-                                      style: GoogleFonts.lato(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w500,
+                                      AppSpaces.verticalSpace20,
+                                      Text("SUGGESTED",
+                                          style: GoogleFonts.lato(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                            color: HexColor.fromHex("616575"),
+                                          )),
+                                      AppSpaces.verticalSpace20,
+                                      Divider(
+                                        height: 2,
                                         color: HexColor.fromHex("616575"),
+                                      ),
+                                      AppSpaces.verticalSpace20,
+                                      Expanded(
+                                          child: MediaQuery.removePadding(
+                                        context: context,
+                                        removeTop: true,
+                                        child: ListView(
+                                            children: [...onlineUsers]),
                                       )),
-                                  AppSpaces.verticalSpace20,
-                                  Divider(
-                                    height: 2,
-                                    color: HexColor.fromHex("616575"),
-                                  ),
-                                  AppSpaces.verticalSpace20,
-                                  Expanded(
-                                      child: MediaQuery.removePadding(
-                                    context: context,
-                                    removeTop: true,
-                                    child: ListView(children: [...onlineUsers]),
-                                  )),
-                                ]))))))
+                                    ]))))))
           ],
         ),
       ),

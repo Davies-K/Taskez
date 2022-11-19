@@ -26,8 +26,22 @@ class ProjectTaskActiveCard extends StatelessWidget {
         notifier.value = !notifier.value;
       },
       child: Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.25,
+        endActionPane: ActionPane(
+          extentRatio: .30,
+          motion: const ScrollMotion(),
+          children: [
+            SlidableAction(
+              backgroundColor: HexColor.fromHex("B1FEE2"),
+              icon: Icons.share,
+              onPressed: (BuildContext context) {},
+            ),
+            SlidableAction(
+              icon: Icons.delete,
+              backgroundColor: HexColor.fromHex("F5A3FF"),
+              onPressed: (BuildContext context) {},
+            ),
+          ],
+        ),
         child: Container(
             width: double.infinity,
             height: 100,
@@ -97,22 +111,6 @@ class ProjectTaskActiveCard extends StatelessWidget {
                       image: this.image,
                       scale: 1.0),
                 ])),
-        secondaryActions: <Widget>[
-          IconSlideAction(
-            //caption: 'More',
-            color: HexColor.fromHex("B1FEE2"),
-            icon: Icons.share,
-
-            // onTap: () => _showSnackBar('More'),
-          ),
-          IconSlideAction(
-            //caption: 'Delete',
-            iconWidget: Icon(Icons.delete, size: 35),
-            color: HexColor.fromHex("F5A3FF"),
-
-            // onTap: () => _showSnackBar('Delete'),
-          ),
-        ],
       ),
     );
   }

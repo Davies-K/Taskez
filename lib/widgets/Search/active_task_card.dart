@@ -19,8 +19,22 @@ class ActiveTaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Slidable(
-      actionPane: SlidableDrawerActionPane(),
-      actionExtentRatio: 0.25,
+      endActionPane: ActionPane(
+        extentRatio: .30,
+        motion: const ScrollMotion(),
+        children: [
+          SlidableAction(
+            backgroundColor: HexColor.fromHex("B1FEE2"),
+            icon: Icons.share,
+            onPressed: (BuildContext context) {},
+          ),
+          SlidableAction(
+            icon: Icons.delete,
+            backgroundColor: HexColor.fromHex("F5A3FF"),
+            onPressed: (BuildContext context) {},
+          ),
+        ],
+      ),
       child: InkWell(
         onTap: () {
           notifier.value = !notifier.value;
@@ -92,22 +106,6 @@ class ActiveTaskCard extends StatelessWidget {
                           GoogleFonts.lato(color: HexColor.fromHex("F5A3FF")))
                 ])),
       ),
-      secondaryActions: <Widget>[
-        IconSlideAction(
-          //caption: 'More',
-          color: HexColor.fromHex("B1FEE2"),
-          icon: Icons.share,
-
-          // onTap: () => _showSnackBar('More'),
-        ),
-        IconSlideAction(
-          //caption: 'Delete',
-          iconWidget: Icon(Icons.delete, size: 35),
-          color: HexColor.fromHex("F5A3FF"),
-
-          // onTap: () => _showSnackBar('Delete'),
-        ),
-      ],
     );
   }
 }

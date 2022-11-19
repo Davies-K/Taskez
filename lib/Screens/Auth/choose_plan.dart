@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,14 +11,13 @@ import 'package:taskez/widgets/Onboarding/plan_card.dart';
 import 'package:taskez/widgets/Onboarding/toggle_option.dart';
 
 class ChoosePlan extends StatelessWidget {
-  ChoosePlan({Key? key}) : super(key: key);
-
-  ValueNotifier<bool> _multiUserTrigger = ValueNotifier(false);
-  ValueNotifier<bool> _customLabelTrigger = ValueNotifier(false);
-  ValueNotifier<int> _planContainerTrigger = ValueNotifier(0);
+  ChoosePlan({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ValueNotifier<bool> _multiUserTrigger = ValueNotifier(false);
+    ValueNotifier<bool> _customLabelTrigger = ValueNotifier(false);
+    ValueNotifier<int> _planContainerTrigger = ValueNotifier(0);
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
@@ -52,24 +50,30 @@ class ChoosePlan extends StatelessWidget {
                               Text('Choose Plan', style: AppTextStyles.header2),
                               AppSpaces.verticalSpace10,
                               Text('Unlock all features with Premium Plan',
-                                  style: GoogleFonts.lato(fontSize: 14, color: HexColor.fromHex("666A7A"))),
+                                  style: GoogleFonts.lato(
+                                      fontSize: 14,
+                                      color: HexColor.fromHex("666A7A"))),
                               AppSpaces.verticalSpace20,
-                              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                                PlanCard(
-                                  notifierValue: _planContainerTrigger,
-                                  selectedIndex: 0,
-                                  header: "It's Free",
-                                  subHeader: "For team\nfrom 1 - 5",
-                                ),
-                                AppSpaces.horizontalSpace20,
-                                PlanCard(
-                                    notifierValue: _planContainerTrigger,
-                                    selectedIndex: 1,
-                                    header: "Premium",
-                                    subHeader: "\$19/mo")
-                              ]),
+                              Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    PlanCard(
+                                      notifierValue: _planContainerTrigger,
+                                      selectedIndex: 0,
+                                      header: "It's Free",
+                                      subHeader: "For team\nfrom 1 - 5",
+                                    ),
+                                    AppSpaces.horizontalSpace20,
+                                    PlanCard(
+                                        notifierValue: _planContainerTrigger,
+                                        selectedIndex: 1,
+                                        header: "Premium",
+                                        subHeader: "\$19/mo")
+                                  ]),
                               AppSpaces.verticalSpace20,
-                              Text('Enable Features', style: AppTextStyles.header2),
+                              Text('Enable Features',
+                                  style: AppTextStyles.header2),
                               AppSpaces.verticalSpace10,
                               Container(
                                 width: Utils.screenWidth * 0.8,
@@ -82,7 +86,10 @@ class ChoosePlan extends StatelessWidget {
                                               'You can customize the features in your workspace now. Or you can do it later in ',
                                           style: GoogleFonts.lato(fontSize: 14, color: HexColor.fromHex("666A7A")),
                                           children: <TextSpan>[
-                                            TextSpan(text: 'Menu - Workspace', style: TextStyle(color: Colors.white))
+                                            TextSpan(
+                                                text: 'Menu - Workspace',
+                                                style: TextStyle(
+                                                    color: Colors.white))
                                           ]),
                                     ),
                                   ],
@@ -94,7 +101,9 @@ class ChoosePlan extends StatelessWidget {
                                   notifierValue: _multiUserTrigger,
                                   icon: Icons.groups),
                               ToggleLabelOption(
-                                  label: '    Custom Labels', notifierValue: _customLabelTrigger, icon: Icons.category)
+                                  label: '    Custom Labels',
+                                  notifierValue: _customLabelTrigger,
+                                  icon: Icons.category)
                             ],
                           ))),
                 )))
@@ -104,17 +113,21 @@ class ChoosePlan extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.only(left: 40, right: 20),
             width: Utils.screenWidth,
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text('Back',
-                  style:
-                      GoogleFonts.lato(color: HexColor.fromHex("616575"), fontSize: 16, fontWeight: FontWeight.bold)),
-              PrimaryProgressButton(
-                  width: 120,
-                  label: "Done",
-                  callback: () {
-                    Get.to(() => Timeline());
-                  })
-            ]),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Back',
+                      style: GoogleFonts.lato(
+                          color: HexColor.fromHex("616575"),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold)),
+                  PrimaryProgressButton(
+                      width: 120,
+                      label: "Done",
+                      callback: () {
+                        Get.to(() => Timeline());
+                      })
+                ]),
           ))
     ]));
   }

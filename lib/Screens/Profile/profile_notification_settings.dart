@@ -9,15 +9,14 @@ import 'package:taskez/widgets/Onboarding/labelled_option.dart';
 import 'package:taskez/widgets/container_label.dart';
 
 class ProfileNotificationSettings extends StatelessWidget {
-  ValueNotifier<bool> _assignmedToMe = ValueNotifier(true);
-  ValueNotifier<bool> _taskCompleted = ValueNotifier(false);
-  ValueNotifier<bool> _mentionedMe = ValueNotifier(true);
-  ValueNotifier<bool> _directMessage = ValueNotifier(false);
-
   ProfileNotificationSettings({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _assignmedToMe = ValueNotifier(true);
+    final _taskCompleted = ValueNotifier(false);
+    final _mentionedMe = ValueNotifier(true);
+    final _directMessage = ValueNotifier(false);
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
@@ -35,15 +34,17 @@ class ProfileNotificationSettings extends StatelessWidget {
                 width: 80,
                 height: 40,
                 label: "Done",
-                textStyle: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.bold),
+                textStyle: GoogleFonts.lato(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             AppSpaces.verticalSpace40,
             Container(
                 width: double.infinity,
                 height: Utils.screenHeight * 0.9,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20), color: AppColors.primaryBackgroundColor),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: AppColors.primaryBackgroundColor),
                 child: Column(children: [
                   LabelledOption(
                     label: '30 minutes',
@@ -73,9 +74,12 @@ class ProfileNotificationSettings extends StatelessWidget {
               label: "Task assigned to me",
               notifierValue: _assignmedToMe,
             ),
-            LabelledCheckbox(label: "Task completed", notifierValue: _taskCompleted),
-            LabelledCheckbox(label: "Mentioned Me", notifierValue: _mentionedMe),
-            LabelledCheckbox(label: "Direct Message", notifierValue: _directMessage),
+            LabelledCheckbox(
+                label: "Task completed", notifierValue: _taskCompleted),
+            LabelledCheckbox(
+                label: "Mentioned Me", notifierValue: _mentionedMe),
+            LabelledCheckbox(
+                label: "Direct Message", notifierValue: _directMessage),
           ]))))
     ]));
   }
