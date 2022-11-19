@@ -11,12 +11,12 @@ import 'filled_selectable_container.dart';
 import 'in_bottomsheet_subtitle.dart';
 
 class DashboardDesignMeetingSheet extends StatelessWidget {
-  TextEditingController _meetingNameController = new TextEditingController();
-
   DashboardDesignMeetingSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _meetingNameController = new TextEditingController();
+
     return SingleChildScrollView(
       child: Column(children: [
         AppSpaces.verticalSpace10,
@@ -24,7 +24,8 @@ class DashboardDesignMeetingSheet extends StatelessWidget {
         AppSpaces.verticalSpace10,
         Padding(
             padding: EdgeInsets.all(20),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(
                 children: [
                   Container(

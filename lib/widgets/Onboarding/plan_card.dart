@@ -5,8 +5,8 @@ import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/dummy/green_done_icon.dart';
 
 class PlanCard extends StatelessWidget {
-  int selectedIndex;
-  ValueNotifier<int> notifierValue;
+  final int selectedIndex;
+  final ValueNotifier<int> notifierValue;
 
   final String header;
   final String subHeader;
@@ -47,18 +47,26 @@ class PlanCard extends StatelessWidget {
                         ? Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: DecoratedBox(
-                                decoration: BoxDecorationStyles.fadingInnerDecor,
+                                decoration:
+                                    BoxDecorationStyles.fadingInnerDecor,
                                 child: Center(
                                     child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                       SizedBox(height: 40),
                                       Text(header,
                                           style: GoogleFonts.lato(
-                                              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24)),
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 24)),
                                       AppSpaces.verticalSpace10,
-                                      Text(subHeader, style: GoogleFonts.lato(color: HexColor.fromHex("F7A3F9")))
+                                      Text(subHeader,
+                                          style: GoogleFonts.lato(
+                                              color:
+                                                  HexColor.fromHex("F7A3F9")))
                                     ]))),
                           )
                         : Stack(children: [
@@ -68,11 +76,15 @@ class PlanCard extends StatelessWidget {
                               child: Container(
                                   width: 50,
                                   height: 50,
-                                  decoration: BoxDecoration(shape: BoxShape.circle, color: HexColor.fromHex("181a1f")),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: HexColor.fromHex("181a1f")),
                                   child: GreenDoneIcon()),
                             ),
                             Center(
-                                child: Column(crossAxisAlignment: CrossAxisAlignment.center,
+                                child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     //mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                   SizedBox(height: 45),
@@ -80,7 +92,9 @@ class PlanCard extends StatelessWidget {
                                   AppSpaces.verticalSpace20,
                                   Text(header,
                                       style: GoogleFonts.lato(
-                                          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24)),
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24)),
                                   AppSpaces.verticalSpace10,
                                   Text(subHeader, style: GoogleFonts.lato())
                                 ]))

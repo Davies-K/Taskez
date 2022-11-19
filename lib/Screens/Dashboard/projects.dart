@@ -11,11 +11,10 @@ import 'package:taskez/widgets/Projects/project_card_vertical.dart';
 class ProjectScreen extends StatelessWidget {
   ProjectScreen({Key? key}) : super(key: key);
 
-  ValueNotifier<int> _settingsButtonTrigger = ValueNotifier(0);
-  ValueNotifier<bool> _switchGridLayout = ValueNotifier(false);
-
   @override
   Widget build(BuildContext context) {
+    final _settingsButtonTrigger = ValueNotifier(0);
+    final _switchGridLayout = ValueNotifier(false);
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
         padding: const EdgeInsets.only(right: 20, left: 20),
@@ -29,14 +28,24 @@ class ProjectScreen extends StatelessWidget {
       AppSpaces.verticalSpace20,
       Padding(
         padding: const EdgeInsets.only(right: 20, left: 20),
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           //tab indicators
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              PrimaryTabButton(buttonText: "Favorites", itemIndex: 0, notifier: _settingsButtonTrigger),
-              PrimaryTabButton(buttonText: "Recent", itemIndex: 1, notifier: _settingsButtonTrigger),
-              PrimaryTabButton(buttonText: "All", itemIndex: 2, notifier: _settingsButtonTrigger)
+              PrimaryTabButton(
+                  buttonText: "Favorites",
+                  itemIndex: 0,
+                  notifier: _settingsButtonTrigger),
+              PrimaryTabButton(
+                  buttonText: "Recent",
+                  itemIndex: 1,
+                  notifier: _settingsButtonTrigger),
+              PrimaryTabButton(
+                  buttonText: "All",
+                  itemIndex: 2,
+                  notifier: _settingsButtonTrigger)
             ],
           ),
           Container(
@@ -50,8 +59,10 @@ class ProjectScreen extends StatelessWidget {
                       valueListenable: _switchGridLayout,
                       builder: (BuildContext context, _, __) {
                         return _switchGridLayout.value
-                            ? Icon(FeatherIcons.clipboard, color: Colors.white, size: 30)
-                            : Icon(FeatherIcons.grid, color: Colors.white, size: 30);
+                            ? Icon(FeatherIcons.clipboard,
+                                color: Colors.white, size: 30)
+                            : Icon(FeatherIcons.grid,
+                                color: Colors.white, size: 30);
                       })))
         ]),
       ),
@@ -77,18 +88,24 @@ class ProjectScreen extends StatelessWidget {
                   ),
                   itemBuilder: (_, index) => _switchGridLayout.value
                       ? ProjectCardVertical(
-                          projectName: AppData.productData[index]['projectName'],
+                          projectName: AppData.productData[index]
+                              ['projectName'],
                           category: AppData.productData[index]['category'],
                           color: AppData.productData[index]['color'],
-                          ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
-                          ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
+                          ratingsUpperNumber: AppData.productData[index]
+                              ['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]
+                              ['ratingsLowerNumber'],
                         )
                       : ProjectCardHorizontal(
-                          projectName: AppData.productData[index]['projectName'],
+                          projectName: AppData.productData[index]
+                              ['projectName'],
                           category: AppData.productData[index]['category'],
                           color: AppData.productData[index]['color'],
-                          ratingsUpperNumber: AppData.productData[index]['ratingsUpperNumber'],
-                          ratingsLowerNumber: AppData.productData[index]['ratingsLowerNumber'],
+                          ratingsUpperNumber: AppData.productData[index]
+                              ['ratingsUpperNumber'],
+                          ratingsLowerNumber: AppData.productData[index]
+                              ['ratingsLowerNumber'],
                         ),
                   itemCount: AppData.productData.length,
                 );

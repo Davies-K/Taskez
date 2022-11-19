@@ -88,26 +88,6 @@ class BarChartSample1State extends State<BarChartSample1> {
               ])
             ],
           ),
-          // Padding(
-          //   padding: const EdgeInsets.all(8.0),
-          //   child: Align(
-          //     alignment: Alignment.topRight,
-          //     child: IconButton(
-          //       icon: Icon(
-          //         isPlaying ? Icons.pause : Icons.play_arrow,
-          //         color: const Color(0xff0f4a3c),
-          //       ),
-          //       onPressed: () {
-          //         setState(() {
-          //           isPlaying = !isPlaying;
-          //           if (isPlaying) {
-          //             refreshState();
-          //           }
-          //         });
-          //       },
-          //     ),
-          //   ),
-          // )
         ],
       ),
     );
@@ -125,13 +105,13 @@ class BarChartSample1State extends State<BarChartSample1> {
       x: x,
       barRods: [
         BarChartRodData(
-          y: isTouched ? y + 1 : y,
-          colors: isTouched ? [Colors.yellow] : [barColor],
+          toY: isTouched ? y + 1 : y,
+          color: isTouched ? Colors.yellow : barColor,
           width: width,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
-            y: 20,
-            colors: [barBackgroundColor],
+            toY: 20,
+            color: barBackgroundColor,
           ),
         ),
       ],
@@ -201,7 +181,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                 ),
                 children: <TextSpan>[
                   TextSpan(
-                    text: (rod.y - 1).toString(),
+                    text: (rod.toY - 1).toString(),
                     style: TextStyle(
                       color: Colors.yellow,
                       fontSize: 12,
@@ -211,49 +191,60 @@ class BarChartSample1State extends State<BarChartSample1> {
                 ],
               );
             }),
-        touchCallback: (barTouchResponse) {
+        touchCallback: (
+          event,
+          barTouchResponse,
+        ) {
           setState(() {
-            if (barTouchResponse.spot != null &&
-                barTouchResponse.touchInput is! PointerUpEvent &&
-                barTouchResponse.touchInput is! PointerExitEvent) {
-              touchedIndex = barTouchResponse.spot!.touchedBarGroupIndex;
+            if (barTouchResponse?.spot != null &&
+                event is! PointerUpEvent &&
+                event is! PointerExitEvent) {
+              touchedIndex = barTouchResponse?.spot?.touchedBarGroupIndex ?? 0;
             } else {
               touchedIndex = -1;
             }
           });
         },
       ),
+      gridData: FlGridData(
+        show: false,
+      ),
       titlesData: FlTitlesData(
-        show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (value) => const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
-          margin: 16,
-          getTitles: (double value) {
-            switch (value.toInt()) {
-              case 0:
-                return 'M';
-              case 1:
-                return 'T';
-              case 2:
-                return 'W';
-              case 3:
-                return 'T';
-              case 4:
-                return 'F';
-              case 5:
-                return 'S';
-              case 6:
-                return 'S';
-              default:
-                return '';
-            }
-          },
+        show: false,
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
         ),
-        leftTitles: SideTitles(
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+            getTitlesWidget: (double value, TitleMeta meta) {
+              switch (value.toInt()) {
+                case 0:
+                  return _BarChartTitle('M');
+                case 1:
+                  return _BarChartTitle('T');
+                case 2:
+                  return _BarChartTitle('W');
+                case 3:
+                  return _BarChartTitle('T');
+                case 4:
+                  return _BarChartTitle('F');
+                case 5:
+                  return _BarChartTitle('S');
+                case 6:
+                  return _BarChartTitle('S');
+                default:
+                  return _BarChartTitle('');
+              }
+            },
+          ),
+        ),
+        leftTitles: AxisTitles(
+            sideTitles: SideTitles(
           showTitles: false,
-        ),
+        )),
       ),
       borderData: FlBorderData(
         show: false,
@@ -264,40 +255,48 @@ class BarChartSample1State extends State<BarChartSample1> {
 
   BarChartData randomData() {
     return BarChartData(
+      gridData: FlGridData(
+        show: false,
+      ),
       barTouchData: BarTouchData(
         enabled: false,
       ),
       titlesData: FlTitlesData(
-        show: true,
-        bottomTitles: SideTitles(
-          showTitles: true,
-          getTextStyles: (value) => const TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
-          margin: 16,
-          getTitles: (double value) {
-            switch (value.toInt()) {
-              case 0:
-                return 'M';
-              case 1:
-                return 'T';
-              case 2:
-                return 'W';
-              case 3:
-                return 'T';
-              case 4:
-                return 'F';
-              case 5:
-                return 'S';
-              case 6:
-                return 'S';
-              default:
-                return '';
-            }
-          },
+        show: false,
+        topTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+          ),
         ),
-        leftTitles: SideTitles(
+        bottomTitles: AxisTitles(
+          sideTitles: SideTitles(
+            showTitles: false,
+            getTitlesWidget: (double value, TitleMeta meta) {
+              switch (value.toInt()) {
+                case 0:
+                  return _BarChartTitle('M');
+                case 1:
+                  return _BarChartTitle('T');
+                case 2:
+                  return _BarChartTitle('W');
+                case 3:
+                  return _BarChartTitle('T');
+                case 4:
+                  return _BarChartTitle('F');
+                case 5:
+                  return _BarChartTitle('S');
+                case 6:
+                  return _BarChartTitle('S');
+                default:
+                  return _BarChartTitle('');
+              }
+            },
+          ),
+        ),
+        leftTitles: AxisTitles(
+            sideTitles: SideTitles(
           showTitles: false,
-        ),
+        )),
       ),
       borderData: FlBorderData(
         show: false,
@@ -346,5 +345,24 @@ class BarChartSample1State extends State<BarChartSample1> {
     if (isPlaying) {
       await refreshState();
     }
+  }
+}
+
+class _BarChartTitle extends StatelessWidget {
+  final String title;
+  const _BarChartTitle(
+    this.title,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: const TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontSize: 12,
+      ),
+    );
   }
 }

@@ -6,12 +6,12 @@ import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import '../container_label.dart';
 
 class MoreTeamDetailsSheet extends StatelessWidget {
-  TextEditingController _workSpaceNameController = new TextEditingController();
-  TextEditingController _teamNameController = new TextEditingController();
   MoreTeamDetailsSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final _workSpaceNameController = new TextEditingController();
+    final _teamNameController = new TextEditingController();
     return Column(children: [
       AppSpaces.verticalSpace10,
       BottomSheetHolder(),

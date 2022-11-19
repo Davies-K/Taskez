@@ -9,17 +9,16 @@ import 'package:taskez/widgets/Navigation/app_header.dart';
 import 'package:taskez/widgets/dummy/profile_dummy.dart';
 
 class EditProfilePage extends StatelessWidget {
-  final String tabSpace = "\t\t\t";
   EditProfilePage({Key? key}) : super(key: key);
-
-  TextEditingController _nameController = new TextEditingController();
-  TextEditingController _passController = new TextEditingController();
-  TextEditingController _emailController = new TextEditingController();
-  TextEditingController _roleController = new TextEditingController();
-  TextEditingController _aboutController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final String tabSpace = "\t\t\t";
+    final _nameController = new TextEditingController();
+    final _passController = new TextEditingController();
+    final _emailController = new TextEditingController();
+    final _roleController = new TextEditingController();
+    final _aboutController = new TextEditingController();
     return Scaffold(
         body: Stack(children: [
       DarkRadialBackground(
@@ -37,7 +36,8 @@ class EditProfilePage extends StatelessWidget {
                 width: 80,
                 height: 40,
                 label: "Done",
-                textStyle: GoogleFonts.lato(color: Colors.white, fontWeight: FontWeight.bold),
+                textStyle: GoogleFonts.lato(
+                    color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(height: 30),
@@ -51,9 +51,11 @@ class EditProfilePage extends StatelessWidget {
                 Container(
                     width: 120,
                     height: 120,
-                    decoration:
-                        BoxDecoration(color: AppColors.primaryAccentColor.withOpacity(0.75), shape: BoxShape.circle),
-                    child: Icon(FeatherIcons.camera, color: Colors.white, size: 20))
+                    decoration: BoxDecoration(
+                        color: AppColors.primaryAccentColor.withOpacity(0.75),
+                        shape: BoxShape.circle),
+                    child: Icon(FeatherIcons.camera,
+                        color: Colors.white, size: 20))
               ],
             ),
             AppSpaces.verticalSpace20,
