@@ -2,7 +2,7 @@
 <p align="center">A productivity mobile application UI kit built with Flutter</p>
 <h3 align="center">Designs and inspiration by <a href="https://www.behance.net/gallery/108149857/TaskEz-Productivity-App-iOS-UI-Kit"> Taskez IOS UI kit.</a></h3>
 <div align="center"> <a href="https://play.google.com/store/apps/details?id=com.taskez.io" target="_blank"><img src="screenshots/playstore.png"/></a></div> 
-<p align="center"> Application Flow - <a href="https://youtu.be/VpYzfUInOYE">Youtube</a></p>
+<h3 align="center"> Application Flow - <a href="https://youtu.be/VpYzfUInOYE">Youtube</a></h3>
 
 ### Show some :heart: and star the repo to support the project
 
